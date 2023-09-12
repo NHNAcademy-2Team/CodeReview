@@ -10,6 +10,8 @@
 |링크
 |순수연
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/Suyeon
+|홍경석
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/kyoungseuk
 
 
 
