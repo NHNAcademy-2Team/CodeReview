@@ -1,0 +1,12 @@
+= NHN Academy Code Review Github
+Doc Writer <soocy0718@gmail.com>
+
+참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+
+[cols=2*]
+|===
+|일정
+|기록
+|2023.09.12
+|참고자료 Unit01 공부 및 실습 완료
+
