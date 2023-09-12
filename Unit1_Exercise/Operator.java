@@ -7,7 +7,6 @@ public class Operator {
     private String telephoneNumbers;
     private String personNames;
     private String city;
-    private String[] cities = {"서울", "대전", "대구", "부산", "광주", "인천", "울산"}; //도시명 저장
     private TelephoneRegistry telephoneRegistry = new TelephoneRegistry();
 
     // public Operator(String city, String personNames) {
@@ -27,13 +26,13 @@ public class Operator {
         String personNames = "";
         String telephoneNumbers = "";
 
-        telephoneRegistry.add(new City("대전", "양진영", "042-123-4567"));
+        telephoneRegistry.add(new Information("대전", "양진영", "042-123-4567"));
 
         for(int i=0; i<30; i++) {
             int random = rnd.nextInt(5);
             personNames = first[rnd.nextInt(5)] + name[rnd.nextInt(15)] + name[rnd.nextInt(15)];
             telephoneNumbers = Cities.values()[random].getNum() + "-" + middle + "-" + last;
-            telephoneRegistry.add(new City(Cities.values()[random].toString(), personNames, telephoneNumbers));
+            telephoneRegistry.add(new Information(Cities.values()[random].toString(), personNames, telephoneNumbers));
         }
         // System.out.println(telephoneRegistry.getTelephone().toString());
     }
@@ -42,7 +41,7 @@ public class Operator {
     //입력한 도시와 이름으로 전화번호 찾기
     public String SearchTelephone(String city, String personName) {
 
-        ArrayList<City> cities = telephoneRegistry.getTelephone();
+        ArrayList<Information> cities = telephoneRegistry.getTelephone();
         boolean exist = false;
         String result = "";
         

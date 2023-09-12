@@ -11,14 +11,14 @@ public class TelephoneRegistry {
     private String personNames;
     private String telephoneNumbers;
     // private Map<String, String> telephoneList = new HashMap<>();
-    private ArrayList<City> telephoneList = new ArrayList<>();
+    private ArrayList<Information> telephoneList = new ArrayList<>();
 
 
-    public void add(City city) {
+    public void add(Information city) {
         telephoneList.add(city);
     }
 
-    public ArrayList<City> getTelephone() {
+    public ArrayList<Information> getTelephone() {
         return telephoneList;
     }
 
