@@ -1,4 +1,4 @@
- = NHN Academy Code Review Github
+= NHN Academy Code Review Github
 Doc Writer <shk0630wkd@gmail.com>
 
 참고자료:: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/ +
