@@ -30,20 +30,17 @@ public class Main{
          * when the program is executed.
         */
 
-        String inverting = "";
-        for(int i = name.length()-1 ;i >= 0; i--) {
-            inverting = inverting.concat(name.substring(i, i+1));
-        }
-        System.out.println(inverting);
+        System.out.println((name.substring(name.length()-2, name.length()-1).concat(name.substring(1,name.length()-1).concat(name.substring(0, 1)))));
 
 
         /*
          * Exercise 2.5. Solve Exercise 2.4 using the class StringBuffer.
          * Illustrate by means of a diagram what happens in memory when the program is executed.
          */
-        StringBuffer sb = new StringBuffer(name);
+        StringBuilder sb = new StringBuilder(name);
         sb.reverse();
         System.out.println(sb.toString());
+
 
     }
 }
