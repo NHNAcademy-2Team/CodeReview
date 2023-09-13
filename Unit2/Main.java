@@ -42,15 +42,8 @@ public class Main{
          * Illustrate by means of a diagram what happens in memory when the program is executed.
          */
         StringBuffer sb = new StringBuffer(name);
-        for(int i = name.length()-1; i>=0; i--) {
-            sb.reverse();
-        }
+        sb.reverse();
         System.out.println(sb.toString());
 
-
-        String s,t,u;
-        s = "xxx";
-        t = "yyy";
-        u = t;
     }
 }
