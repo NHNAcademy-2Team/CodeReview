@@ -1,25 +1,19 @@
 public class Operator {
-    private String city;
-    private String name;
-    private TelephoneRegistry telephoneList = new TelephoneRegistry();
-    public Operator(String city, String name){
-        this.city = city;
-        this.name = name;
-    }
+    private static TelephoneRegistry telephoneList = new TelephoneRegistry();
 
-    public TelephoneRegistry pickCity(TelephoneRegistry telephones){
+    public static TelephoneRegistry pickCity(TelephoneRegistry telephones, String city){
         for(Telephone telephone : telephones.getTelephoneRegistry()){
-            if(telephone.getCity().equals(this.city)){
+            if(telephone.getCity().equals(city)){
                 telephoneList.add(telephone);
             }
         }
         return telephoneList;
     }
 
-    public String searchPhoneNumber(){
+    public static String searchPhoneNumber(String name){
         String searchPhone = "";
         for(Telephone telephone : telephoneList.getTelephoneRegistry()){
-            if(telephone.getName().equals(this.name)){
+            if(telephone.getName().equals(name)){
                 searchPhone = telephone.getTelephone();
             }
         }

@@ -10,9 +10,7 @@ public class CallCenter {
     public static void main(String[] args) {
         Client client = new Client("Mokpo", "수연");
         TelephoneRegistry telephoneRegistry = addTelephone();
-        Operator operator = new Operator(client.getClientCity(), client.getClientName());
-        operator.pickCity(telephoneRegistry);
-        System.out.println(operator.searchPhoneNumber());
+        Operator.pickCity(telephoneRegistry, client.getClientCity());
+        Operator.searchPhoneNumber(client.getClientName());
     }
 }
-// 
