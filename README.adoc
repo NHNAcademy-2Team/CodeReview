@@ -1,6 +1,29 @@
 # *NHN Academy team2 Code Review*
 
-[cols=2, row=2]
-| 날짜 
-| 한 일
+*선택 과정 1* +
+참고자료 : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+
+
+[cols="2, 3, 5", options=header]
+|===
+|날짜
+|알고리즘
+|진도
+
+|23.09.12
+|최대공약수
+|Unit1 예시문제 코드리뷰
+
+|23.09.13
+|최소공배수
+|Unit2 Exercise 코드리뷰
+
+|23.09.14
+|소수를 분수로
+|Unit3(1/2) 내용 리뷰 및 토의
+
+
+
+
+
 

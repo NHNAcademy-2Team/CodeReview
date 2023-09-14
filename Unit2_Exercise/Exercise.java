@@ -26,6 +26,11 @@ public class Exercise {
         System.out.println(result);
 
 
+        //2.3 변수 줄이기
+        String name2 = new String("양진영");
+        System.out.println(name2.substring(0, 1).concat(name2.substring(name2.length()-1)));
+
+
         //2.4 문자열 반전
         Scanner scan = new Scanner(System.in);
         System.out.print("문자를 입력하세요 : ");
@@ -42,7 +47,6 @@ public class Exercise {
 
         //2.5 문자열 반전(StringBuffer 사용)
         StringBuffer sb2 = new StringBuffer();
-        StringBuilder st = new StringBuilder();
 
         for(int i=input.length()-1; i>=0; i--) {
             sb2.append(input.charAt(i));
@@ -50,7 +54,7 @@ public class Exercise {
 
         System.out.println("StringBuffer : " + sb2.toString());
 
-
+        scan.close();
     }
 
 
