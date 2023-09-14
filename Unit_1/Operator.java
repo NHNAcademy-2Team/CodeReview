@@ -1,5 +1,3 @@
-package com.nhnacademy;
-
 public class Operator {
 
     private String city;

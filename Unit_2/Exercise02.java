@@ -3,7 +3,7 @@
  * Exercise 02.3
  */
 
-public class Exercise02_1 {
+public class Exercise02 {
     public static void main(String[] args) {
 
         // 02.1

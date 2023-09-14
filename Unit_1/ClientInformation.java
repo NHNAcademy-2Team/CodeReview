@@ -1,5 +1,3 @@
-package com.nhnacademy;
-
 public class ClientInformation {
     private final String name;
     private final String number;
