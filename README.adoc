@@ -1,5 +1,25 @@
 = NHN Academy 2 Team Code Review Github
 
+목표 :: 선택과정 1 및 선택과정 2를 공부하여 기본기 맟 자바 Programming 기초 지식 정립
+
+공부 방법 :: 
+오전 - 알고리즘 코드 리뷰 +
+오후 - 깃허브에 push한 Exercise 코드 리뷰
+
+계획 ::
+선택과정1 + 
+* [*] Unit01(~9/12)
+* [*] Unit02(~9/13)
+* [ ] Unit03(~9/15)
+* [ ] Unit04(~9/18)
+* [ ] Unit05(~9/19)
+* [ ] Unit06(~9/21)
+* [ ] Unit07(~9/22)
+* [ ] Unit08(~9/25)
+* [ ] Unit09(~9/25)
+* [ ] Unit10(~9/26)
+* [ ] Unit11(~9/27)
+
 참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
 
 참고사항 :: 각자 branch에 리뷰할 코드 업로드
@@ -18,5 +38,5 @@
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee
 |김승현
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/hyuni000
-
+|===
 
