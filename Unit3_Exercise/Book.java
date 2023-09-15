@@ -12,6 +12,7 @@ public class Book {
     public Book(String title, String authors) {
         this.title = title;
         this.authors = authors;
+        this.price = 0;
     }    
 
     public String printBook() {

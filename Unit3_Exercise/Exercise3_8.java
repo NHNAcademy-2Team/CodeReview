@@ -18,6 +18,13 @@ public class Exercise3_8 {
         System.out.print("faculty : ");
         String faculty = scan.nextLine();
 
+        //중복되는 코드 피하려면 for문도 괜찮을 듯
+        // String[] bookList = new String[4];
+        // for(int i=0; i<bookList.length; i++) {
+        //     bookList[i] = scan.nextLine();
+        // }
+        // Book book1 = new FreeUniversityOfBolzano(bookList[0], bookList[1], bookList[2], bookList[3]);
+        
         Book book1 = new FreeUniversityOfBolzano(title, authors, course, faculty);
 
         //2. 첫번째 책에 대한 정보 표시
@@ -47,6 +54,8 @@ public class Exercise3_8 {
 
         //7. 첫번째 책의 가격 포함 정보
         System.out.println(book1.toString());
+
+        scan.close();
     }
     
 }

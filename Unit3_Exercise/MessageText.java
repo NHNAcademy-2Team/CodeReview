@@ -25,7 +25,8 @@ public class MessageText {
         return this.text;
     }
 
-    public void setCode(String code, String text) {
+    //변수명이 모호하다는 피드백 > setCode -> addCode
+    public void addCode(String code, String text) {
         this.messageList.put(code, text);
     }
 

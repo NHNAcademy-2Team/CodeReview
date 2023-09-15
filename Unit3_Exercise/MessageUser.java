@@ -19,9 +19,9 @@ public class MessageUser {
         // 왜 makeCode(text)가 주소값으로 들어가는지?? > 내가 MessageText 클래스 안에 toString()을 정의를 안해줘서!
         
         // 번외 > code 입력 시 전체 문장 출력
-        messageText.setCode("ily", "I love you");
-        messageText.setCode("iky", "I kill you");
-        messageText.setCode("my", "Miss you");
+        messageText.addCode("ily", "I love you");
+        messageText.addCode("iky", "I kill you");
+        messageText.addCode("my", "Miss you");
         System.out.print("코드 입력 : ");
         String codeInput = scan.nextLine();
         System.out.println("번외 : " + messageText.codeToText(codeInput));
@@ -35,6 +35,8 @@ public class MessageUser {
         
         //5. Message 객체 정보 표시
         System.out.println(message.toString());
+
+        scan.close();
     }
 
     public static String makeCode(String message) {
