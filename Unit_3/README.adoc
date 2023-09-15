@@ -1,4 +1,4 @@
-= Unit 2
+= Unit 3
 
 == Exercise 03.1
 Define a classe Book to handle the information associated to books. The information of interest for a book are: the title, the authors, and the price. The methods of interest are:

@@ -1,1 +1,20 @@
 = NHN Academy 2 Team
+
+선택 과정 1 : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+
+
+[cols="1, 4",options=header]
+|===
+|Date
+|Plan
+
+|9.12
+|Unit_1 Code Review
+
+|9.13
+|Unit_2
+
+|9.15
+|Unit_3
+
+|===
