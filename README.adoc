@@ -14,5 +14,5 @@ https://narusas.github.io/2018/03/21/Asciidoc-basic.html
 |===
 
 *아오 너무 잠온다* +
-_수현님꺼 README.adoc 복붙한 것은 비밀..._ +
+_수연님꺼 README.adoc 복붙한 것은 비밀..._ +
 _영어로 땡큐~ 중국어 쉐쉐~ 일본어로 아리가또라고 하지요~_
