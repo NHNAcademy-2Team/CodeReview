@@ -1,17 +1,14 @@
 package Message;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class MessageText {
-    String message;
-    String code;
+    private String message;
+    private String code;
 
-    public MessageText(Scanner s) {
-        System.out.print("please enter code: ");
-        this.code = s.nextLine();
-
-        System.out.print("please enter message about code: ");
-        this.message = s.nextLine();
+    public MessageText() {
+        this.code = JOptionPane.showInputDialog("Please enter code");
+        this.message = JOptionPane.showInputDialog("Please enter message about code");
     }
 
     public String getCode() {

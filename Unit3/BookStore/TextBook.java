@@ -1,8 +1,8 @@
 package BookStore;
 
 public class TextBook extends Book{
-    String course;
-    String professor;
+    private String course;
+    private String professor;
 
     public TextBook(String title, String author, String course, String professor) {
         super(title, author);

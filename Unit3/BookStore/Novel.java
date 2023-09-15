@@ -1,7 +1,7 @@
 package BookStore;
 
 public class Novel extends Book{
-    String genre;
+    private String genre;
 
     // public Novel(Book book) {
         
