@@ -4,7 +4,7 @@
 참고자료 : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
 
 
-[cols="2, 3, 5", options=header]
+[cols="2, 5, 3", options=header]
 |===
 |날짜
 |진도
@@ -23,8 +23,9 @@
 |소수를 분수로
 
 |23.09.15
-|Unit3(2/2) 코드 리뷰
+|Unit3(2/2) Exercise 코드 리뷰
 |Recursion을 활용한 factorial, fibonazzi 구현(switch-case)
+
 
 
 
