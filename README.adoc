@@ -11,7 +11,7 @@
 선택과정1 + 
 * [*] Unit01(~9/12)
 * [*] Unit02(~9/13)
-* [ ] Unit03(~9/15)
+* [*] Unit03(~9/15)
 * [ ] Unit04(~9/18)
 * [ ] Unit05(~9/19)
 * [ ] Unit06(~9/21)
@@ -38,5 +38,7 @@
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee
 |김승현
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/hyuni000
+|홍지원
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/jiwon
 |===
 
