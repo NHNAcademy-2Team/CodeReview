@@ -1,10 +1,10 @@
 = NHN Academy 2 Team Code Review Github
 
-목표 :: 선택과정 1 및 선택과정 2를 공부하여 기본기 맟 자바 Programming 기초 지식 정립
+목표 :: 선택과정 1 및 선택과정 2를 공부하여 기본기 및 자바 Programming 기초 지식 정립
 
 공부 방법 ::
-* 알고리즘 코드 리뷰 및 Unit 학습 토의
-* 일정에 맞추어 Unit이 끝난 익일 오후1시까지 각자 branch에 push한 Exercise 코드 리뷰
+* 전산학 기초 학습 및 Unit 학습 토의
+* 일정에 맞추어 Unit이 끝난 익일 오후 1시까지 각자 branch에 push한 Exercise 코드 리뷰
 * 피드백 반영하여 당일 오후 6시 이전까지 push 완료하기
 
 계획 ::
