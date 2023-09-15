@@ -7,7 +7,10 @@ public class MessageText {
     String code;
 
     public MessageText(Scanner s) {
+        System.out.print("please enter code: ");
         this.code = s.nextLine();
+
+        System.out.print("please enter message about code: ");
         this.message = s.nextLine();
     }
 

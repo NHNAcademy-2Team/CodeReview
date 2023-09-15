@@ -4,20 +4,25 @@ public class Book{
     private String authors;
     private int price;
 
+    public Book() {
+        this("Unknown", "Unknown");
+    }
+
     public Book(String title, String authors) {
         this.title = title;
         this.authors = authors;
+        this.price = 10000;
     }
 
     public void printBook() {
-        System.out.printf("Book title : %s", this.title);
-        System.out.printf("Book authors : %s", this.authors);
+        System.out.printf("Book title : %s\n", this.title);
+        System.out.printf("Book authors : %s\n", this.authors);
     }
 
     public void printBookPrice() {
-        System.out.printf("Book title : %s", this.title);
-        System.out.printf("Book authors : %s", this.authors);
-        System.out.printf("Book price : %d",this.price);
+        // System.out.printf("Book title : %s\n", this.title);
+        // System.out.printf("Book authors : %s\n", this.authors);
+        System.out.printf("Book price : %d\n",this.price);
     }
 
     public void windowBook() {
@@ -31,7 +36,7 @@ public class Book{
 
     public String getAuthors() {
         return this.authors;
-    }å
+    }
 
     public int getPrice() {
         return this.price;

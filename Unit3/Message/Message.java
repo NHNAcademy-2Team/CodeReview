@@ -1,20 +1,20 @@
 package Message;
+
+import java.util.Scanner;
+
 public class Message {
     String receiver;
     String sender;
     MessageText message;
     
-    public Message(String receiver, String sender) {
-        this.receiver = receiver;
+    public Message(Scanner s, String sender) {
+        System.out.print("Who would you like to call? \n>>");
+        this.receiver = s.nextLine();
         this.sender = sender;
     }
 
     public Message(String sender) {
         this.sender = sender;
-    }
-
-    public Message() {
-
     }
 
     public void setReceiver(String receiver) {
