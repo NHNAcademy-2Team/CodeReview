@@ -18,6 +18,14 @@ public class MessageUser {
         MessageText messageText = new MessageText(makeCode(text), text);
         // 왜 makeCode(text)가 주소값으로 들어가는지?? > 내가 MessageText 클래스 안에 toString()을 정의를 안해줘서!
         
+        // 번외 > code 입력 시 전체 문장 출력
+        messageText.setCode("ily", "I love you");
+        messageText.setCode("iky", "I kill you");
+        messageText.setCode("my", "Miss you");
+        System.out.print("코드 입력 : ");
+        String codeInput = scan.nextLine();
+        System.out.println("번외 : " + messageText.codeToText(codeInput));
+
         //3. 수신자 번호 입력
         System.out.print("받는이의 번호를 입력하세요 : ");
         String numberToCall = scan.nextLine();
