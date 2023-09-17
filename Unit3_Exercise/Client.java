@@ -61,8 +61,6 @@ public class Client {
             n.printStackTrace();
         }
         
-
-        scan.close();
     }
     
 }

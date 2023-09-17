@@ -12,7 +12,7 @@ public class Book {
     public Book(String title, String authors) {
         this.title = title;
         this.authors = authors;
-        this.price = 0;
+        this.price = 0; //처음엔 0으로 초기화 안했는데 추가함
     }    
 
     public String printBook() {
@@ -23,7 +23,7 @@ public class Book {
         return String.format("%s, %s, %d\r\n", this.title, this.authors, this.price);
     }
 
-    //windowBook이 뭐지...
+    //windowBook이 뭐지... -> 창으로 출력하는 것
 
     public String getTitle() {
         return this.title;
