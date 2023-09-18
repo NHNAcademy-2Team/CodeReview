@@ -1,20 +1,15 @@
-packageSelect1.Unit04;
+package unit4;
 
 public class Exercise_4_8 {
-    public static void main(String[] args) {
-        int c = 100;
-     
-
-            System.out.println(c + " " + r.bal);
+    public static void method(int a, Account b) {
+        a *= 2;
+        b.bal *= 2;
     }
 
-            a *= 2;
-               b.ba
-        }
-            
-            
-            
-            
-        
-
-    
+    public static void main(String[] args) {
+        int c = 100;
+        Account r = new Account(100);
+        method(c, r);
+        System.out.println(c + " " + r.bal);
+    }
+}
