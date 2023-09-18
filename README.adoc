@@ -1,36 +1,42 @@
-# *NHN Academy team2 Code Review*
+= NHN Academy 2 Team Code Review Github
 
-*선택 과정 1* +
-참고자료 : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+목표 :: 선택과정 1 및 선택과정 2를 공부하여 기본기 및 자바 Programming 기초 지식 정립
 
+공부 방법 ::
+* 전산학 기초 학습 및 Unit 학습 토의
+* 일정에 맞추어 Unit이 끝난 익일 오후 1시까지 각자 branch에 push한 Exercise 코드 리뷰
+* 피드백 반영하여 당일 오후 6시 이전까지 push 완료하기
 
-[cols="2, 5, 3", options=header]
+계획 ::
+선택과정1 + 
+* [*] Unit01(~9/12)
+* [*] Unit02(~9/13)
+* [*] Unit03(~9/15)
+* [ ] Unit04(~9/18)
+* [ ] Unit05(~9/19)
+* [ ] Unit06(~9/21)
+* [ ] Unit07(~9/22)
+* [ ] Unit08(~9/25)
+* [ ] Unit09(~9/25)
+* [ ] Unit10(~9/26)
+* [ ] Unit11(~9/27)
+
+참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+
+아스키독 ::
+[cols=2*]
 |===
-|날짜
-|진도
-|알고리즘
-
-|23.09.12
-|Unit1 예시문제 코드리뷰
-|최대공약수
-
-|23.09.13
-|Unit2 Exercise 코드리뷰
-|최소공배수
-
-|23.09.14
-|Unit3(1/2) 내용 리뷰 및 토의
-|소수를 분수로
-
-|23.09.15
-|Unit3(2/2) Exercise 코드 리뷰
-|Recursion을 활용한 factorial, fibonazzi 구현(switch-case)
-
-|23.09.18
-|Unit4 Exercise 코드리뷰
-|X
-
-
-
-
-
+|이름
+|링크
+|순수연
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/Suyeon
+|홍경석
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/kyoungseuk
+|양진영
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/jinyoung
+|이태희
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee
+|김승현
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/hyuni000
+|홍지원
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/jiwon
