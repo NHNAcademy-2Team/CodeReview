@@ -1,33 +1,24 @@
-packageSelect1.Unit04;
+package unit4;
 
 public class Product {
-        private String name;
-        private int amount;
-    
-        public Product(String name) {
-            this.name = name;
-            this.amount = 0;
-        }
-    
-        public void downLoad(int amount) {
-            this.amount += amount;
-        }
-    
-        public void upLoad(int amount) {
-            this.amount -= amount;
-        }
-    
-        public String toString() {
-            return String.format("%s, %d pieces", this.name, this.amount);
-     }
+    // 창고에 저장된 특정 상품의 정보
+    private String productName;
+    private int productCount = 0;
 
+    public Product() {
 
-    
+    }
 
-        
+    public void downLoad(int number) {
+        productCount += number;
+    }
 
-        
+    public void upLoad(int number) {
+        productCount -= number;
+    }
 
-        
-
-        
+    @Override
+    public String toString() {
+        return "" + productCount;
+    }
+}
