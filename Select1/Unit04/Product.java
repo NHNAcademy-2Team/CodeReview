@@ -1,4 +1,4 @@
-package Select1.Unit04;
+packageSelect1.Unit04;
 
 public class Product {
         private String name;
@@ -19,5 +19,15 @@ public class Product {
     
         public String toString() {
             return String.format("%s, %d pieces", this.name, this.amount);
-        }
-}
+     }
+
+
+    
+
+        
+
+        
+
+        
+
+        
