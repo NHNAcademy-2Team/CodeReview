@@ -1,22 +1,33 @@
-// 04.9
+packageSelect1.Unit04;
+
 public class Product {
-    private String name;
-    private int item;
+        private String name;
+        private int amount;
+    
+        public Product(String name) {
+            this.name = name;
+            this.amount = 0;
+        }
+    
+        public void downLoad(int amount) {
+            this.amount += amount;
+        }
+    
+        public void upLoad(int amount) {
+            this.amount -= amount;
+        }
+    
+        public String toString() {
+            return String.format("%s, %d pieces", this.name, this.amount);
+     }
 
-    public Product(String name) {
-        this.name = name;
-        this.item = 0;
-    }
 
-    public void downLoad(int number) {
-        item += number;
-    }
+    
 
-    public void upLoad(int number) {
-        item -= number;
-    }
+        
 
-    public String toString() {
-        return name + " " + item + "개";
-    }
-}
+        
+
+        
+
+        
