@@ -1,22 +1,22 @@
 public class Product {
     private String name;
-    private int productCount;
+    private int number;
 
     public Product(String name){
         this.name = name;
-        this.productCount = 0;
+        this.number = 0;
     }
 
-    public void downLoad(int productCount){
-        this.productCount += productCount;
+    public void downLoad(int n){
+        this.number += n;
     }
 
-    public void upLoad(int productCount){
-        this.productCount -= productCount;
+    public void upLoad(int n){
+        this.number -= n;
     }
 
     public String toString(){
-        return String.format("%s, %d pieces", name, productCount);
+        return String.format("%s, %d pieces", name, number);
     }
 
     public String getName(){
