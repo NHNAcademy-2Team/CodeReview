@@ -1,4 +1,4 @@
-// 04.9
+// Exercise 04.9
 public class TestProduct {
     public static void main(String[] args) {
         Product lamp = new Product("Lamp 60 Watt");

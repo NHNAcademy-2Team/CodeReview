@@ -1,4 +1,4 @@
-public class PrintAccount {
+public class Exercise_4_8 {
     public static void method(int a, Account b) {
         a *= 2;
         b.bal *= 2;
