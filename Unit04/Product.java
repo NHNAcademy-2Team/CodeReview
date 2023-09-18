@@ -11,7 +11,6 @@ public class Product {
 
     public void downLoad(int number) {
         productCount += number;
-        // System.out.println(productCount);
     }
 
     public void upLoad(int number) {

@@ -1,6 +1,6 @@
 package unit4;
 
-public class Ex4_8 {
+public class Exercise_4_8 {
     public static void method(int a, Account b) {
         a *= 2;
         b.bal *= 2;
