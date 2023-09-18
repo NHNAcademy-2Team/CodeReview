@@ -6,7 +6,11 @@ public class Exercise_4_8 {
     public static void main(String[] args) {
         int c = 100;
         Account r = new Account(100);
+
+
         Exercise_4_8.method(c,r);
+
+
         System.out.println(c + " " + r.bal);
     }
 }
