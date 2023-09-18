@@ -18,7 +18,7 @@ public class Exercises{
         short shortX = x;
         short shortY = y;
         int s = shortX + shortY;
-        return -128 <= s && s <= 127;
+        return (-128 <= s) && (s <= 127);
     }
 
     /**

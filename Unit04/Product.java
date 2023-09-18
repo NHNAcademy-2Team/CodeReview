@@ -18,4 +18,12 @@ public class Product {
     public String toString(){
         return String.format("%s, %d pieces", name, productCount);
     }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
 }
