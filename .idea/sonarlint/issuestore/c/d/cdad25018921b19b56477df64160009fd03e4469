@@ -1,8 +1,0 @@
-
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ô‰£·ıÿÿÿÿ
-š
-java:S1598"This file "Exercise_4_8.java" should be located in "unit4" directory, not in "/Users/hongjiwon/Desktop/Select1/Select1/Unit04".(£îêùÿÿÿÿ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£îêùÿÿÿÿ
-P
-java:S1854"5Remove this useless assignment to local variable "a".(‹æ ßøÿÿÿÿ
-@	java:S106"+Replace this use of System.out by a logger.(¤Âü¢
