@@ -1,4 +1,4 @@
-package Select1.Unit04;
+package unit.four;
 
 public class Product {
     // 창고에 저장된 특정 상품의 정보
