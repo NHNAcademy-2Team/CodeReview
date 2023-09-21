@@ -25,3 +25,7 @@ hs_err_pid*
 replay_pid*
 
 .DS_Store
+
+.idea
+.Select1.iml
+.google_checks.xml
