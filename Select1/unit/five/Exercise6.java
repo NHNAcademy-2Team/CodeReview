@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Exercise6 {
     public static void answer(String s) {
-        if (s.charAt(s.length() - 1) == 'a' ||
-                s.charAt(s.length() - 1) == 'i' ||
-                s.charAt(s.length() - 1) == 'u') {
+        char ch = s.charAt(s.length() - 1);
+        if (ch == 'a' ||
+                ch == 'i' ||
+                ch == 'u') {
             System.out.println("YES");
-        } else if (s.charAt(s.length() - 1) == 'e' || s.charAt(s.length() - 1) == 'o') {
+        } else if (ch == 'e' || ch == 'o') {
             System.out.println("NO");
         } else
             System.out.println("DON'T KNOW");

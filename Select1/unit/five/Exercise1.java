@@ -3,7 +3,6 @@ package Select1.unit.five;
 import java.util.Scanner;
 
 public class Exercise1 {
-    // 1
     public static void alcoholInclude(double g) {
 
         if (40 < g) {
