@@ -7,7 +7,6 @@ public class Exercise11 {
         if (n < 2) {
             return false;
         } else if (n == 2) {
-            System.out.println(n);
             return true;
         }
 

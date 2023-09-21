@@ -1,4 +1,4 @@
-package Select1.Unit04;
+package Select1.unit.four;
 
 public class TestProduct {
     public static void main(String[] args) {
