@@ -1,0 +1,8 @@
+
+•
+java:S1598"zThis file "Product.java" should be located in "unit4" directory, not in "/Users/hongjiwon/Desktop/Select1/Select1/Unit04".(£ξκωÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£ξκωÿÿÿÿ
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ν³‚όÿÿÿÿ
+E
+java:S1068"/Remove this unused "productName" private field.(…£ί
