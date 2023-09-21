@@ -6,9 +6,10 @@ public class Exercise2 {
 
     public static void evenNumbers(int n) {
         int number = 2;
-        while (n >= number) {
+        while (n > 0) {
             System.out.printf("%d ", number);
             number += 2;
+            n--;
         }
     }
 

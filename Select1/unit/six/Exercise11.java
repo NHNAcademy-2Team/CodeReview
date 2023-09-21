@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercise11 {
 
     public static boolean prime(int n) {
-        if (n == 1) {
+        if (n <= 1) {
             return false;
         }
         for (int i = 2; i < n; i++) {

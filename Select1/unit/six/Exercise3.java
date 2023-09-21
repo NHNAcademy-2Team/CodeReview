@@ -10,12 +10,12 @@ public class Exercise3 {
             try {
                 number = scanner.nextInt();
                 if (number < 0)
-                    throw new Exception();
+                    throw new IllegalArgumentException();
                 else {
                     System.out.println(factorial(number));
                     break;
                 }
-            } catch (Exception e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("양수를 입력해주세요.");
             }
         }

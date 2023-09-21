@@ -7,7 +7,7 @@ public class Exercise14 {
     public static void primeFactors(int n) {
         int count = n;
         if (n < 2)
-            System.out.println(n);
+            throw new IllegalArgumentException("소수가 아닙니다.");
 
         for (int i = 2; i < count; i++) {
             if (Exercise11.prime(i)) {
