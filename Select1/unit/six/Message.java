@@ -1,4 +1,4 @@
-package six;
+package unit.six;
 
 public class Message {
     private String sender;

@@ -1,4 +1,4 @@
-package six;
+package unit.six;
 
 public class Exercise8 {
 

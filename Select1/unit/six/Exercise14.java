@@ -1,4 +1,4 @@
-package six;
+package unit.six;
 
 import java.util.Scanner;
 
