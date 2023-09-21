@@ -8,10 +8,10 @@ public class Exercise12 {
         System.out.print("정수 n을 입력하십시오 : ");
         int n = scan.nextInt();
 
-        System.out.println(sosues(n));
+        System.out.println(primes(n));
     }
 
-    public static String sosues(int n) {
+    public static String primes(int n) {
         StringBuilder sb = new StringBuilder();
 
         if (isPrime(n)) {
