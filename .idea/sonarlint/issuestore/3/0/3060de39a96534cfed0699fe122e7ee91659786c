@@ -1,6 +1,0 @@
-
- 
-java:S1598"~This file "TestProduct.java" should be located in "unit4" directory, not in "/Users/hongjiwon/Desktop/Select1/Select1/Unit04".(£îêùÿÿÿÿ8çÆ§»ª1
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£îêùÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(ûÒ±Ñûÿÿÿÿ
-@	java:S106	"+Replace this use of System.out by a logger.(§»ãø
