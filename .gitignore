@@ -21,8 +21,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.DS_Store
 replay_pid*
 
-*.json
-
 .DS_Store
+
+.idea
+.Select1.iml
+.google_checks.xml
