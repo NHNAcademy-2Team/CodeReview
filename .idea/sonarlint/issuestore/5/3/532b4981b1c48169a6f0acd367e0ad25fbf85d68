@@ -1,0 +1,43 @@
+
+7
+java:S1220""Move this file to a named package.8òÕÃ©«1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(àªÅö8ÛÃ©«1
+F
+java:S1905")Remove this unnecessary cast to "double".(°€À8‘ÜÃ©«1
+X	java:S125"<This block of commented-out lines of code should be removed.(£éÓë8¬ÜÃ©«1
+^
+java:S1126"AReplace this if-then-else statement by a single return statement.(±Ğ¸±8¯ÜÃ©«1
+N
+java:S1135"2Complete the task associated to this TODO comment.(ÒÉ»8¾ÜÃ©«1
+c
+java:S1126"AReplace this if-then-else statement by a single return statement.(¤ÏŠ²ıÿÿÿÿ8ÁÜÃ©«1
+i	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ¶şr8ÏÜÃ©«1
+G	java:S106%"+Replace this use of System.out by a logger.(Éê—8İÃ©«1
+`
+java:S1659)">Declare "s" and all following declarations on a separate line.(Ü’¾‘şÿÿÿÿ8±İÃ©«1
+H
+java:S1481)"&Remove this unused "b" local variable.(Ü’¾‘şÿÿÿÿ8»İÃ©«1
+H
+java:S1481)"&Remove this unused "s" local variable.(Ü’¾‘şÿÿÿÿ8ÁİÃ©«1
+H
+java:S1481)"&Remove this unused "i" local variable.(Ü’¾‘şÿÿÿÿ8ÄİÃ©«1
+H
+java:S1481)"&Remove this unused "l" local variable.(Ü’¾‘şÿÿÿÿ8ÈİÃ©«1
+H
+java:S1481)"&Remove this unused "f" local variable.(Ü’¾‘şÿÿÿÿ8ÉİÃ©«1
+H
+java:S1481)"&Remove this unused "d" local variable.(Ü’¾‘şÿÿÿÿ8ÌİÃ©«1
+H
+java:S1481)"&Remove this unused "c" local variable.(Ü’¾‘şÿÿÿÿ8ÏİÃ©«1
+I
+java:S1481)"'Remove this unused "b1" local variable.(Ü’¾‘şÿÿÿÿ8×İÃ©«1
+I
+java:S1481)"'Remove this unused "b2" local variable.(Ü’¾‘şÿÿÿÿ8ÙİÃ©«1
+X	java:S125;"<This block of commented-out lines of code should be removed.(ÌŠİ¼8ãİÃ©«1
+O
+java:S1135+"2Complete the task associated to this TODO comment.(‚Ö“‹8îİÃ©«1
+T
+java:S11359"2Complete the task associated to this TODO comment.( ‘¼£ÿÿÿÿÿ8ğİÃ©«1
+|
+java:S3039J"`Refactor this "charAt" call; it will result in an "StringIndexOutOfBounds" exception at runtime.(µ¤•p8‡ŞÃ©«1
