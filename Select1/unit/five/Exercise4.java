@@ -1,8 +1,8 @@
-package Select1.Unit05;
+package Select1.unit.five;
 
 import java.util.Scanner;
 
-public class Triangle {
+public class Exercise4 {
     public static int compareLength(int length1, int length2, int length3) {
         int max = 0;
         int middle = 0;

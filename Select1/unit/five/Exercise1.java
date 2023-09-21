@@ -1,8 +1,8 @@
-package Select1.Unit05;
+package Select1.unit.five;
 
 import java.util.Scanner;
 
-public class Exercises {
+public class Exercise1 {
     // 1
     public static void alcoholInclude(double g) {
 
@@ -44,12 +44,6 @@ public class Exercises {
         double g = scn.nextDouble();
 
         alcoholInclude(g);
-
-        int length1 = scn.nextInt();
-        int length2 = scn.nextInt();
-        int length3 = scn.nextInt();
-
-        triangleType(length1, length2, length3);
 
         scn.close();
     }

@@ -1,8 +1,8 @@
-package Select1.Unit05;
+package Select1.unit.five;
 
 import java.util.Scanner;
 
-public class Discriminant {
+public class Exercise5 {
     public static void discriminant(double a, double b, double c) {
         double discriminant, root1, root2;
 

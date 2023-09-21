@@ -1,8 +1,8 @@
-package Select1.Unit05;
+package Select1.unit.five;
 
 import java.util.Scanner;
 
-public class Question {
+public class Exercise6 {
     public static void answer(String s) {
         if (s.charAt(s.length() - 1) == 'a' ||
                 s.charAt(s.length() - 1) == 'i' ||
