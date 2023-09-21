@@ -1,4 +1,4 @@
-package Select1.Unit04;
+package Unit04;
 
 public class Product {
         private String name;
