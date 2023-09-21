@@ -28,9 +28,7 @@ public class Exercise10 {
             throw new IllegalArgumentException("양의 정수를 입력하십시오");
         }
 
-        if (n == 0) {
-            return 0;
-        } else if (n == 1) {
+        if (n == 0 || n == 1) {
             return 1;
         } else {
             n *= factorial(n - 1);

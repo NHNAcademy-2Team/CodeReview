@@ -19,18 +19,13 @@ public class Exercise3 {
             return;
         }
 
-        if (lengths[0].equals(lengths[1])) {
-            if (lengths[0].equals(lengths[2])) {
-                System.out.println("It is regular");
-            } else {
-                System.out.println("It is symmetric");
-            }
+        if (lengths[0].equals(lengths[1]) && lengths[0].equals(lengths[2])) {
+            System.out.println("It is regular");
+        } else if (lengths[0].equals(lengths[1]) || lengths[0].equals(lengths[2]) || lengths[1].equals(lengths[2])) {
+            System.out.println("It is symmetric");
         } else {
-            if (lengths[1].equals(lengths[2]) || lengths[0].equals(lengths[2])) {
-                System.out.println("It is symmetric");
-            } else {
-                System.out.println("It is irregular");
-            }
+            System.out.println("It is irregular");
         }
+
     }
 }

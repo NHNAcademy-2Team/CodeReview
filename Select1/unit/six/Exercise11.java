@@ -10,11 +10,11 @@ public class Exercise11 {
         System.out.print("양의 정수를 입력하십시오 : ");
         int num = scan.nextInt();
 
-        System.out.println(isSosu(num));
+        System.out.println(isPrime(num));
 
     }
 
-    public static boolean isSosu(int n) {
+    public static boolean isPrime(int n) {
 
         int count = 0;
 
@@ -26,7 +26,7 @@ public class Exercise11 {
             return false;
         }
 
-        for (int i=2; i<n; i++) {
+        for (int i = 2; i < Math.sqrt(n); i++) {
             if (n % i == 0) {
                 count++;
             }

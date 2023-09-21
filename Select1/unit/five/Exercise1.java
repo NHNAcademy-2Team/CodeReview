@@ -28,9 +28,9 @@ public class Exercise1 {
                 System.out.println("normal vine");
             } else if (g > 0) {
                 System.out.println("light vine");
+            } else {
+                System.out.println("0 이상의 값을 입력하십시오.");
             }
-
-            System.out.println("0 이상의 값을 입력하십시오.");
 
         } catch (IllegalArgumentException e) {
             e.printStackTrace();

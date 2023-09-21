@@ -16,11 +16,15 @@ public class Exercise9 {
     public static void pyramid(int h) {
 
         for (int i=0; i<h; i++) {
-            for(int j=h; j>=0; j--) {
+            for(int j=h-i; j>=0; j--) {
                 System.out.print(" ");
             }
 
-            for(int j=0; j<h; j++) {
+            for(int j=0; j<=i; j++) {
+                System.out.print(j);
+            }
+
+            for(int j=i-1; j>=0; j--) {
                 System.out.print(j);
             }
             System.out.println();

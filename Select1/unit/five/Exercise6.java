@@ -10,7 +10,7 @@ public class Exercise6 {
 //    라인의 마지막 글자가 "a", "i" 또는 "u"이면 답변은 "YES"입니다.
 //    라인의 마지막 글자가 "e" 또는 "o"이면 답변은 "NO"입니다.
 //    라인의 마지막 글자가 "a", "e", "i", "o", "u" 이외의 문자라면 답변은 "DON'T KNOW"입니다.
-//            참고: 두 규칙을 적용할 때 답변은 두 규칙의 답변을 연결하여 얻습니다.
+//    참고: 두 규칙을 적용할 때 답변은 두 규칙의 답변을 연결하여 얻습니다.
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

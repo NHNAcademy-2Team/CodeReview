@@ -19,7 +19,7 @@ public class Exercise7 {
         int count = 0;
         int[] counts = new int[sentence.length()];
 
-        if (sentence.indexOf(search) == 0) {
+        if (sentence.indexOf(search) < 0) {
             return -1;
         }
 

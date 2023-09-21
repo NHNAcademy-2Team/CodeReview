@@ -16,7 +16,7 @@ public class Exercise3 {
 
     public static int factorial(int n) {
 
-        if (n < 0) {
+        if (n <= 0) {
             throw new IllegalArgumentException("양의 정수를 입력하십시오");
         }
 

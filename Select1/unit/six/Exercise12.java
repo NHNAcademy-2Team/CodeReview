@@ -14,7 +14,7 @@ public class Exercise12 {
     public static String sosues(int n) {
         StringBuilder sb = new StringBuilder();
 
-        if (isSosu(n)) {
+        if (isPrime(n)) {
             return String.valueOf(n);
         } else {
             return sosu(n);
@@ -24,27 +24,23 @@ public class Exercise12 {
     public static String sosu(int n) {
         StringBuilder sb = new StringBuilder();
 
-        if (n < 0) {
-            throw new IllegalArgumentException("음의 정수를 입력하지 마십시오");
+        if (n < 2) {
+            throw new IllegalArgumentException("2 이상의 값을 입력하십시오");
         }
 
-        if (n == 0 || n == 1) {
-            return String.valueOf(n);
-        }
-
-        for (int i=2; i<n-1; i++) {
-            if (n % i != 0) {
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
                 sb.append(i + ", ");
             }
         }
-        if (n % n-1 != 0) {
+        if (n % n - 1 != 0) {
             sb.append(n);
         }
 
         return sb.toString();
     }
 
-    public static boolean isSosu(int n) {
+    public static boolean isPrime(int n) {
 
         int count = 0;
 
@@ -56,7 +52,7 @@ public class Exercise12 {
             return false;
         }
 
-        for (int i=2; i<n; i++) {
+        for (int i = 2; i < n; i++) {
             if (n % i == 0) {
                 count++;
             }

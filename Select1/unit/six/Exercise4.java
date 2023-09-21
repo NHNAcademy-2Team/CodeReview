@@ -21,18 +21,18 @@ public class Exercise4 {
     }
 
     public static String sum(int[] length) {
-        int even = 0;
-        int odd = 0;
+        int positive = 0;
+        int negative = 0;
 
         for (int number : length) {
             if (number >= 0) {
-                even += number;
+                positive += number;
             } else {
-                odd += number;
+                negative += number;
             }
         }
 
-        return String.format("짝수 합 : %d, 홀수 합 : %d", even, odd);
+        return String.format("양수 합 : %d, 음수 합 : %d", positive, negative);
     }
 
 

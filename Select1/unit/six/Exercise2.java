@@ -16,9 +16,9 @@ public class Exercise2 {
     }
 
     public static int[] even(int num) {
-        int[] even = new int[num / 2];
+        int[] even = new int[num];
         if (num > 0) {
-            for (int i = 1, j = 0; i <= num; i++) {
+            for (int i = 1, j = 0; j < num; i++) {
                 if (i % 2 == 0) {
                     even[j] = i;
                     j++;
