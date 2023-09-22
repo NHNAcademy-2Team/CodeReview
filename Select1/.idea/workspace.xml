@@ -5,73 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Apartment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unit/seven/Exercise9.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../unit/seven/Exercise8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Select1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit01/CallCenter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit01/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit01/Operator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit01/Telephone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit01/TelephoneRegistry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02/Exercise5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/Book/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/Book/BookExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/Book/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/Book/Novel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/Book/TextBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/Book/UniversityTextBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/PhoneMessage/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/PhoneMessage/MessageExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/PhoneMessage/MessageText.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit03/PhoneMessage/SendMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit04/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit04/Exercise_4_8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit04/Exercises.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit04/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit04/TestProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Date.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/five/Exercise7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise10.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise11.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise12.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit/six/Exercise9.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Select1/Select1.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Select1/Unit02/Exercise2.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Select1/Unit02/Exercise4.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Select1/Unit02/Exercise5.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/codeReview/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/codeReview/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../unit/seven/Exercise8.java" beforeDir="false" afterPath="$PROJECT_DIR$/../unit/seven/Exercise8.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2Vjgi3hRckYFsSFNVve1kBTunGv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -99,6 +38,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/nhn/Desktop/codeReview/Select1/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -154,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695355032697</updated>
       <workItem from="1695355035470" duration="5935000" />
+      <workItem from="1695368491337" duration="731000" />
     </task>
     <servers />
   </component>
