@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b0e4cf7-826d-4b72-8980-72dd5cf9e0dd" name="Changes" comment="Git 초기화(package issue)">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/seven/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="7b0e4cf7-826d-4b72-8980-72dd5cf9e0dd" name="Changes" comment="Git 초기화(package issue)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Suyeon" />
+        <entry key="$PROJECT_DIR$" value="hyuni000" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "hyuni010",
     "last_opened_file_path": "/Users/suyeon/Documents/GIt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
