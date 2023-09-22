@@ -1,4 +1,5 @@
-package Select1.unit.six;
+package unit.six;
+
 
 public class Exercise8 {
     public static void main(String[] args) {

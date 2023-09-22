@@ -1,4 +1,5 @@
-package Select1.unit.six;
+package unit.six;
+
 
 import java.util.Scanner;
 

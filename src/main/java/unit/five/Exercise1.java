@@ -1,4 +1,5 @@
-package Select1.unit.five;
+package unit.five;
+
 
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Exercise1 {
             System.out.println("strong liquor");
         } else if (15 < g && g <= 20) {
             System.out.println("liquor");
-        } else if (12 < g && g <= 12) {
+        } else if (12 < g && g <= 15) {
             System.out.println("strong vine");
         } else if (10.5 < g && g <= 12) {
             System.out.println("normal vine");

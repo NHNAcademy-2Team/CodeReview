@@ -1,4 +1,5 @@
-package Select1.unit.six;
+package unit.six;
+
 
 public class Exercise7 {
     public static int subsequence(String s) {
