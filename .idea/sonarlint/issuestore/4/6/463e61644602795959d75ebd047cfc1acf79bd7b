@@ -1,0 +1,22 @@
+
+«
+java:S1598"ˆThis file "Exercises.java" should be located in "unit04" directory, not in "/Users/kimseunghyeon/Desktop/NHN/CodeReview/Select1/Unit04".(œôÏÛûÿÿÿÿ8½õ·»ª1
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œôÏÛûÿÿÿÿ
+\
+java:S1126"AReplace this if-then-else statement by a single return statement.(¬©ğùÿÿÿÿ
+\
+java:S1126 "AReplace this if-then-else statement by a single return statement.(¤ÏŠ²ıÿÿÿÿ
+E	java:S1064"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
+E	java:S1065"+Replace this use of System.out by a logger.(±¥Ï½øÿÿÿÿ
+@	java:S1066"+Replace this use of System.out by a logger.(€§Şÿ
+E	java:S1067"+Replace this use of System.out by a logger.(§…±øÿÿÿÿ
+@	java:S106="+Replace this use of System.out by a logger.(¢‡¬
+@	java:S106D"+Replace this use of System.out by a logger.(’ÆÚí
+E	java:S106E"+Replace this use of System.out by a logger.(ÿÂ¶µûÿÿÿÿ
+E	java:S106F"+Replace this use of System.out by a logger.(œ×Úƒúÿÿÿÿ
+E	java:S106G"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
+E	java:S106I"+Replace this use of System.out by a logger.(¢‚ÏÂşÿÿÿÿ
+E	java:S106K"+Replace this use of System.out by a logger.(Æ¨şùÿÿÿÿ
+E	java:S106Q"+Replace this use of System.out by a logger.(–õÎ€ÿÿÿÿÿ
+E	java:S106V"+Replace this use of System.out by a logger.(Ã”…ªûÿÿÿÿ
+G	java:S106Z"+Replace this use of System.out by a logger.(²Å•8×õ·»ª1
