@@ -2,17 +2,16 @@
 <project version="4">
   <component name="CheckStyle-IDEA" serialisationVersion="2">
     <checkstyleVersion>10.12.2</checkstyleVersion>
-    <scanScope>AllSourcesWithTests</scanScope>
-    <suppressErrors>true</suppressErrors>
+    <scanScope>JavaOnly</scanScope>
     <option name="thirdPartyClasspath" />
     <option name="activeLocationIds">
-      <option value="09a37f91-0eb7-47a5-b573-f07f96f75a15" />
+      <option value="3d38917a-4cea-4416-ba3f-776be93274a5" />
     </option>
     <option name="locations">
       <list>
         <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
         <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
-        <ConfigurationLocation id="09a37f91-0eb7-47a5-b573-f07f96f75a15" type="LOCAL_FILE" scope="All" description="Academy Checks">
+        <ConfigurationLocation id="3d38917a-4cea-4416-ba3f-776be93274a5" type="PROJECT_RELATIVE" scope="All" description="NhnChecks">
           $PROJECT_DIR$/google_checks.xml
           <option name="properties">
             <map>
