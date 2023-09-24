@@ -1,4 +1,4 @@
-package unit.seven;
+package CodeReview.Select1.src.main.java.unit.seven;
 
 public class Exercise5 {
     public static void main(String[] args) {

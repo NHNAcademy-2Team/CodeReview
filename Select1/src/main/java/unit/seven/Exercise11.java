@@ -1,4 +1,4 @@
-package unit.seven;
+package CodeReview.Select1.src.main.java.unit.seven;
 
 //Exercise 07.11: 행렬 M은 i와 j가 다른 경우(i.e., 주 대각선에 없는 경우)에만 대각선 행렬로 간주됩니다.
 //static boolean diagonal(int[][] M)라는 프레디케이트를 작성하세요.

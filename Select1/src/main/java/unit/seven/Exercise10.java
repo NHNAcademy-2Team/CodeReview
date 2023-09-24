@@ -1,4 +1,4 @@
-package unit.seven;
+package CodeReview.Select1.src.main.java.unit.seven;
 
 //Exercise 07.10: 행렬 M은 모든 요소 M[i][j]가 i<j (i.e., 주 대각선 위쪽에 있는 요소)인 경우에만 하삼각 행렬로 간주됩니다.
 //static boolean lowerTriangular(int[][] M)라는 프레디케이트를 작성하세요.

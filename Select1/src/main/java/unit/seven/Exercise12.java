@@ -1,4 +1,5 @@
-package unit.seven;
+package CodeReview.Select1.src.main.java.unit.seven;
+
 public class Exercise12 {
     public static void main(String[] args) {
         Apartment apartment = new Apartment(10, "광주시 동명동");
