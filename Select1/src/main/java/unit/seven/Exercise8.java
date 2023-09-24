@@ -1,5 +1,8 @@
 package unit.seven;
 
+/* Exercise 7.8
+ * What does the following method calculate?
+ */
 public class Exercise8 {
     public static int mystery(int[] A) {
         int x = 0;

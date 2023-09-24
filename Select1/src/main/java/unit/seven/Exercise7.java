@@ -2,6 +2,13 @@ package unit.seven;
 
 import java.util.Arrays;
 
+/* Exercise 7.7
+ * Write a method static int[] removeDuplicates(int[] A)
+ * that returns a new array obtained from A by removing all duplicates.
+ *
+ * The duplicates should be removed by keeping only the first occurrence of each distinct element,
+ * and shifting remaining elements upwards when a duplicate is removed.
+ */
 public class Exercise7 {
 
     public static int numberOfDupliates(int[] A) {
