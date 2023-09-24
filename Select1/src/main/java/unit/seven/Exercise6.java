@@ -17,14 +17,14 @@ public class Exercise6 {
         return a.length - numberOfDistinctValues(a);
     }
 
-    //중복되지 않는 값 개수(망함)
+    //중복되지 않는 값 개수
     public static int numberOfDistinctValues(int[] a) {
         Arrays.sort(a);
         int count = 1;
 
         for (int i = 0; i < a.length - 1; i++) {
-                if (a[i] != a[i+1]) {
-                    count++;
+            if (a[i] != a[i + 1]) {
+                count++;
             }
         }
 

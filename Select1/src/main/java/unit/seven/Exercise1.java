@@ -6,6 +6,7 @@ import java.util.Random;
 public class Exercise1 {
     public static void main(String[] args) {
         //스칼라 곱 : 각 배열 간 곱하여 합산
+        
         double[] a = new double[10];
         double[] b = new double[10];
 
