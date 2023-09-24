@@ -1,37 +1,45 @@
 package unit.seven;
 
-//https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
-//Exercise 07.9 A matrix M is said to be symmetric if it is square (i.e., has the same number of rows and columns) and M[i][j] is equal to M[j][i], for each pair of valid indexes i and j.
-// Write a predicate static boolean symmetric(int[][] M) that returns true if the matrix M is symmetric, and false otherwise.
+//Exercise 07.9: 행렬 M은 정사각형이며(i.e., 행과 열의 수가 동일),
+//각 유효한 인덱스 i와 j 쌍에 대해 M[i][j]가 M[j][i]와 동일한 경우에 대해 대칭이라고 합니다.
+//static boolean symmetric(int[][] M)라는 메소드를 작성하세요.
+//이 메소드는 행렬 M이 대칭인 경우 true를 반환하고, 그렇지 않은 경우 false를 반환해야 합니다.
 public class Exercise9 {
     public static void main(String[] args) {
-        //보류
         int[][] m = {
                 {1, 2, 3, 7},
-                {2, 4, 5, 8},
-                {3, 5, 6, 9},
-                {7, 8, 9, 10}
+                {2, 5, 6, 8},
+                {3, 6, 9, 10},
+                {7, 8, 10, 11}
         };
 
-        System.out.println(symmetric(m));
+        int[][] n = {
+                {1, 2, 3, 6},
+                {2, 5, 6, 8},
+                {3, 9, 9, 10},
+                {7, 8, 10, 11}
+        };
+
+        System.out.println(symmetric(m));   //true
+        System.out.println(symmetric(n));   //false
     }
 
     public static boolean symmetric(int[][] m) {
         int count = 0;
         for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m.length; j++) {
+            for (int j = 0; j < m[0].length; j++) {
                 if (i == j) {
                     continue;
                 }
-                if (m[i][j] == m[j][i]) {
+                if (m[i][j] != m[j][i]) {
                     count++;
                 }
             }
         }
-        //이게 문제임
-        if (count / 2 == m.length) {
-            return true;
+
+        if (count > 0) {
+            return false;
         }
-        return false;
+        return true;
     }
 }
