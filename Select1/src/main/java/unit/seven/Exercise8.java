@@ -5,10 +5,10 @@ package unit.seven;
  * Exercise 07.8
  * What does the following method calculate?
  * public static int mystery(int[] A) {
- *   int x = 0;
- *   for (int i = 0; i < A.length; i++)
- *     if (A[i] % 2 == 1) x++;
- *   return x;
+ * int x = 0;
+ * for (int i = 0; i < A.length; i++)
+ * if (A[i] % 2 == 1) x++;
+ * return x;
  * }
  */
 public class Exercise8 {
@@ -16,8 +16,11 @@ public class Exercise8 {
     // 답. 배열 안에 elements 중 홀수인 element의 개수 구하는 메서드
     public static int mystery(int[] A) {
         int x = 0;
-        for (int i = 0; i < A.length; i++)
-            if (A[i] % 2 == 1) x++;
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] % 2 == 1) {
+                x++;
+            }
+        }
         return x;
     }
 }
