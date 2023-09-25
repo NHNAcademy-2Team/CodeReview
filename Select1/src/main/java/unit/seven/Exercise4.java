@@ -2,11 +2,10 @@ package unit.seven;
 
 public class Exercise4 {
     public static int[] matrixSumColumns(int[][] m) {
-        int[] c = new int[m.length];
-        for (int i = 0; i < m.length; i++) {
-            c[i] = 0;
-            for (int j = 0; j < m[i].length; j++) {
-                c[i] += m[i][j];
+        int[] c = new int[m[0].length];
+        for (int i = 0; i < m[0].length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                c[i] += m[j][i];
             }
         }
         return c;
@@ -29,4 +28,6 @@ public class Exercise4 {
 
     }
 }
+
+
 
