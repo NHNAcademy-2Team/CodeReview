@@ -1,4 +1,4 @@
-package CodeReview.Select1.src.main.java.unit.seven;
+package unit.seven;
 
 import java.util.Arrays;
 import java.util.Random;
