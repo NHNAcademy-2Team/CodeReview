@@ -1,69 +1,54 @@
 package unit.seven;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-
+/**
+ * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
+ * Exercise 07.2
+ * Write a method static int[] intersection(int[] A, int[] B) that returns a new array containing the intersection of two arrays A and B, i.e., exactly those elements that are present both in A and in B (independently of their position).
+ * We may assume that A and B do not contain duplicates, i.e., elements that appear more than once in the array.
+ */
 public class Exercise2 {
+    public static boolean searchArray(int[] array, int value) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int intersectionCount(int[] A, int[] B) {
+        int count = 0;
+        for (int i = 0; i < A.length; i++) {
+            if (searchArray(B, A[i])) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int[] intersection(int[] A, int[] B) {
+        int count = intersectionCount(A, B);
+        int[] intersection = new int[count];
+        int index = 0;
+        for (int i = 0; i < A.length; i++) {
+            if (searchArray(B, A[i])) {
+                intersection[index] = A[i];
+                index++;
+            }
+        }
+        return intersection;
+    }
+
+    public static void intersectionTest() {
+        int[] A = {1, 3, 4, 5, 6, 9, 12};
+        int[] B = {2, 4, 6, 8, 10};
+        int[] intersection = intersection(A, B);
+        for (int i : intersection) {
+            System.out.print(i + " ");
+        }
+    }
+
     public static void main(String[] args) {
-        
-        int[] a = new int[10];
-        int[] b = new int[10];
-
-        Random rnd = new Random();
-
-        for (int i = 0; i < a.length; i++) {
-            a[i] = rnd.nextInt(100);
-            b[i] = rnd.nextInt(100);
-        }
-        System.out.println(Arrays.toString(intersection(a, b)));
-    }
-
-    public static int[] intersection(int[] a, int[] b) {
-        ArrayList<Integer> list = new ArrayList<>();
-
-        a = duplicate(a);
-        b = duplicate(b);
-
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
-
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-                if (a[i] == b[j]) {
-                    list.add(a[i]);
-                }
-            }
-        }
-        int[] result = new int[list.size()];
-
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
-        }
-        return result;
-    }
-
-    private static int[] duplicate(int[] a) {
-
-        Arrays.sort(a);
-        
-        List<Integer> list = new ArrayList<Integer>();
-
-        for(int b : a) {
-            if (!list.contains(b)) {
-                list.add(b);
-            }
-        }
-
-        int[] result = new int[list.size()];
-
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
-        }
-
-        return result;
+        intersectionTest();
     }
 }

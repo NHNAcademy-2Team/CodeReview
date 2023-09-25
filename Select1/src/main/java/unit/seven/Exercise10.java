@@ -1,47 +1,38 @@
 package unit.seven;
 
-//Exercise 07.10: 행렬 M은 모든 요소 M[i][j]가 i<j (i.e., 주 대각선 위쪽에 있는 요소)인 경우에만 하삼각 행렬로 간주됩니다.
-//static boolean lowerTriangular(int[][] M)라는 프레디케이트를 작성하세요.
-//이 프레디케이트는 행렬 M이 하삼각 행렬인 경우 true를 반환하고, 그렇지 않은 경우 false를 반환해야 합니다.
+/**
+ * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
+ * Exercise 07.10
+ * A matrix M is said to be lower triangular if all elements M[i][j] with i<j (i.e., that are "above" the main diagonal) are equal to 0.
+ * Write a predicate static boolean lowerTriangular(int[][] M) that returns true if the matrix M is lower triangular, and false otherwise.
+ */
 public class Exercise10 {
-    public static void main(String[] args) {
-        int[][] m = {
-                {1, 0, 0, 0},
-                {5, 2, 0, 0},
-                {6, 7, 3, 0},
-                {8, 9, 10, 4}
-        };
-
-        int[][] n = {
-                {1, 0, 0, 7},
-                {5, 2, 0, 0},
-                {6, 7, 3, 0},
-                {8, 9, 10, 4}
-        };
-
-        System.out.println(lowerTriangular(m)); //true
-        System.out.println(lowerTriangular(n)); //false
-    }
-
-    public static boolean lowerTriangular(int[][] m) {
-        int count = 0;
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[0].length; j++) {
-                if (i < j) {
-                    if (m[i][j] != 0) {
-                        count++;
-                    }
-                } else {
-                    if (m[i][j] == 0) {
-                        count++;
-                    }
+    public static boolean lowerTriangular(int[][] M) {
+        if (M.length != M[0].length) {
+            throw new IllegalArgumentException("정방행렬이 아니기 때문에 하삼각행렬의 조건이 될 수 없습니다.");
+        }
+        for (int i = 0; i < M.length - 1; i++) {
+            for (int j = i + 1; j < M.length; j++) {
+                if (M[i][j] != 0) {
+                    return false;
                 }
             }
         }
-
-        if (count > 0) {
-            return false;
-        }
         return true;
+    }
+
+    public static void lowerTriangularTest() {
+        int[][][] testMatrix = {
+                {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}},
+                {{1, 0, 0}, {2, 7, 0}, {3, 8, 9}},
+                {{1, 0, 0, 0}, {2, 7, 0, 0}, {3, 8, 9, 0}}
+        };
+        for (int[][] test : testMatrix) {
+            System.out.println(lowerTriangular(test));
+        }
+    }
+
+    public static void main(String[] args) {
+        lowerTriangularTest();
     }
 }
