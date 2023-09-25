@@ -7,28 +7,29 @@ package unit.seven;
  * and false otherwise.
  */
 public class Exercise5 {
-    public static boolean equalArrays(int[] A, int[] B) {
-        if (A.length != B.length) {
-            return false;
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        int[] b = new int[10];
+
+        assign(a);
+        assign(b);
+
+        System.out.println(equalArrays(a, b));
+    }
+
+    private static int[] assign(int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            a[i] = i;
         }
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] != B[i]) {
+        return a;
+    }
+
+    public static boolean equalArrays(int[] a, int[] b) {
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
                 return false;
             }
         }
         return true;
-    }
-
-
-    public static void main(String[] args) {
-        int[] A = {1, 2, 2, 3, 4};
-        int[] B = {1, 2, 2, 3, 4, 4};
-
-        System.out.println(equalArrays(A, B));
-
-
-        int[] C = {1, 2, 3, 4, 5};
-        int[] D = {1, 2, 3, 4, 5};
-        System.out.println(equalArrays(C, D));
     }
 }
