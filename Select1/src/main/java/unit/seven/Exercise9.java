@@ -9,8 +9,7 @@ public class Exercise9 {
             for (int j = i+1; j < m.length; j++) {
                 if (m[i][j] != m[j][i]) {
                     return false;
-                } else
-                    return true;
+                }
             }
         }
         return true;
