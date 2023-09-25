@@ -1,4 +1,4 @@
-package CodeReview.Select1.src.main.java.unit.six;
+package unit.six;
 
 public class Exercise8 {
 
