@@ -2,15 +2,15 @@ package src.main.java.unit7;
 
 public class Exercise6 {
 
-    static int numberOfDuplicates(int[] A) { // 중복되는 요소의 개수
-        int count =0;
-        for (int i = 0; i < A.length ; i++) {
-            for (int j = i+1 ; j < A.length ; j++) {
-                if(A[i] == (Integer)null) {
+    static int numberOfDuplicates(int[] A) {
+        int count = 0;
+        for (int i = 0; i < A.length; i++) {
+            for (int j = i + 1; j < A.length; j++) {
+                if (A[i] == (Integer) null) {
                     break;
                 }
-                if (A[i]==A[j]) {
-                    A[j] = (Integer)null;
+                if (A[i] == A[j]) {
+                    A[j] = (Integer) null;
                     count++;
                 }
             }
