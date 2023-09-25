@@ -5,7 +5,7 @@ package unit.seven;
  * Exercise 07.12 Test
  */
 public class Exercise12 {
-    public static void apartmentTest(){
+    public static void apartmentTest() {
         Apartment apart = new Apartment(33, "dohoro 232-1");
 
         System.out.println("Size : " + apart.getSquareMetersSize());
@@ -31,6 +31,7 @@ public class Exercise12 {
         System.out.println(apart);
         System.out.println();
     }
+
     public static void main(String[] args) {
         apartmentTest();
     }

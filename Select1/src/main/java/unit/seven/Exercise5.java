@@ -6,19 +6,22 @@ package unit.seven;
  * Write a predicate static boolean equalArrays(int[] A, int[] B) that returns true if the two arrays A and B are equal (i.e., A[i] is equal to B[i], for each i), and false otherwise.
  */
 public class Exercise5 {
-    public static boolean equalArrays(int[] A, int[] B){
-        if(A.length != B.length)
+    public static boolean equalArrays(int[] A, int[] B) {
+        if (A.length != B.length) {
             return false;
-        for(int i = 0; i < A.length; i++){
-            if(A[i] != B[i])
+        }
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] != B[i]) {
                 return false;
+            }
         }
         return true;
     }
-    public static void equalArraysTest(){
+
+    public static void equalArraysTest() {
         int[][] TestA = {{1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}};
         int[][] TestB = {{1, 2, 3, 4, 5}, {5, 6, 7, 8, 9}};
-        for(int i = 0; i < TestA.length; i++){
+        for (int i = 0; i < TestA.length; i++) {
             System.out.println(equalArrays(TestA[i], TestB[i]));
         }
     }
