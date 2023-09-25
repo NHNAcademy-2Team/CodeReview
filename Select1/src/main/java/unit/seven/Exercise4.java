@@ -1,4 +1,4 @@
-package src.main.java.unit7;
+package src.main.java.unit.seven;
 
 public class Exercise4 {
 
@@ -6,10 +6,9 @@ public class Exercise4 {
         int[] sum = new int[x.length];
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x[i].length; j++) {
-                sum[i] += x[i][j];
+                sum[i] += x[j][i];
             }
         }
-
         return sum;
     }
 }
