@@ -1,0 +1,27 @@
+= NHN Acaademy 2 Team Code Review
+
+References : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+
+.Select1 Introduction to Programming
+Free University of Bolzano/Bozen
+Faculty of Computer Science - Bachelor in Applied Computer Science
+Bachelor in Production Engineering
+
+[cols=2*,options=header]
+|===
+|Plan
+|Date
+
+|Unit 5
+|9.19
+
+|Unit 6
+|9.21
+
+|Unit 7
+|9.22
+
+|Unit 8
+|
+
+|===
