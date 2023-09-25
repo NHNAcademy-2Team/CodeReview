@@ -1,6 +1,6 @@
 package unit.seven;
 
-public class TestApartmentOwner {
+public class Exercise12 {
     public static void main(String[] args) {
         ApartmentOwner p = new ApartmentOwner("Mario Rossi");
         p.setApartment("Via della Camilluccia, 29", 0);
