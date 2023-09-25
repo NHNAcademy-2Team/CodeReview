@@ -1,16 +1,16 @@
-package src.main.java.unit7;
+package src.main.java.unit.seven;
 
 public class Exercise6 {
 
-    static int numberOfDuplicates(int[] A) {
+    static int numberOfDuplicates(int[] Array) {
         int count = 0;
-        for (int i = 0; i < A.length; i++) {
-            for (int j = i + 1; j < A.length; j++) {
-                if (A[i] == (Integer) null) {
+        for (int i = 0; i < Array.length; i++) {
+            for (int j = i + 1; j < Array.length; j++) {
+                if (Array[i] == (Integer) null) {
                     break;
                 }
-                if (A[i] == A[j]) {
-                    A[j] = (Integer) null;
+                if (Array[i] == Array[j]) {
+                    Array[j] = (Integer) null;
                     count++;
                 }
             }
