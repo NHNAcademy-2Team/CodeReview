@@ -12,19 +12,11 @@ package unit.seven;
  */
 public class Exercise2 {
     public static int[] intersection(int[] A, int[] B) {
-        int[] tmp;
-        int maxLength;
-        if (A.length <= B.length) {
-            tmp = new int[A.length];
-            maxLength = B.length;
-        } else {
-            tmp = new int[B.length];
-            maxLength = A.length;
-        }
+        int[] tmp = new int[Math.min(A.length, B.length)];
 
         int j = 0;
-        for (int i = 0; i < tmp.length; i++) {
-            for (int k = 0; k < maxLength; k++) {
+        for (int i = 0; i < A.length; i++) {
+            for (int k = 0; k < B.length; k++) {
                 if (A[i] == B[k]) {
                     tmp[j++] = A[i];
                 }
@@ -38,15 +30,20 @@ public class Exercise2 {
         return result;
     }
 
+    public static void printArray(int[] M) {
+        for(int i = 0;i<M.length;i++) {
+            System.out.print(M[i] + " ");
+        }
+        System.out.println();
+    }
+
 
     public static void main(String[] args) {
-        int[] A = { 1,2,3,4,5,6};
-        int[] B = { 2,4,8,3,1,5};
+        int[] A = { 1,2,3,4,0,6};
+        int[] B = { 2,4,8,3,0,5};
 
         int[] result = intersection(A, B);
 
-        for(int i = 0;i<result.length;i++) {
-            System.out.printf("%d ", result[i]);
-        }
+        printArray(result);
     }
 }

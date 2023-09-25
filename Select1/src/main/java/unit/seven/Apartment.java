@@ -39,14 +39,12 @@ public class Apartment {
     }
 
     public void removePerson(int num) {
-        if (num >= 0 && this.peopleNum > num) {
-            this.persons[peopleNum--] = null;
-
-            for (int i = num; i < peopleNum; i++) {
+        if(num >= 0 && num < this.peopleNum ) {
+            for(int i = num; i < peopleNum; i++) {
                 this.persons[i] = this.persons[i + 1];
             }
+            this.persons[peopleNum--] = null;
         }
-
     }
 
     @Override

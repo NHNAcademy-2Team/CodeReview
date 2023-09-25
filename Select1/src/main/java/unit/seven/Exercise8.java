@@ -14,6 +14,6 @@ public class Exercise8 {
         return x;
     }
 
-    // 배열 안에 들어있는 홀수를 짝수로 바꾸는 작업
+    // 배열 안에 들어있는 홀수의 개수
 
 }
