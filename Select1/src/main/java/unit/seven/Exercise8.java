@@ -2,10 +2,10 @@ package src.main.java.unit.seven;
 
 public class Exercise8 {
 
-    public static int mystery(int[] A) {
+    public static int mystery(int[] Array) {
         int x = 0;
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] % 2 == 1) x++;
+        for (int i = 0; i < Array.length; i++) {
+            if (Array[i] % 2 == 1) x++;
         }
         return x;
     }
