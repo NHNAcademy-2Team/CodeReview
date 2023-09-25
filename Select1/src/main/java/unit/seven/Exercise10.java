@@ -31,6 +31,10 @@ public class Exercise10 {
                     if (m[i][j] != 0) {
                         count++;
                     }
+                } else {
+                    if (m[i][j] == 0) {
+                        count++;
+                    }
                 }
             }
         }

@@ -7,7 +7,6 @@ import java.util.List;
 public class Exercise6 {
     public static void main(String[] args) {
         int[] a = {2, 2, 3, 3, 4, 9, 11, 8, 11, 11};
-        Arrays.sort(a);
         System.out.println(numberOfDuplicates(a));
         System.out.println(numberOfDistinctValues(a));
     }

@@ -2,7 +2,7 @@ package unit.seven;
 
 public class Exercise12 {
     public static void main(String[] args) {
-        Apartment apartment = new Apartment(10, "광주시 동명동");
+        Apartment apartment = new Apartment(10, "광주광역시 동명동");
         apartment.setName("양진영");
         apartment.setName("이태희");
         apartment.setName("순수연");

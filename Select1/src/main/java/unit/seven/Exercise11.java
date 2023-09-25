@@ -30,15 +30,16 @@ public class Exercise11 {
             for(int j=0; j<m[0].length; j++) {
                 if (i != j) {
                     if (m[i][j] != 0) {
-                        count++;
+                        return false;
+                    }
+                } else {
+                    if (m[i][j] == 0) {
+                        return false;
                     }
                 }
             }
         }
 
-        if(count > 0) {
-            return false;
-        }
         return true;
     }
 }
