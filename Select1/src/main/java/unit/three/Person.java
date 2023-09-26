@@ -11,8 +11,8 @@ public class Person {
 
 
     public static void main(String[] args) {
-        Person p = new Person();
-        p.name = "John Smith";
+//        Person p = new Person();
+//        p.name = "John Smith";
     }
 
 }

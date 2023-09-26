@@ -1,11 +1,13 @@
+package unit.one;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Seoul{
+public class Incheon{
     private static final List<String> name = new ArrayList<>();
    
 
-    public Seoul() {
+    public Incheon() {
         name.add("Kim");
         name.add("Lee");
         name.add("Park");
@@ -17,7 +19,7 @@ public class Seoul{
         if(this.name.contains(name))
             System.out.println(name + "님과 통화연결되었습니다.");
         else
-            System.out.println("서울엔 " + name + "님이 안 계십니다");
+            System.out.println("인천엔 " + name + "님이 안 계십니다");
 
     }
 

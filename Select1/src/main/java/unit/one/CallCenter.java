@@ -1,4 +1,4 @@
-package unit.one.CallCenter;
+package unit.one;
 
 import java.util.Scanner;
 

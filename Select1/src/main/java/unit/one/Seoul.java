@@ -1,13 +1,13 @@
-package unit.one.CallCenter;
+package unit.one;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gwangju{
+public class Seoul{
     private static final List<String> name = new ArrayList<>();
    
 
-    public Gwangju() {
+    public Seoul() {
         name.add("Kim");
         name.add("Lee");
         name.add("Park");
@@ -19,7 +19,7 @@ public class Gwangju{
         if(this.name.contains(name))
             System.out.println(name + "님과 통화연결되었습니다.");
         else
-            System.out.println("광주엔 " + name + "님이 안 계십니다");
+            System.out.println("서울엔 " + name + "님이 안 계십니다");
 
     }
 

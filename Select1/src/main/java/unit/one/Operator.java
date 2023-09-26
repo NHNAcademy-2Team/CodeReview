@@ -1,7 +1,4 @@
-package unit.one.CallCenter;
-
-import java.util.ArrayList;
-import java.util.List;
+package unit.one;
 
 public class Operator {
     // private List<TelephoneReg> telegistry = new ArrayList<>();

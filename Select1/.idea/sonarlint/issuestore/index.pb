@@ -32,8 +32,6 @@ W
 'src/main/java/unit/seven/Exercise8.java,d/9/d93df00b53c133044b548df86516c6c9ea621d35
 ?
 src/Select1.iml,c/4/c4a30bc367fd671b1f44ee3918c8033b8e9c16fe
-L
-src/main/java/unit/Main.java,5/3/53ad14535f73516b842d9b5a925e2122e578807a
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 S
