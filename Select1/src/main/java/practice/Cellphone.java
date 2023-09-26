@@ -9,8 +9,9 @@ public class Cellphone {
 
         for(int i = 0; i<messages.length;i++) {
             sender = "User[" + i + "]";
-            senderNumber = "1000" + i;
+            senderNumber = "010-1234-123" + i;
             messages[i] = new Message(sender, senderNumber, "Hello User[" + i + "]");
         }
     }
+
 }
