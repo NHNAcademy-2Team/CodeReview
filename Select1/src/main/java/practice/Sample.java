@@ -21,13 +21,13 @@ class Cellphone {
 
     public Message[] message() {
 
-        this.messages = new Message[5];
+        this.messages = new Message[3];
 
-        String[] sender = {"James", "July", "Tom", "Smith", "Sam"};
-        String[] senderNumber = {"010-1234-5678", "010-5432-11234", "010-3546-9434", "010-2342-2534", "010-3493-0439"};
-        String[] messageText = {"It's so difficult", "I'm genius", "What do you do for fun", "Hello", "Let's go home!"};
+        String[] sender = {"James", "July", "Tom"};
+        String[] senderNumber = {"010-1234-5678", "010-5432-11234", "010-3546-9434"};
+        String[] messageText = {"It's so difficult", "I'm genius", "Hello"};
 
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 3; i++) {
             this.messages[i] = new Message(sender[i], senderNumber[i], messageText[i]);
         }
         return messages;
