@@ -10,6 +10,7 @@ public class Zerg {
         zerg.add(new Unit(false, "Zergling", 2, 2, ""));
         zerg.add(new Unit(false, "Hydralisk", 3, 7, "stinger"));
         zerg.add(new Unit(false, "Ultralisk", 5, 15, ""));
+        zerg.add(new Unit(true, "Queen", 15, 25, ""));
     }
 
     public ArrayList<Unit> getZergList() {

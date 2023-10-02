@@ -10,6 +10,7 @@ public class Protos {
         protos.add(new Unit(false, "Zealot", 5, 20, ""));
         protos.add(new Unit(false, "Dragoon", 3, 15, "laser"));
         protos.add(new Unit(false, "HighTempler", 10, 2, ""));
+        protos.add(new Unit(true, "Carrier", 25, 40, ""));
     }
 
     public ArrayList<Unit> getProtosList() {

@@ -10,6 +10,7 @@ public class Terran {
         terran.add(new Unit(false, "Marine", 3, 10, ""));
         terran.add(new Unit(false, "Tank", 7, 15, ""));
         terran.add(new Unit(false, "Goliath", 5, 15, "missile"));
+        terran.add(new Unit(true, "BattleCruzer", 20, 30, ""));
     }
 
     public ArrayList<Unit> getTerranList() {
