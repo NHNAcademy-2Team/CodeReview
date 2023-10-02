@@ -30,46 +30,22 @@ public class GameSystem {
         }
         int randomNumber = random.nextInt(3) + 1;
 
-        myRace = new Player(number, randomSetting(number));
-        computerRace = new Player(randomNumber, randomSetting(randomNumber));
+        myRace = new Player(number, unitSetting(number));
+        computerRace = new Player(randomNumber, unitSetting(randomNumber));
 
         fightRace(scanner);
     }
 
-    private ArrayList<Unit> randomSetting(int number) {
-        ArrayList<Unit> arrays = new ArrayList<>();
+    private ArrayList<Unit> unitSetting(int number) {
         Race race = new Race();
 
         if (number == 1) {
-            arrays.add(new Unit(essentialUnit(race.getTerran().getTerranList())));
-            for (int i = 0; i < 4; i++) {
-                arrays.add(new Unit(
-                        race.getTerran().getTerranList().get(random.nextInt(race.getTerran().getTerranList().size()))));
-            }
+            return race.terranRandomSetting();
         } else if (number == 2) {
-            arrays.add(new Unit(essentialUnit(race.getProtos().getProtosList())));
-            for (int i = 0; i < 3; i++) {
-                arrays.add(new Unit(
-                        race.getProtos().getProtosList().get(random.nextInt(race.getProtos().getProtosList().size()))));
-            }
+            return race.protosRandomSetting();
         } else {
-            arrays.add(new Unit(essentialUnit(race.getZerg().getZergList())));
-            for (int i = 0; i < 7; i++) {
-                arrays.add(new Unit(
-                        race.getZerg().getZergList().get(random.nextInt(race.getZerg().getZergList().size()))));
-            }
+            return race.zergRandomSetting();
         }
-        return arrays;
-    }
-
-    private Unit essentialUnit(ArrayList<Unit> unitList) {
-        Unit temp;
-        while (true) {
-            temp = unitList.get(random.nextInt(unitList.size()));
-            if (temp.fly == true || !(temp.ability.equals("")))
-                break;
-        }
-        return temp;
     }
 
     private void fightRace(Scanner scanner) {
@@ -78,8 +54,8 @@ public class GameSystem {
 
         printAll();
         while (myRace.unitList.size() != 0 && computerRace.unitList.size() != 0) {
-            if (turn) {
 
+            if (turn) {
                 try {
                     System.out.print("(Player) 공격을 수행할 아군 유닛과 공격할 적군 유닛을 선택하세요: ");
                     attackUnit = scanner.nextInt();
