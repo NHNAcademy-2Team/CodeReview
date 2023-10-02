@@ -96,17 +96,26 @@ public class GameSystem {
     }
 
     private void hitUnit(int attackUnit, int damageUnit) {
+        int power = 0;
+        int defense = 0;
+
         if (turn) {
-            if (computerRace.unitList.get(damageUnit).defense <= myRace.unitList.get(attackUnit).power)
+            power = myRace.unitList.get(attackUnit).power;
+            defense = computerRace.unitList.get(damageUnit).defense;
+
+            if (defense <= power)
                 computerRace.unitList.remove(damageUnit);
             else {
-                computerRace.unitList.get(damageUnit).defense -= myRace.unitList.get(attackUnit).power;
+                computerRace.unitList.get(damageUnit).defense -= power;
             }
         } else {
-            if (myRace.unitList.get(damageUnit).defense <= computerRace.unitList.get(attackUnit).power)
+            power = computerRace.unitList.get(attackUnit).power;
+            defense = myRace.unitList.get(damageUnit).defense;
+
+            if (defense <= power)
                 myRace.unitList.remove(damageUnit);
             else {
-                myRace.unitList.get(damageUnit).defense -= computerRace.unitList.get(attackUnit).power;
+                myRace.unitList.get(damageUnit).defense -= power;
             }
         }
     }
