@@ -12,6 +12,7 @@ public class Cellphone {
         messages[2] = new Message("namhee", "010-3423-3422", "WTH");
     }
 
+
     public static String switchWord(String messageText) {
         if (messageText == "RY") {
             messageText = "are you";
