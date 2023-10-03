@@ -1,4 +1,4 @@
-package practice;
+package practice.one;
 
 public class Address {
     private String name;
