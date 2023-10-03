@@ -3,22 +3,22 @@ package practice2;
 public class Address {
 
     private String name;
-    private String phonenumber;
+    private String phoneNumber;
     private String company;
 
-    public Address(String name, String phonenumber) {
+    public Address(String name, String phonNnumber) {
         this.name = name;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phoneNumber;
         this.company = "";
     }
 
-    public Address(String name, String phonenumber, String company) {
+    public Address(String name, String phoneNumber, String company) {
         this.name = name;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phoneNumber;
         this.company = company;
     }
 
     public String toString() {
-        return String.format("name : %s, phonenumber : %s, company : %s", this.name, this.phonenumber, this.company);
+        return String.format("name : %s, phonenumber : %s, company : %s", this.name, this.phoneNumber, this.company);
     }
 }

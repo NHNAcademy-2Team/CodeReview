@@ -5,17 +5,21 @@ import java.util.List;
 
 public class Cellphone {
     private String phoneNumber;
+    private String name;
     private List<Address> addressbook = new ArrayList<>();
     private List<Message> messages = new ArrayList<>();
 
+    public Cellphone() {
+
+    }
+
     public Cellphone(String phoneNumber, String name) {
         this.phoneNumber = phoneNumber;
-        this.addressbook.add(new Address(name, phoneNumber));
+        this.name = name;
     }
 
     public Cellphone(String phoneNumber, String address, String message) {
         this.phoneNumber = phoneNumber;
-        this.addressbook.add(new Address(phoneNumber, address));
         this.messages.add(new Message(message, phoneNumber));
     }
 
@@ -27,6 +31,10 @@ public class Cellphone {
     public void receive(Message message) { //상대방이 보낸 걸 내가 받음
         messages.add(message);
         System.out.println(message.getMessage());
+    }
+
+    public void setAddressbook(String name, String phoneNumber) {
+        this.addressbook.add(new Address(name, phoneNumber));
     }
 
     public List<Message> readmessages() {
