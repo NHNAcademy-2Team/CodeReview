@@ -32,7 +32,7 @@ Bachelor in Production Engineering
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/practice/src
 
 |10.3
-|Chuseok Game
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/Game/src
+|StarCraft Game
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/starcraft/src
 
 |===
