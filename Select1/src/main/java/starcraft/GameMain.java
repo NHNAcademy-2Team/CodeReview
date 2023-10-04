@@ -9,7 +9,7 @@ public class GameMain {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 
-        System.out.println("종족을 선택하세요 (1: Terran, 2: Protos, 3: Zerg): ");
+        System.out.print("종족을 선택하세요 (1: Terran, 2: Protos, 3: Zerg): ");
         int userChoice = scn.nextInt();
 
         // 사용자가 선택한 종족에 따라 해당 종족의 클래스 인스턴스 생성
@@ -42,7 +42,7 @@ public class GameMain {
         while(!userTribe.units.isEmpty() && !computerTribe.units.isEmpty()){
             // 사용자 턴
             System.out.println("사용자의 턴입니다.");
-            System.out.println("사용자 유닛 목록: ");
+            System.out.print("아군: ");
             userTribe.displayRemainingUnits();
             Unit userAttacker = selectAttackerUnit(userTribe);
             Unit userTarget = selectTargetUnit(computerTribe);
@@ -54,6 +54,7 @@ public class GameMain {
 
             if (!computerTribe.units.isEmpty()){
                 System.out.println("컴퓨터의 턴입니다.");
+                System.out.print("적군: ");
                 Unit computerAttacker = computerTribe.getRandomUnit();
                 Unit computerTarget = selectTargetUnit(userTribe);
 

@@ -61,9 +61,9 @@ public class Tribe {
     }
 
     public void displayRemainingUnits(){
-        System.out.println(name + " 종족 남은 유닛: ");
+        System.out.println(name);
         for (Unit unit: units){
-            System.out.println(unit.name + " (방어력: "+ unit.defense + ")");
+            System.out.println(unit.name + " (현재 방어력: "+ unit.defense + ")");
         }
     }
 }
