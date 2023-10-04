@@ -59,13 +59,19 @@ public class GameSystem {
         printAll();
         while (myUnit.getUnitList().size() != 0 && computerUnit.getUnitList().size() != 0) {
 
+            if (!checkAttakPossible(myUnit, computerUnit)) {
+                System.out.println("이미 승패가 결정났습니다.");
+                break;
+            }
+
             if (myturn) {
+
                 try {
                     System.out.print("(Player) 공격을 수행할 아군 유닛과 공격할 적군 유닛을 선택하세요: ");
                     attackUnit = scanner.nextInt();
                     damageUnit = scanner.nextInt();
 
-                    if (!checkAttackPossible(myUnit.getUnitList().get(attackUnit),
+                    if (!checkAttackRange(myUnit.getUnitList().get(attackUnit),
                             computerUnit.getUnitList().get(damageUnit))) {
                         throw new IllegalArgumentException("공격할 수 없습니다. 다시 선택해주세요.");
                     }
@@ -80,21 +86,51 @@ public class GameSystem {
                     System.out.println("인덱스 값을 초과하였습니다. 다시 입력해주세요.");
                 }
             } else {
-                System.out.print("(Computer) 공격을 수행할 아군 유닛과 공격할 적군 유닛을 선택하세요: ");
-                attackUnit = random.nextInt(computerUnit.getUnitList().size());
-                damageUnit = random.nextInt(myUnit.getUnitList().size());
 
-                System.out.println(attackUnit + " " + damageUnit);
-                hitUnit(attackUnit, damageUnit);
+                try {
+                    attackUnit = random.nextInt(computerUnit.getUnitList().size());
+                    damageUnit = random.nextInt(myUnit.getUnitList().size());
 
-                myturn = true;
-                printAll();
+                    if (!checkAttackRange(computerUnit.getUnitList().get(attackUnit),
+                            myUnit.getUnitList().get(damageUnit))) {
+                        throw new IllegalArgumentException();
+                    }
+                    System.out.print("(Computer) 공격을 수행할 아군 유닛과 공격할 적군 유닛을 선택하세요: ");
+                    System.out.println(attackUnit + " " + damageUnit);
+                    hitUnit(attackUnit, damageUnit);
+
+                    myturn = true;
+                    printAll();
+                } catch (IllegalArgumentException e) {
+                }
             }
         }
         winner();
     }
 
-    private boolean checkAttackPossible(Unit attackUnit, Unit damageUnit) {
+    private boolean checkAttakPossible(Player player1, Player player2) {
+        boolean player1Possible = false;
+        boolean player2Possible = false;
+
+        for (int i = 0; i < player1.getUnitList().size(); i++) {
+            if (player1.getUnitList().get(i).fly == true
+                    || player1.getUnitList().get(i).ability.equals("") == false) {
+                player1Possible = true;
+            }
+        }
+
+        for (int i = 0; i < player2.getUnitList().size(); i++) {
+            if (player2.getUnitList().get(i).fly == true
+                    || player2.getUnitList().get(i).ability.equals("") == false) {
+                player2Possible = true;
+            }
+        }
+
+        return (player1Possible == true && player2Possible == false
+                || player1Possible == false && player2Possible == true) ? false : true;
+    }
+
+    private boolean checkAttackRange(Unit attackUnit, Unit damageUnit) {
         return ((attackUnit.fly == false && attackUnit.ability.equals("")) && (damageUnit.fly == true)) ? false
                 : true;
     }
