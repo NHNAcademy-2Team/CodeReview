@@ -26,6 +26,11 @@
 개인과제(스타크래프트) ::
 [cols=2*]
 |===
+|요구사항
+|https://nhnacademy.tistory.com/26
+|===
+[cols=2*]
+|===
 |이름
 |링크
 |순수연
@@ -37,7 +42,7 @@
 |이태희
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/starcraft/src
 |김승현
-|
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/hyuni000/starcraft
 |홍지원
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/jiwon/Select1/src/main/java/starcraft
 |===
