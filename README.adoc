@@ -23,6 +23,24 @@
 
 참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
 
+개인과제(스타크래프트) ::
+[cols=2*]
+|===
+|이름
+|링크
+|순수연
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/Suyeon/Select1/src/main/java/starcraft
+|홍경석
+|https://github.com/Hongkyoungseuk/Starcraft
+|양진영
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/jinyoung/Select1/src/main/java/Starcraft
+|이태희
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/starcraft/src
+|김승현
+|
+|홍지원
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/jiwon/Select1/src/main/java/starcraft
+
 아스키독 ::
 [cols=2*]
 |===
