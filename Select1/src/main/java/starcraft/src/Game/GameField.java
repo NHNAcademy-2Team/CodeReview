@@ -8,7 +8,7 @@ public class GameField {
         GameSystem gameSystem = new GameSystem();
 
         System.out.println("Game start!");
-        gameSystem.createRace(scanner);
+        gameSystem.createGame(scanner);
 
         scanner.close();
     }

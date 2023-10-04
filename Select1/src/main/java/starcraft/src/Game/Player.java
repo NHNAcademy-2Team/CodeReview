@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import race.Unit;
 
 public class Player {
-    public ArrayList<Unit> unitList = new ArrayList<>();
+    private ArrayList<Unit> unitList = new ArrayList<>();
     private String race;
 
     public Player(int race, ArrayList<Unit> randomList) {
@@ -23,8 +23,20 @@ public class Player {
         }
     }
 
+    public void removeUnit(int index) {
+        unitList.remove(index);
+    }
+
+    public void decreaseDefense(int index, int power) {
+        unitList.get(index).defense -= power;
+    }
+
     public String getRace() {
         return race;
+    }
+
+    public ArrayList<Unit> getUnitList() {
+        return unitList;
     }
 
     public void printUnitList() {

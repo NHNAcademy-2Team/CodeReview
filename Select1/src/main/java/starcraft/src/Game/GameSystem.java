@@ -14,7 +14,7 @@ public class GameSystem {
     private Random random = new Random();
     private boolean myturn = true;
 
-    public void createRace(Scanner scanner) {
+    public void createGame(Scanner scanner) {
         int number = 0;
 
         while (!(number >= 1 && number <= 3)) {
@@ -57,7 +57,7 @@ public class GameSystem {
         int damageUnit = 0;
 
         printAll();
-        while (myUnit.unitList.size() != 0 && computerUnit.unitList.size() != 0) {
+        while (myUnit.getUnitList().size() != 0 && computerUnit.getUnitList().size() != 0) {
 
             if (myturn) {
                 try {
@@ -65,7 +65,8 @@ public class GameSystem {
                     attackUnit = scanner.nextInt();
                     damageUnit = scanner.nextInt();
 
-                    if (!checkAttackPossible(myUnit.unitList.get(attackUnit), computerUnit.unitList.get(damageUnit))) {
+                    if (!checkAttackPossible(myUnit.getUnitList().get(attackUnit),
+                            computerUnit.getUnitList().get(damageUnit))) {
                         throw new IllegalArgumentException("공격할 수 없습니다. 다시 선택해주세요.");
                     }
                     hitUnit(attackUnit, damageUnit);
@@ -80,8 +81,8 @@ public class GameSystem {
                 }
             } else {
                 System.out.print("(Computer) 공격을 수행할 아군 유닛과 공격할 적군 유닛을 선택하세요: ");
-                attackUnit = random.nextInt(computerUnit.unitList.size());
-                damageUnit = random.nextInt(myUnit.unitList.size());
+                attackUnit = random.nextInt(computerUnit.getUnitList().size());
+                damageUnit = random.nextInt(myUnit.getUnitList().size());
 
                 System.out.println(attackUnit + " " + damageUnit);
                 hitUnit(attackUnit, damageUnit);
@@ -103,22 +104,22 @@ public class GameSystem {
         int defense = 0;
 
         if (myturn) {
-            power = myUnit.unitList.get(attackUnit).power;
-            defense = computerUnit.unitList.get(damageUnit).defense;
+            power = myUnit.getUnitList().get(attackUnit).power;
+            defense = computerUnit.getUnitList().get(damageUnit).defense;
 
             if (defense <= power)
-                computerUnit.unitList.remove(damageUnit);
+                computerUnit.removeUnit(damageUnit);
             else {
-                computerUnit.unitList.get(damageUnit).defense -= power;
+                computerUnit.decreaseDefense(damageUnit, power);
             }
         } else {
-            power = computerUnit.unitList.get(attackUnit).power;
-            defense = myUnit.unitList.get(damageUnit).defense;
+            power = computerUnit.getUnitList().get(attackUnit).power;
+            defense = myUnit.getUnitList().get(damageUnit).defense;
 
             if (defense <= power)
-                myUnit.unitList.remove(damageUnit);
+                myUnit.removeUnit(damageUnit);
             else {
-                myUnit.unitList.get(damageUnit).defense -= power;
+                myUnit.decreaseDefense(damageUnit, power);
             }
         }
     }
