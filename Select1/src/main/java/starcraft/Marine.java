@@ -1,18 +1,10 @@
 package starcraft;
 
-public class Marine extends Terran implements Unflyable {
+public class Marine extends Unit {
     public Marine() {
         this.attackPower = 3;
         this.defensivePower = 10;
+        this.brood = Brood.Terran;
         this.name = "Marine";
-    }
-
-    @Override
-    public void attack(Unflyable unflyable) {
-        Unit unit = (Unit) unflyable;
-        if (unit == null) {
-            throw new IllegalArgumentException("Unit == null");
-        }
-        unit.setDefensivePower(getDefensivePower() - this.attackPower);
     }
 }

@@ -1,18 +1,10 @@
 package starcraft;
 
-public class HighTempler extends Protos implements Unflyable {
+public class HighTempler extends Unit {
     public HighTempler() {
         this.attackPower = 10;
         this.defensivePower = 2;
+        this.brood = Brood.Protos;
         this.name = "HighTempler";
-    }
-
-    @Override
-    public void attack(Unflyable unflyable) {
-        Unit unit = (Unit) unflyable;
-        if (unit == null) {
-            throw new IllegalArgumentException("Unit == null");
-        }
-        unit.setDefensivePower(getDefensivePower() - this.attackPower);
     }
 }
