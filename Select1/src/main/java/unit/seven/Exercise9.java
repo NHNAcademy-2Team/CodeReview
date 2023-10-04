@@ -27,18 +27,11 @@ public class Exercise9 {
     public static boolean symmetric(int[][] m) {
         int count = 0;
         for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[0].length; j++) {
-                if (i == j) {
-                    continue;
-                }
+            for (int j = i+1; j < m.length; j++) {
                 if (m[i][j] != m[j][i]) {
-                    count++;
+                    return false;
                 }
             }
-        }
-
-        if (count > 0) {
-            return false;
         }
         return true;
     }
