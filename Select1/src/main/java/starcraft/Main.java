@@ -1,4 +1,4 @@
-package Starcraft;
+package starcraft;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class Main {
         Tribe user = new Tribe(tribe);
         Tribe enemy = new Tribe(computer);
 
-        System.out.println("아군 : " + );
+        System.out.println("아군 : ");
         System.out.println("적군 : ");
 
         while(true) {

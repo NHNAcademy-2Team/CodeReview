@@ -1,4 +1,4 @@
-package Starcraft;
+package starcraft;
 
 public interface CantFly {
 }

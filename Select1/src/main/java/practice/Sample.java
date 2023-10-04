@@ -7,6 +7,9 @@ public class Sample {
         System.out.println(message.sender);
         System.out.println(message.senderNumber);
         System.out.println(message.messageText);
+
+        Mom a = new Child();
+        System.out.println(a.add(1, 2));
     }
 }
 
