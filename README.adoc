@@ -1,67 +1,36 @@
-= NHN Academy 2 Team Code Review Github
-
-목표 :: 선택과정 1 및 선택과정 2를 공부하여 기본기 및 자바 Programming 기초 지식 정립
-
-공부 방법 ::
-* 전산학 기초 학습 및 Unit 학습 토의
-* 일정에 맞추어 Unit이 끝난 익일 오후 1시까지 각자 branch에 push한 Exercise 코드 리뷰
-* 피드백 반영하여 당일 오후 6시 이전까지 push 완료하기
-
-계획 ::
-선택과정1 + 
-* [*] Unit01(~9/12)
-* [*] Unit02(~9/13)
-* [*] Unit03(~9/15)
-* [*] Unit04(~9/18)
-* [*] Unit05(~9/19)
-* [*] Unit06(~9/21)
-* [*] Unit07(~9/22)
-* [ ] Unit08(~9/25)
-* [ ] Unit09(~9/25)
-* [ ] Unit10(~9/26)
-* [ ] Unit11(~9/27)
+= NHN Academy Code Review Github
+Doc Writer <soocy0718@gmail.com>
 
 참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
 
-개인과제(스타크래프트) ::
 [cols=2*]
 |===
-|요구사항
-|https://nhnacademy.tistory.com/26
-|===
-[cols=2*]
-|===
-|이름
-|링크
-|순수연
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/Suyeon/Select1/src/main/java/starcraft
-|홍경석
-|https://github.com/Hongkyoungseuk/Starcraft
-|양진영
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/jinyoung/Select1/src/main/java/Starcraft
-|이태희
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/starcraft/src
-|김승현
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/hyuni000/starcraft
-|홍지원
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/jiwon/Select1/src/main/java/starcraft
-|===
-
-아스키독 ::
-[cols=2*]
-|===
-|이름
-|링크
-|순수연
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/Suyeon
-|홍경석
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/kyoungseuk
-|양진영
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/jinyoung
-|이태희
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee
-|김승현
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/hyuni000
-|홍지원
-|https://github.com/NHNAcademy-2Team/CodeReview/tree/jiwon
+|일정
+|기록
+|2023.09.12
+|참고자료 Unit01 공부 및 실습 완료
+|2023.09.13
+|참고자료 Unit02 공부 및 실습 완료
+|2023.09.14
+|참고자료 Unit03 공부
+|2023.09.15
+|참고자료 Unit03 공부 및 실습 완료
+|2023.09.16
+|참고자료 Unit04 공부 및 실습 완료
+|2023.09.17
+|참고자료 Unit04 공부 및 실습 완료
+|2023.09.18
+|참고자료 Unit04 공부 및 실습 완료
+|2023.09.19
+|참고자료 Unit05 공부 및 실습 완료
+|2023.09.20
+|참고자료 Unit06 공부
+|2023.09.21
+|참고자료 Unit06 공부 및 실습 완료
+|2023.09.22
+|참고자료 Unit07 공부 및 실습 완료
+|2023.09.23
+|참고자료 Unit04 ~ 07 복습
+|2023.09.24
+|MaxGcd 공부
 |===
