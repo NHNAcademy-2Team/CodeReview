@@ -1,10 +1,10 @@
 package starcraft;
 
-public class Goliath extends Unit{
+public class Goliath extends Unit {
     public Goliath() {
         this.attackPower = 5;
         this.defensivePower = 15;
-        this.brood = Brood.Terran;
+        this.brood = Brood.TERRAN;
         this.name = "Goliath";
     }
 

@@ -1,6 +1,6 @@
 package starcraft;
 
-public abstract class Unit implements Flyable, Weaponable{
+public abstract class Unit implements Flyable, Weaponable {
     protected int attackPower;
     protected int defensivePower;
     protected Brood brood;
@@ -26,22 +26,28 @@ public abstract class Unit implements Flyable, Weaponable{
         return this.attackPower;
     }
 
-    public void attack(Unit targetunit){
-        boolean flyOrWeaponUnit = this.isFly() || this.isWeapon();
-        boolean notFlyUnitAndNotFlyTargetUnit = !this.isFly() && !targetunit.isFly();
-        boolean isAttack = flyOrWeaponUnit || notFlyUnitAndNotFlyTargetUnit;
-        if(isAttack) {
-            targetunit.setDefensivePower(targetunit.getDefensivePower() - this.getAttackPower());
+    public void attack(Unit targetUnit) {
+        if (isFlyOrIsWeapon() || isNotFlyUnitAndNotFlyTargetUnit(targetUnit)) {
+            targetUnit.setDefensivePower(targetUnit.getDefensivePower() - this.getAttackPower());
         }
+        System.out.println("공격할 수 없습니다.");
     }
 
     @Override
-    public boolean isFly(){
+    public boolean isFly() {
         return false;
     }
 
     @Override
-    public boolean isWeapon(){
+    public boolean isWeapon() {
         return false;
+    }
+
+    private boolean isFlyOrIsWeapon() {
+        return this.isFly() || this.isWeapon();
+    }
+
+    private boolean isNotFlyUnitAndNotFlyTargetUnit(Unit targetUnit) {
+        return !this.isFly() && !targetUnit.isFly();
     }
 }

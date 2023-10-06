@@ -4,7 +4,7 @@ public class Dragoon extends Unit {
     public Dragoon() {
         this.attackPower = 3;
         this.defensivePower = 15;
-        this.brood = Brood.Protos;
+        this.brood = Brood.PROTOS;
         this.name = "Dragoon";
     }
 

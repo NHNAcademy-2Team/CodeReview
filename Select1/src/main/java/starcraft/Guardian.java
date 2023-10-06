@@ -4,7 +4,7 @@ public class Guardian extends Unit {
     public Guardian() {
         this.attackPower = 3;
         this.defensivePower = 6;
-        this.brood = Brood.Zerg;
+        this.brood = Brood.ZERG;
         this.name = "Guardian";
     }
 

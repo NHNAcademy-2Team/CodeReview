@@ -4,7 +4,7 @@ public class Valkyrie extends Unit {
     public Valkyrie() {
         this.attackPower = 4;
         this.defensivePower = 12;
-        this.brood = Brood.Terran;
+        this.brood = Brood.TERRAN;
         this.name = "Valkyrie";
     }
 

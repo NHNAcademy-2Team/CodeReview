@@ -1,10 +1,10 @@
 package starcraft;
 
-public class Wraith extends Unit{
+public class Wraith extends Unit {
     public Wraith() {
         this.attackPower = 3;
         this.defensivePower = 10;
-        this.brood = Brood.Terran;
+        this.brood = Brood.TERRAN;
         this.name = "Wraith";
     }
 
