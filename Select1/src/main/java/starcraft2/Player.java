@@ -27,14 +27,14 @@ public class Player {
                 Protos protos = new Protos();
                 user.add("Protos");
                 for (int i = 0; i < 4; i++) {
-                    user.add(protos.getProtoses()[size]);
+//                    user.add(protos.getProtoses()[size]);
                 }
                 break;
             case 3:
                 Zerg zerg = new Zerg();
                 user.add("Zerg");
                 for (int i = 0; i < 8; i++) {
-                    user.add(zerg.getZergs()[size]);
+//                    user.add(zerg.getZergs()[size]);
                 }
                 break;
             default:
