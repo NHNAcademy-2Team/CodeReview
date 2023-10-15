@@ -1,0 +1,6 @@
+hi
+hello
+%world
+word
+/words
+;;
