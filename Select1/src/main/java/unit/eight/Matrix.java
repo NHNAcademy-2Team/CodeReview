@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import unit.nine.ExceptionWrongMatrixDimension;
+import unit.nine.ExceptionWrongMatrixValue;
 
 public class Matrix {
     private int n;
@@ -45,7 +47,7 @@ public class Matrix {
         }
     }
 
-    public static Matrix read(String filename) throws IOException {
+    public static Matrix read(String filename) throws IOException, ExceptionWrongMatrixDimension {
         Matrix newMatrix = null;
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();
@@ -61,12 +63,15 @@ public class Matrix {
                 }
             }
         }
+        if(newMatrix == null){
+            throw new ExceptionWrongMatrixDimension("행렬이 될 수 없는 파일입니다.");
+        }
         return newMatrix;
     }
 
-    public Matrix sum(Matrix m) {
+    public Matrix sum(Matrix m) throws ExceptionWrongMatrixValue {
         if (this.m != m.getM() || this.n != m.getN()) {
-            return null;
+            throw new ExceptionWrongMatrixValue("형식이 맞지 앖습니다.");
         }
         Matrix newMatrix = new Matrix(m.getM(), m.getN());
         for (int i = 0; i < m.getM(); i++) {
@@ -77,9 +82,9 @@ public class Matrix {
         return newMatrix;
     }
 
-    public Matrix product(Matrix m) {
+    public Matrix product(Matrix m) throws ExceptionWrongMatrixValue {
         if (this.m != m.getM() || this.n != m.getN()) {
-            return null;
+            throw new ExceptionWrongMatrixValue("형식이 맞지 앖습니다.");
         }
         Matrix newMatrix = new Matrix(m.getM(), m.getN());
         for (int i = 0; i < m.getM(); i++) {
