@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 // 보류
 
@@ -20,11 +21,10 @@ public class Exercise7 {
             file = new FileReader(filename);
             br = new BufferedReader(file);
 
-            String line()
-        } catch() {
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+//            String line(
+        } catch(IOException e) {
         }
+
+        return true;
     }
 }
