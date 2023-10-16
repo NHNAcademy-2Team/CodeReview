@@ -6,9 +6,9 @@ import java.io.InputStream;
 
 public class Exercise6 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        try (InputStream is = new FileInputStream("/Users/taehee/과정1/nine/exercise6.txt")) {
+        try (InputStream is = new FileInputStream("/Users/taehee/과정1/resources/nine/exercise6.txt")) {
 
             int data = -1;
             int count = 0;
