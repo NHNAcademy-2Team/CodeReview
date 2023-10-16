@@ -18,7 +18,7 @@ public class Exercise6 {
 
     public static void main(String[] args) throws IOException {
 
-        OutputStream os = new FileOutputStream("/Users/nhn/Desktop/Git/CodeReview/Select1/src/main/java/unit/eight/ioFile.txt");
+        OutputStream os = new FileOutputStream("ioFile.txt");
 
         IOFile ioFile = new IOFile("test.txt");
         ioFile.write(os);
