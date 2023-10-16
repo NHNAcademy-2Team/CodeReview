@@ -35,4 +35,16 @@ Bachelor in Production Engineering
 |StarCraft Game
 |https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/starcraft/src
 
+|10.16
+|Unit 8
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/unit/eight
+
+|10.16
+|Unit 9
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/unit/nine
+
+|10.16
+|Unit 10
+|https://github.com/NHNAcademy-2Team/CodeReview/tree/taehee/Select1/src/main/java/unit/ten
+
 |===
