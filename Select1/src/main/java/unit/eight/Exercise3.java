@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Exercise3 {
 
-    static void printFile(File file) throws IOException {
+    static void printFile(File file) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String sentence = "";
 
@@ -24,8 +24,8 @@ public class Exercise3 {
 
     }
 
-    public static void main(String[] args) throws IOException {
-        File file = new File("/Users/taehee/과정1/eight/exercise3.txt");
+    public static void main(String[] args) {
+        File file = new File("/Users/taehee/과정1/resources/eight/exercise3.txt");
         printFile(file);
     }
 }

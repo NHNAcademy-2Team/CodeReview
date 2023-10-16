@@ -23,10 +23,10 @@ public class Exercise1 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         try (InputStream is = System.in;
-                OutputStream os = new FileOutputStream("/Users/taehee/과정1/eight/exercise1.txt", true);) {
+                OutputStream os = new FileOutputStream("/Users/taehee/과정1/resources/eight/exercise1.txt", true);) {
             saveArray(os, loadArray(is, 5)); // 5글자 입력
         } catch (IOException e) {
             System.out.println(e.getMessage());

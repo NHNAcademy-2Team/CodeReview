@@ -21,7 +21,7 @@ public class IOFile {
         this.filename = filename;
     }
 
-    public int countLines() throws IOException {
+    public int countLines() {
         int count = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(this.filename))) {
@@ -52,7 +52,7 @@ public class IOFile {
         }
     }
 
-    public void print() throws IOException {
+    public void print() {
         try (BufferedReader br = new BufferedReader(new FileReader(this.filename))) {
             while (br.ready()) {
                 System.out.println(br.readLine());
@@ -62,7 +62,7 @@ public class IOFile {
         }
     }
 
-    public void copy(String filename) throws IOException {
+    public void copy(String filename) {
         String data;
 
         try (BufferedReader br = new BufferedReader(new FileReader(this.filename));

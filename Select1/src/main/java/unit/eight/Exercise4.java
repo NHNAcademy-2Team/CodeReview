@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Exercise4 {
 
-    public static void writeMultiTable(String filename, int size) throws IOException {
+    public static void writeMultiTable(String filename, int size) {
 
         try (FileWriter fw = new FileWriter(filename)) {
             for (int i = 1; i <= size; i++) {
@@ -19,8 +19,8 @@ public class Exercise4 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        String filename = "/Users/taehee/과정1/eight/exercise4.txt";
+    public static void main(String[] args) {
+        String filename = "/Users/taehee/과정1/resources/eight/exercise4.txt";
         writeMultiTable(filename, 3);
     }
 }

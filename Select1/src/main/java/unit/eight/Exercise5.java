@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Exercise5 {
 
-    public static String highScoreStudent(String filename, int student) throws IOException {
+    public static String highScoreStudent(String filename, int student) {
         String[] highStudent = new String[2];
         highStudent[1] = "0";
 
@@ -31,8 +31,8 @@ public class Exercise5 {
         return highStudent[0];
     }
 
-    public static void main(String[] args) throws IOException {
-        String filename = "/Users/taehee/과정1/eight/exercise5.txt";
+    public static void main(String[] args) {
+        String filename = "/Users/taehee/과정1/resources/eight/exercise5.txt";
         System.out.println("시험을 가장 잘 본 학생 : " + highScoreStudent(filename, 3));
     }
 }
