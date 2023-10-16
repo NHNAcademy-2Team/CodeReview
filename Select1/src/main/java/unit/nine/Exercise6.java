@@ -1,8 +1,12 @@
 package unit.nine;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni09/node26.html
@@ -16,7 +20,8 @@ public class Exercise6 {
 
     public static void test() throws IOException {
         try (BufferedReader br = new BufferedReader(
-                new FileReader("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/test.txt"))) {
+                new FileReader(
+                        Objects.requireNonNull(Exercise6.class.getClassLoader().getResource("test.txt")).getFile()))) {
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.length() > 80) {

@@ -1,8 +1,10 @@
 package unit.eight;
 
 import java.io.IOException;
+import java.util.Objects;
 import unit.nine.ExceptionWrongMatrixDimension;
 import unit.nine.ExceptionWrongMatrixValue;
+import unit.nine.Exercise6;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
@@ -31,7 +33,8 @@ public class Exercise9 {
     private static void matrixTest() throws IOException, ExceptionWrongMatrixValue, ExceptionWrongMatrixDimension {
         Matrix firstMatrix = new Matrix(3, 3);
         Matrix secondMatrix =
-                Matrix.read("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/matrix1.txt");
+                Matrix.read(
+                        Objects.requireNonNull(Exercise6.class.getClassLoader().getResource("matrix1.txt")).getFile());
 
         Matrix thirdMatrix = firstMatrix.sum(secondMatrix);
         Matrix fourthMatrix = firstMatrix.product(secondMatrix);

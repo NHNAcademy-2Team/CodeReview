@@ -3,7 +3,11 @@ package unit.eight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.stream.Stream;
+import unit.nine.Exercise6;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
@@ -12,7 +16,7 @@ import java.util.stream.Stream;
 public class Exercise3 {
     public static void main(String[] args) {
         try {
-            printVideo("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/hi.txt");
+            printVideo(Objects.requireNonNull(Exercise3.class.getClassLoader().getResource("hi.txt")).getFile());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

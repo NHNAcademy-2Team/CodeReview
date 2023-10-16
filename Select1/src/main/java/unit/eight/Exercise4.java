@@ -3,6 +3,10 @@ package unit.eight;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
+import unit.nine.Exercise6;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
@@ -13,7 +17,7 @@ import java.io.PrintWriter;
  */
 public class Exercise4 {
     public static void main(String[] args) throws IOException {
-        multiplyWriteFile("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/multiply.txt", 3);
+        multiplyWriteFile(Objects.requireNonNull(Exercise6.class.getClassLoader().getResource("multiply.txt")).getFile(), 3);
     }
 
     public static void multiplyWriteFile(String fileName, int n) throws IOException {

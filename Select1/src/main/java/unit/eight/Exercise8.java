@@ -3,7 +3,10 @@ package unit.eight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
+import unit.nine.Exercise6;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
@@ -32,15 +35,15 @@ public class Exercise8 {
         apart.removeApartment(4);
         apart.reorganizeApartments();
 
-        apart.saveToFile("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/apart.txt");
+        apart.saveToFile(Objects.requireNonNull(Exercise8.class.getClassLoader().getResource("apart.txt")).getFile());
 
         try (BufferedReader br = new BufferedReader(
-                new FileReader("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/apart2.txt"))) {
+                new FileReader(Objects.requireNonNull(Exercise8.class.getClassLoader().getResource("apart2.txt")).getFile()))) {
             Apartment apartment2 = Apartment.readFromFile(br);
             System.out.println(Objects.requireNonNull(apartment2).getSquareMetersSize());
             System.out.println(apartment2.getAddress());
         }
         System.out.println();
-        Apartment.printApartment("/Users/suyeon/Documents/nhn/git/CodeReview/Select1/src/main/resources/apart.txt");
+        Apartment.printApartment(Objects.requireNonNull(Exercise8.class.getClassLoader().getResource("apart.txt")).getFile());
     }
 }

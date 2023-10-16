@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.nio.file.DirectoryNotEmptyException;
@@ -39,10 +40,9 @@ public class Exercise6 {
     }
 
     public void write(OutputStream os) throws IOException {
-        try (PrintWriter pw = new PrintWriter(os);
-             BufferedReader br = new BufferedReader(new FileReader(this.fileName))) {
+        try (PrintWriter pw = new PrintWriter(os); BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             String line;
-            while ((line = br.readLine()) != null) {
+            while(!((line = reader.readLine()).isEmpty())){
                 pw.println(line);
             }
         }
