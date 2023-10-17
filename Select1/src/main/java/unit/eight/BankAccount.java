@@ -1,16 +1,21 @@
 package unit.eight;
 
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 public class BankAccount {
     private String name;
     private String surname;
     private BigDecimal balance; // Euro
+    private final String filename;
 
     public BankAccount(String name, String surname) {
         this.name = name;
         this.surname = surname;
         this.balance = BigDecimal.valueOf(0);
+        this.filename = "src/main/java/unit/resource/BankAccountData";
     }
     public void deposit(int money) {
         this.balance = this.balance.add(BigDecimal.valueOf(money));
@@ -20,9 +25,23 @@ public class BankAccount {
         this.balance = this.balance.subtract(BigDecimal.valueOf(money));
     }
 
+    public void writeData() {
+        try {
+            FileWriter out = new FileWriter(this.filename, true);
+
+            out.write(this.toString());
+            out.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("계좌정보를 백업하는 과정에서 문제가 발생하였습니다.\n" +
+                    "파일이름 혹은 파일경로를 확인해주세요");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public String toString() {
-        return this.name +" " + this.surname +
-                ", " + this.balance + "(Euro)";
+        return "[" + this.name + " " + this.surname +
+                "] Euro: " + this.balance + "\n";
     }
 
     public boolean sameOwner(BankAccount account) {
@@ -57,5 +76,10 @@ public class BankAccount {
         ba1.transferTo(ba2, 250);
         System.out.println("After the transfer...");
         System.out.println(ba1);
-        System.out.println(ba2);    }
+        System.out.println(ba2);
+
+        ba1.writeData();
+        ba2.writeData();
+        ba3.writeData();
+    }
 }

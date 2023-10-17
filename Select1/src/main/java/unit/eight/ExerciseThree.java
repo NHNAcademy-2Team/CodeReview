@@ -26,7 +26,7 @@ public class ExerciseThree {
 
     public static void main(String[] args) {
         try {
-            printFile("src/main/java/unit/eight/test");
+            printFile("src/main/java/unit/eight/resource/test");
         } catch(IOException e) {
             System.out.println("파일이 존재하지 않습니다. 파일이름과 파일위치를 확인해주세요");
         }

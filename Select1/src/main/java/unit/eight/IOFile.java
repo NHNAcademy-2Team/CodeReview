@@ -91,14 +91,14 @@ public class IOFile {
     }
 
     public static void main(String[] args) throws IOException {
-        IOFile file = new IOFile("src/main/java/unit/eight/examInfo");
-        IOFile file2 = new IOFile("src/main/java/unit/eight/hello2");
+        IOFile file = new IOFile("src/main/java/unit/eight/resource/examInfo");
+        IOFile file2 = new IOFile("src/main/java/unit/eight/resource/hello2");
 //        FileOutputStream os = new FileOutputStream("src/main/java/unit/eight/hello2");
 //        file.write(os);
 
 
         file.print();
-        file.write(new FileOutputStream("src/main/java/unit/eight/hello2", true));
+        file.write(new FileOutputStream("src/main/java/unit/eight/resource/hello2", true));
 
         file2.print();
 

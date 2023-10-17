@@ -21,7 +21,7 @@ public class ExerciseFour {
 
     public static void main(String[] args) {
         try {
-            multiTable("src/main/java/unit/eight/test2.txt", 5);
+            multiTable("src/main/java/unit/eight/resource/test2.txt", 5);
         } catch(IOException e) {
             throw new RuntimeException();
         }

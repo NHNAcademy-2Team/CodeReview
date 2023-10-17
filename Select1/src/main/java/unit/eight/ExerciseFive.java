@@ -48,7 +48,7 @@ public class ExerciseFive {
 
     public static void main(String[] args) {
         try {
-            System.out.println(getAverage("src/main/java/unit/eight/examInfo"));
+            System.out.println(getAverage("src/main/java/unit/eight/resource/examInfo"));
         }catch (IOException e) {
             System.out.println("파일을 찾을 수 없습니다. 파일 이름을 확인해주세요");
         }
