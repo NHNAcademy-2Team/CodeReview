@@ -15,6 +15,16 @@ public class Exercise9 {
             System.out.println(Arrays.toString(result));
         }
 
+        Matrix x = new Matrix(3, 5);
+
+        for (int i=0; i<3; i++){
+            for (int j = 0; j < 5; j++) {
+                x.setMatrix(i, j, i+j);
+            }
+        }
+
+        x.product(matrix);
+
     }
 
 

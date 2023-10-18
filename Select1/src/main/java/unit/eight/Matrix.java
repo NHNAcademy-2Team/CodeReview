@@ -42,6 +42,7 @@ public class Matrix {
         Matrix matrix = null;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file));) {
+
             matrix = sizeMatrix(br);
             String line;
 
@@ -56,6 +57,8 @@ public class Matrix {
 
         } catch (IOException e) {
             System.out.println("잘못된 입력입니다.");
+//        } catch (ExceptionWroneMatrixValues ewmv) {
+
         }
 
         return matrix;
@@ -90,12 +93,43 @@ public class Matrix {
         return this.size;
     }
 
-    public Matrix sum(Matrix m) {
+    public Matrix sum(Matrix x) {
+        Matrix fresh;
+        int row = x.getMatrix().length;
+        int column = x.getMatrix()[0].length;
+        if (n == row && m == column) {
+            fresh = new Matrix(n, m);
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    fresh.setMatrix(i, j, this.getMatrix()[i][j] + x.getMatrix()[i][j]);
+                }
+            }
 
+            return fresh;
+        }
+
+        return null;
     }
 
-    public Matrix product(Matrix m) {
+    public Matrix product(Matrix x) {
+        Matrix fresh;
+        int row = x.getMatrix().length;
+        int column = x.getMatrix()[0].length;
 
+        if (m == row) {
+            fresh = new Matrix(n, column);
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < column; j++) {
+                    for (int k = 0; k < this.getMatrix()[0].length; k++) {
+                        fresh.setMatrix(i, j, this.getMatrix()[i][k] * x.getMatrix()[k][j]);
+                    }
+                }
+            }
+
+            return fresh;
+        }
+
+        return null;
     }
 
 }
