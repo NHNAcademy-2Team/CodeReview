@@ -11,9 +11,11 @@ public class Exercise6 {
     public static void main(String[] args) {
         System.out.println(longestSequence("xxyxxxhiizyy", "y"));
     }
-    public static int longestSequence(String s, String c){
-        if(s.contains(c))
+
+    public static int longestSequence(String s, String c) {
+        if (s.contains(c)) {
             return longestSequence(s, c + c.substring(0, 1));
+        }
         return c.length() - 1;
     }
 }
