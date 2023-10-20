@@ -14,7 +14,7 @@ public class Exercise6 {
 
     public static int longestSequence(String s, String c) {
         if (s.contains(c)) {
-            return longestSequence(s, c + c.substring(0, 1));
+            return longestSequence(s, c + c.charAt(0));
         }
         return c.length() - 1;
     }

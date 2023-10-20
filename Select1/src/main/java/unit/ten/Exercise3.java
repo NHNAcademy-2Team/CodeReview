@@ -2,7 +2,7 @@ package unit.ten;
 
 public class Exercise3 {
     public static void main(String[] args) {
-        System.out.println(ackermann(4, 3));
+        System.out.println(ackermann(2, 3));
     }
 
     public static int ackermann(int m, int n) {
