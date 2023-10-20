@@ -1,5 +1,6 @@
 package unit.eight;
 
+/* 여러분! 몰라서 못했습니다! 그냥 지나가시면 되겠습니다!*/
 public class Apartment {
     private String owner;
     private String[] apartments; // 아파트 주소
