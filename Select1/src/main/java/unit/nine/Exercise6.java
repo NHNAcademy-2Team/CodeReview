@@ -22,7 +22,7 @@ public class Exercise6 {
                 line = br.readLine();
             }
         } catch(IOException e ) {
-
+            System.out.println("파일 이름 혹은 파일 경로를 확인해주세요");
         } catch (ExceptionLineTooLong e) {
             throw new RuntimeException(e);
         }
