@@ -1,11 +1,5 @@
 package unit.seven;
 
-/**
- * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
- * Exercise 07.3
- * Write a method static double[][] transposeMatrix(double[][] M) that returns a new matrix that is the transpose of the matrix M.
- * We recall that the transpose of a matrix M is obtained by exchanging the rows with the columns, which corresponds to exchange M[i][j] with M[j][i], for each pair of valid indexes i and j.
- */
 public class Exercise3 {
     public static double[][] transposeMatrix(double[][] M) {
         double temp;

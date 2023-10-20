@@ -1,11 +1,5 @@
 package unit.seven;
 
-/**
- * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
- * Exercise 07.11
- * A matrix M is said to be diagonal if all elements M[i][j] with i different from j (i.e., that are not on the main diagonal) are equal to 0.
- * Write a predicate static boolean diagonal(int[][] M) that returns true if the matrix M is diagonal, and false otherwise.
- */
 public class Exercise11 {
     static boolean diagonal(int[][] M) {
         if (M.length != M[0].length) {

@@ -1,11 +1,5 @@
 package unit.seven;
 
-/**
- * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
- * Exercise 07.4
- * Write a method, static int[] matrixSumColumns(int[][]), that takes as parameter a matrix and returns an array with one element for each column of the matrix;
- * the element of index i of the array must be equal to the sum of the elements of column i of the matrix.
- */
 public class Exercise4 {
     public static int[] matrixSumColumns(int[][] matrix) {
         int[] matrixSumColumns = new int[matrix[0].length];

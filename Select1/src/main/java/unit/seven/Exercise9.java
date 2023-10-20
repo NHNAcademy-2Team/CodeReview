@@ -1,12 +1,5 @@
 package unit.seven;
 
-/* Exercise 7.9
- * A matrix M is said to be symmetric if it is square (i.e., has the same number of rows and columns)
- * and M[i][j] is equal to M[j][i], for each pair of valid indexes i and j.
- *
- * Write a predicate static boolean symmetric(int[][] M)
- * that returns true if the matrix M is symmetric, and false otherwise.
- */
 public class Exercise9 {
     public static boolean symmetric(int[][] M) {
         for (int i = 0; i < M.length; i++) {

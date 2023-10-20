@@ -1,11 +1,5 @@
 package unit.seven;
 
-/**
- * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
- * Exercise 07.2
- * Write a method static int[] intersection(int[] A, int[] B) that returns a new array containing the intersection of two arrays A and B, i.e., exactly those elements that are present both in A and in B (independently of their position).
- * We may assume that A and B do not contain duplicates, i.e., elements that appear more than once in the array.
- */
 public class Exercise2 {
     public static boolean searchArray(int[] array, int value) {
         for (int i = 0; i < array.length; i++) {
