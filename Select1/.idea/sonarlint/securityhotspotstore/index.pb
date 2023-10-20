@@ -30,8 +30,6 @@ X
 (src/main/java/unit/seven/Exercise10.java,4/c/4c0d88d9f5b4f1bbd23c2ed88792eb7287f10ccc
 W
 'src/main/java/unit/seven/Exercise4.java,6/c/6cdee9b3b47109df80fc279fcc2f994e08ec56cd
-L
-src/main/java/unit/Main.java,5/3/53ad14535f73516b842d9b5a925e2122e578807a
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 S
