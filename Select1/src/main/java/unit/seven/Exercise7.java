@@ -1,41 +1,53 @@
 package unit.seven;
 
-/**
- * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
- * Exercise 07.7
- * Write a method static int[] removeDuplicates(int[] A) that returns a new array obtained from A by removing all duplicates.
- * The duplicates should be removed by keeping only the first occurrence of each distinct element, and shifting remaining elements upwards when a duplicate is removed.
+import java.util.Arrays;
+
+/* Exercise 7.7
+ * Write a method static int[] removeDuplicates(int[] A)
+ * that returns a new array obtained from A by removing all duplicates.
+ *
+ * The duplicates should be removed by keeping only the first occurrence of each distinct element,
+ * and shifting remaining elements upwards when a duplicate is removed.
  */
 public class Exercise7 {
-    public static boolean searchArray(int[] array, int value, int index) {
-        for (int i = 0; i < array.length; i++) {
-            if (i != index && array[i] == value) {
-                return true;
+
+    public static int numberOfDupliates(int[] A) {
+        Arrays.sort(A);
+        int duplicate = 0;
+        for (int i = 0; i < A.length - 1; i++) {
+            if (A[i] == A[i + 1]) {
+                duplicate++;
             }
         }
-        return false;
+
+        return duplicate;
+    }
+
+    public static int numberOfDistinctValues(int[] A) {
+        return A.length - numberOfDupliates(A);
     }
 
     public static int[] removeDuplicates(int[] A) {
-        int[] result = new int[Exercise6.numberOfDistinctValues(A)];
-        int index = 0;
-        for (int i = 0; i < A.length; i++) {
-            if (!searchArray(A, A[i], i)) {
-                result[index++] = A[i];
+        Arrays.sort(A);
+        int[] result = new int[numberOfDistinctValues(A)-1];
+        for (int i = 0, j = 0; i < A.length - 1; i++) {
+            if (A[i] != A[i + 1]) {
+                result[j++] = A[i];
+                if (i == A.length - 2) {
+                    result[j] = A[i + 1];
+                }
             }
         }
+
         return result;
     }
 
-    public static void removeDeuplicatesTest() {
-        int[] test = {1, 2, 3, 1, 2, 4, 9, 2};
-        int[] answer = removeDuplicates(test);
-        for (int a : answer) {
-            System.out.print(a + " ");
-        }
-    }
-
     public static void main(String[] args) {
-        removeDeuplicatesTest();
+        int[] A = {1, 2, 2, 3, 3, 3, 5, 5, 5};
+        int[] result = removeDuplicates(A);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + " ");
+        }
     }
 }
