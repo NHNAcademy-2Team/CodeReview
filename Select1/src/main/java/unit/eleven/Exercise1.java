@@ -20,6 +20,6 @@ public class Exercise1 {
 
     }
 
-    /* old의 모든 발생을 ne로 수정하여 lis 반환 */
+
 
 }
