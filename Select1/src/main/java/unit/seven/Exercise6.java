@@ -1,4 +1,4 @@
-package src.main.java.unit.seven;
+package unit.seven;
 
 public class Exercise6 {
 
