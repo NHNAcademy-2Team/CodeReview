@@ -1,66 +1,94 @@
 package unit.seven;
 
-public class Apartment {
-    private int size;
-    private String address;
-    private String[] name = new String[10];
 
-    public Apartment(int size, String address) {
-        this.size = size;
+public class Apartment {
+    private int squareMetersSize;
+    private String address;
+    private String[] apartments;
+
+    public Apartment(int squareMetersSize, String address) {
+        this.squareMetersSize = squareMetersSize;
         this.address = address;
+        this.apartments = new String[10];
     }
-    public int getSize() {
-        return size;
+
+    public int getSquareMetersSize() {
+        return this.squareMetersSize;
     }
+
     public String getAddress() {
-        return address;
+        return this.address;
     }
-    public int numPeople() {
-        int num = 0;
-        for (int i = 0; i < name.length; i++) {
-            if (name[i] != null) {
-                num++;
+
+    public int countApartments() {
+        int cnt = 0;
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] != null) {
+                cnt++;
             }
         }
-        return num;
+        return cnt;
     }
-    public void addPeople(String name) {
-        for (int i = 0; i < this.name.length; i++) {
-            if (this.name[i] == null) {
-                this.name[i] = name;
+
+    public void setApartment(String personName) {
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] == null) {
+                apartments[i] = personName;
                 break;
             }
         }
-        System.out.println("빈자리가 없습니다.");
     }
-    public String getName(int i) {
-        if (i >= name.length) {
+
+    public String getApartment(int slot) {
+        if (slot < 0) {
+            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
+        }
+        if (slot >= 10) {
             return null;
         }
-        return this.name[i];
+        return apartments[slot];
     }
-    public void daiPeople(int i) {
-        if (i >= name.length) {
-            return;
+
+    public void removeApartment(int slot) {
+        if (slot < 0) {
+            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
         }
-        if (name[i] == null) {
-            return;
-        } else {
-            name[i] = null;
-            for (int j = i ;j < name.length - 1; j++) {
-                name[i] = name[i+1];
+        if (slot >= 10) {
+            throw new IllegalArgumentException("입력 범위를 넘겼습니다.");
+        }
+        apartments[slot] = null;
+    }
+
+    public void reorganizeApartments() {
+        int empty = -1;
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] == null && empty == -1) {
+                empty = i;
+            }
+            if (apartments[i] != null && empty != -1) {
+                apartments[empty] = apartments[i];
+                apartments[i] = null;
+                empty++;
             }
         }
     }
+
+    @Override
     public String toString() {
-        String people = name[0];
-        for (int i = 1; i < name.length; i++) {
-            if (name[i] == null) {
-                break;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Size: ")
+                .append(this.squareMetersSize)
+                .append(", ")
+                .append("Address: ")
+                .append(this.address);
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] != null) {
+                sb.append("\nApartment ")
+                        .append(i)
+                        .append(": ")
+                        .append(apartments[i]);
             }
-            people = people + ", " + name[i];
         }
-        return "주소 : "+this.address+" 집 크기 : "+this.size+" 입주자 : "+people;
+        return sb.toString();
     }
 }
-
