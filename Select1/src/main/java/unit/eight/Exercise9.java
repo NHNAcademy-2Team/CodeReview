@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Objects;
 import unit.nine.ExceptionWrongMatrixDimension;
 import unit.nine.ExceptionWrongMatrixValue;
-import unit.nine.Exercise6;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
@@ -34,7 +33,7 @@ public class Exercise9 {
         Matrix firstMatrix = new Matrix(3, 3);
         Matrix secondMatrix =
                 Matrix.read(
-                        Objects.requireNonNull(Exercise6.class.getClassLoader().getResource("matrix1.txt")).getFile());
+                        Objects.requireNonNull(Exercise9.class.getClassLoader().getResource("matrix1.txt")).getFile());
 
         Matrix thirdMatrix = firstMatrix.sum(secondMatrix);
         Matrix fourthMatrix = firstMatrix.product(secondMatrix);
