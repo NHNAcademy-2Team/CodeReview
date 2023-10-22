@@ -1,7 +1,7 @@
 package unit.nine;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni09/node26.html
@@ -23,10 +23,9 @@ public class Exercise7 {
 
     public static boolean fileExists(String fileName) {
         boolean isFileExist;
-        try {
-            FileInputStream file = new FileInputStream(fileName);
+        try (FileInputStream file = new FileInputStream(fileName)) {
             isFileExist = true;
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             isFileExist = false;
         }
         return isFileExist;
