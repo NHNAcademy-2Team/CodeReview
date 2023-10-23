@@ -8,8 +8,12 @@ public class Exercise1 {
     public static String[] loadArray(InputStream is, int n) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         String[] result = new String[n];
-        for (int i = 0; i < n; i++) {
-            result[i] = reader.readLine();
+        try {
+            for (int i = 0; i < n; i++) {
+                result[i] = reader.readLine();
+            }
+        } finally {
+            is.close();
         }
         return result;
     }
@@ -17,11 +21,15 @@ public class Exercise1 {
     /* os가 지정한 출력 채널에 문자열 sa의 배열 사용*/
     public static void saveArray(OutputStream os, String[] sa) throws IOException {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os));
-        for (String s : sa) {
-            writer.write(s);
-            writer.newLine();
+        try {
+            for (String s : sa) {
+                writer.write(s);
+                writer.newLine();
+            }
+            writer.flush();
+        } finally {
+            os.close();
         }
-        writer.flush();
     }
 
     public static void main(String[] args) throws IOException {

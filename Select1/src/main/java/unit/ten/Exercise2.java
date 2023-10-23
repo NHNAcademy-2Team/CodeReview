@@ -1,9 +1,17 @@
 package unit.ten;
 
+import java.io.IOException;
+
 public class Exercise2 {
     static int count = 0;
     public static int fibonacci(int n) {
         count++;
+        try {
+            if( n < 0)
+                return n;
+        } catch (IllegalArgumentException e) {
+            System.out.println("음수입니다.");
+        }
         if(n <= 1){
             return n;
         }
