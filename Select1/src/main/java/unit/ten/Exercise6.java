@@ -1,22 +1,22 @@
 package unit.ten;
 
 public class Exercise6 {
-    public static int findLongSequence(String s, char c){
+    public static int findLongSequence(String s, char letter){
         if(s.length()==0){
             return 0;
         }
 
-        if(s.charAt(0) == c){
+        if(s.charAt(0) == letter){
             int count = 1;
             int i = 1;
             while(i < s.length() && s.charAt(0)=='c'){
                 count++;
                 i++;
             }
-            int nextSequence = findLongSequence(s.substring(i), c);
+            int nextSequence = findLongSequence(s.substring(i), letter);
             return Math.max(count, nextSequence);
         } else {
-            return findLongSequence(s.substring(1),c);
+            return findLongSequence(s.substring(1),letter);
         }
     }
 

@@ -16,11 +16,9 @@ public class Exercise5 {
                 String name = tokens[0];
                 int sum = 0;
                 int numOfMarks = tokens.length -1;
-                int[] marks = new int[numOfMarks];
 
                 for (int i = 1; i < tokens.length; i++) {
-                    marks[i -1] = Integer.parseInt(tokens[i]);
-                    sum += marks[i - 1];
+                    sum  += Integer.parseInt(tokens[i]);
                 }
 
                 double average = (double) sum/ numOfMarks;

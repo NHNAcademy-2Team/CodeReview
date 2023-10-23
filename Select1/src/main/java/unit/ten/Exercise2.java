@@ -1,7 +1,5 @@
 package unit.ten;
 
-import java.io.IOException;
-
 public class Exercise2 {
     static int count = 0;
     public static int fibonacci(int n) {
