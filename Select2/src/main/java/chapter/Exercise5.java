@@ -13,7 +13,7 @@ public class Exercise5 {
         int eggCartons = eggs/12;
         eggs %= 12;
 
-        System.out.println("총 " +eggBoxs+ "상자, " +eggCartons+ "판, " +eggs+ "개의 입니다.");
+        System.out.println("Your number of eggs is " + eggBoxs + " gross, " + eggCartons + "dozen, and " + eggs);
         sc.close();
     }
 }
