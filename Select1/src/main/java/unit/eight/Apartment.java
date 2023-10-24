@@ -1,126 +1,129 @@
 package unit.eight;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
+import java.io.PrintWriter;
 
 public class Apartment {
-    /**
-     * Exercise 12
-     * 
-     * Unit 8 Exercise 8
-     * saveToFile, readFromFile, printApartment method
-     */
-    private int size;
+    private int squareMetersSize;
     private String address;
-    private String[] people;
-    private int count = 0;
+    private String[] apartments;
 
-    public Apartment(int size, String address) {
-        this.size = size;
+    public Apartment(int squareMetersSize, String address) {
+        this.squareMetersSize = squareMetersSize;
         this.address = address;
-        this.people = new String[10];
+        this.apartments = new String[10];
     }
 
-    public String houseOwner(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
-        } else if (n >= 10) {
-            return null;
-        } else {
-            return people[n];
-        }
-    }
-
-    public void removePeople(int n) {
-        if (n < count) {
-            for (int i = n; i < count - 1; i++) {
-                people[i] = people[i + 1];
-            }
-            count--;
-            people[count] = null;
-        }
-    }
-
-    public void setPeople(String name) {
-        if (count < 10) {
-            people[count] = name;
-            count++;
-        } else {
-            System.out.println("아파트에 자리가 없습니다.");
-        }
-    }
-
-    public int getSize() {
-        return this.size;
+    public int getSquareMetersSize() {
+        return this.squareMetersSize;
     }
 
     public String getAddress() {
         return this.address;
     }
 
-    public String[] getPeople() {
-        return this.people;
+    public int countApartments() {
+        int cnt = 0;
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] != null) {
+                cnt++;
+            }
+        }
+        return cnt;
     }
 
-    public String toString() {
-        return "아파트 주소 : " + getAddress() + "\n아파트 크기 : " + getSize() + "\n아파트 입주자 : " + Arrays.toString(getPeople());
+    public void setApartment(String personName) {
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] == null) {
+                apartments[i] = personName;
+                break;
+            }
+        }
     }
 
-    // Unit 8 Exercise 8
+    public String getApartment(int slot) {
+        if (slot < 0) {
+            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
+        }
+        if (slot >= 10) {
+            return null;
+        }
+        return apartments[slot];
+    }
+
+    public void removeApartment(int slot) {
+        if (slot < 0) {
+            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
+        }
+        if (slot >= 10) {
+            throw new IllegalArgumentException("입력 범위를 넘겼습니다.");
+        }
+        apartments[slot] = null;
+    }
+
+    public void reorganizeApartments() {
+        int empty = -1;
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] == null && empty == -1) {
+                empty = i;
+            }
+            if (apartments[i] != null && empty != -1) {
+                apartments[empty] = apartments[i];
+                apartments[i] = null;
+                empty++;
+            }
+        }
+    }
+
     public void saveToFile(String fileName) throws IOException {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
-
-            bw.write("size " + this.size + "\n");
-            bw.write("address " + this.address + "\n");
-            for (int i = 0; i < count; i++) {
-                bw.write(i + "번지 " + this.people[i] + "\n");
+        FileWriter f = new FileWriter(fileName);
+        try (PrintWriter out = new PrintWriter(f)) {
+            out.println(this.squareMetersSize);
+            out.println(this.address);
+            for (int i = 0; i < this.apartments.length; i++) {
+                if(this.apartments[i] == null)
+                    break;
+                out.println(this.apartments[i]);
             }
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
         }
     }
 
-    // Unit 8 Exercise 8
     public static Apartment readFromFile(BufferedReader br) throws IOException {
-        Apartment apartment;
-        String data;
-
-        if (!br.ready())
-            throw new FileNotFoundException("파일이 존재하지 않습니다.");
-
-        int size = 0;
-        String address = "";
-
-        String[] sentence = (br.readLine()).split(" ");
-        size = Integer.parseInt(sentence[1]);
-
-        sentence = (br.readLine()).split(" ");
-        address = sentence[1];
-
-        apartment = new Apartment(size, address);
-
-        try {
-            while (br.ready()) {
-                data = br.readLine();
-                sentence = data.split(" ");
-
-                apartment.setPeople(sentence[1]);
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        String first = br.readLine();
+        String second = br.readLine();
+        if (first == null || second == null) {
+            return null;
         }
-
-        return apartment;
+        return new Apartment(Integer.parseInt(first), second);
     }
 
-    // Unit 8 Exercise 8
-    public static void printApartment(String filename) throws IOException {
-        System.out.println(readFromFile(new BufferedReader(new FileReader(filename))));
+    public static void printApartment(String fileName) throws IOException {
+        try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+            String line;
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+            }
+        }
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Size: ")
+                .append(this.squareMetersSize)
+                .append(", ")
+                .append("Address: ")
+                .append(this.address);
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] != null) {
+                sb.append("\nApartment ")
+                        .append(i)
+                        .append(": ")
+                        .append(apartments[i]);
+            }
+        }
+        return sb.toString();
     }
 }

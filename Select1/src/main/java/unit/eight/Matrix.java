@@ -1,120 +1,156 @@
 package unit.eight;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import unit.nine.ExceptionWrongMatrixValues;
+import java.io.PrintWriter;
 
 public class Matrix {
-
     private int[][] matrix;
+    private int row;
+    private int column;
 
     public Matrix(int n, int m) {
         matrix = new int[n][m];
+
+        this.row = n;
+        this.column = m;
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                matrix[i][j] = 0;
+            }
+        }
     }
 
-    public void setMatrix(int row, int column, int data) {
-        this.matrix[row][column] = data;
+    public Matrix(int[][] m) {
+        this.matrix = m;
+        this.row = m.length;
+        this.column = m[0].length;
     }
 
     public int[][] getMatrix() {
-        return matrix;
+        return this.matrix;
+    }
+
+    public void setMatrix(int matrix[][]) {
+        this.matrix = matrix;
+    }
+
+    public int getRow() {
+        return this.row;
+    }
+
+    public int getColumn() {
+        return this.column;
     }
 
     public void save(String filename) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
-            for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[0].length; j++) {
-                    bw.write(matrix[i][j] + " ");
+        try {
+            PrintWriter out = new PrintWriter(filename);
+
+            out.println(this.row + " " + this.column);
+            for(int i = 0; i < row; i++) {
+                for(int j = 0; j < this.column; j++) {
+                    out.print(matrix[i][j] + " ");
                 }
-                bw.write("\n");
+                out.println();
             }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+            out.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    private static Matrix sizeMatrix(String filename) {
-        int row = 1;
-        int column = 0;
+    /*
+    * 2 3
+    *
+    * 1 1 1
+    * 2 2 2
+    *
+    * */
+    public static Matrix read(String filename) throws IOException {
+        FileReader fr = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fr);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        String line = br.readLine();
 
-            String[] arrays = br.readLine().split(" ");
-            column = arrays.length;
+        String mInfo[] = line.split(" ");
+        Matrix matrix = new Matrix(Integer.parseInt(mInfo[0]), Integer.parseInt(mInfo[1]));
+        int m[][] = matrix.getMatrix();
 
-            while (br.readLine() != null) {
-                row++;
+        for(int i = 0; i < m.length; i++) {
+            line = br.readLine();
+            for(int j = 0; j < m[0].length; j++) {
+                m[i][j] = Integer.parseInt(line.split(" ")[j]);
             }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
         }
-        Matrix matrix = new Matrix(row, column);
+
+        matrix.setMatrix(m);
+
         return matrix;
+
     }
 
-    public static Matrix read(String filename) {
-        Matrix matrix = sizeMatrix(filename);
+    public Matrix sum(Matrix m) {
+        if(this.row != m.getRow() || this.column != m.getColumn()) {
+            return null;
+        }
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        Matrix result = new Matrix(this.row, this.column);
 
-            for (int i = 0; i < matrix.getMatrix().length; i++) {
-                String[] data = br.readLine().split(" ");
+        int temp[][] = m.getMatrix();
 
-                for (int j = 0; j < matrix.getMatrix()[0].length; j++) {
-                    matrix.setMatrix(i, j, Integer.parseInt(data[j]));
+        for(int i = 0; i < this.row; i++) {
+            for(int j = 0; j < this.column; j++) {
+                temp[i][j] += matrix[i][j];
+            }
+        }
+
+        result.setMatrix(temp);
+        return result;
+    }
+
+    public Matrix product(Matrix m) {
+        if(this.row != m.getColumn() || this.column != m.getRow()) {
+            return null;
+        }
+
+        Matrix result = new Matrix(this.row, m.getColumn());
+        int[][] mt = result.getMatrix();
+        for(int i = 0; i < this.row; i++) {
+            for(int j = 0; j < m.getColumn(); j++) {
+                for(int k = 0; k < this.column; k++) {
+                    mt[i][j] += matrix[i][k] * m.getMatrix()[k][j];
                 }
             }
-        } catch (ExceptionWrongMatrixValues e) {
-            System.out.println(e.getMessage());
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
         }
-        return matrix;
+        result.setMatrix(mt);
+        return result;
     }
 
-    private boolean samecheck(Matrix matrix) {
-        if (this.matrix.length == matrix.getMatrix().length && this.matrix[0].length == matrix.getMatrix()[0].length)
-            return true;
-        else {
-            return false;
-        }
-    }
+    public static void main(String[] args) throws IOException {
+        int[][] m = {
+                {1,2,3},
+                {2,3,4},
+                {1,2,3},
+                {2,3,4}
+        };
 
-    public Matrix sum(Matrix matrix) {
+        Matrix mFirst = new Matrix(m);
+        mFirst.save("src/main/java/unit/resource/matrixData2");
 
-        if (samecheck(matrix)) {
-            for (int i = 0; i < this.matrix.length; i++) {
-                for (int j = 0; j < this.matrix[0].length; j++) {
-                    matrix.setMatrix(i, j, matrix.getMatrix()[i][j] + this.matrix[i][j]);
-                }
+        Matrix mSecond = read("src/main/java/unit/resource/matrixData");
+        Matrix mProduct = mFirst.product(mSecond);
+
+        int[][] result = mProduct.getMatrix();
+
+        for(int i = 0; i < result.length; i++) {
+            for(int j = 0; j < result[0].length; j++) {
+                System.out.print(result[i][j] + " ");
             }
-        } else {
-            throw new IllegalArgumentException("null");
+            System.out.println();
         }
-        return matrix;
-    }
-
-    public Matrix product(Matrix matrix) {
-        Matrix productMatrix;
-
-        if (this.matrix[0].length == matrix.getMatrix().length) {
-            productMatrix = new Matrix(this.matrix.length, matrix.getMatrix()[0].length);
-
-            for (int i = 0; i < this.matrix.length; i++) {
-                for (int j = 0; j < matrix.getMatrix()[0].length; j++) {
-                    for (int k = 0; k < this.matrix[0].length; k++) {
-                        productMatrix.setMatrix(i, j, this.matrix[i][k] * matrix.getMatrix()[k][j]);
-                    }
-                    matrix.setMatrix(i, j, matrix.getMatrix()[i][j] * this.matrix[i][j]);
-                }
-            }
-        } else {
-            throw new IllegalArgumentException("null");
-        }
-        return productMatrix;
     }
 }

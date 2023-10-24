@@ -1,16 +1,24 @@
 package unit.ten;
 
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni10/node30.html
+ * Exercise 10.1 Provide an iterative implementation of a method that computes the n-th Fibonacci number.
+ */
 public class Exercise1 {
-
-    public static int fibonacci(int number) {
-        if (number == 1)
-            return 1;
-        else if (number == 2)
-            return 1;
-        return fibonacci(number - 1) + fibonacci(number - 2);
+    public static void main(String[] args) {
+        System.out.println(fibonacci(6));
     }
 
-    public static void main(String[] args) {
-        System.out.println(fibonacci(100)); // 3
+    public static int fibonacci(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("양수를 입력해주세요.");
+        }
+        switch (n) {
+            case 0:
+            case 1:
+                return n;
+            default:
+                return fibonacci(n - 1) + fibonacci(n - 2);
+        }
     }
 }

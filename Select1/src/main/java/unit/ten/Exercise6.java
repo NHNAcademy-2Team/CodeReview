@@ -1,33 +1,28 @@
 package unit.ten;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class Exercise6 {
+    private static int longest, sequence,index;
+    public static int longestSequence(String s, char c) {
 
-    public static int calc(String s, char c, int x) {
-        int max = x;
-        int count = 0;
-
-        if (s.length() <= 1) {
-            int y = (s.charAt(0) == c) ? 1 : 0;
-            return (max > y) ? max : y;
+        if(s.length() <= index) {
+            if(longest < sequence) longest = sequence;
+            return longest;
+        }
+        else if(s.charAt(index++) == c) {
+            sequence++;
+        } else {
+            if(longest < sequence) longest = sequence;
+            sequence = 0;
         }
 
-        if (s.charAt(0) == c) {
-            for (int i = 0; i < s.length(); i++) {
-                if (s.charAt(i) != c)
-                    break;
-                count++;
-            }
-        }
-
-        if (max < count) {
-            max = count;
-        }
-
-        return calc(s.substring(1), c, max);
-
+        return longestSequence(s, c);
     }
 
     public static void main(String[] args) {
-        System.out.println(calc("l", 'l', 0));
+        System.out.println(longestSequence("hellohhhhh", 'h'));
     }
 }

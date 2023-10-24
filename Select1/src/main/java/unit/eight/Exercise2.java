@@ -1,43 +1,41 @@
 package unit.eight;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
+ * Exercise 08.2 Write a public static method that reads from the keyboard a sequence of positive integers until the value 0 is inserted, and returns a double representing the average of the read values (without considering the final 0).
+ */
 public class Exercise2 {
-
-    static double inputSum(Scanner scanner) {
-        double result = 0.0;
-        int inputNum = -1;
-        int count = 0;
-
-        while (true) {
-            try {
-                System.out.print("양수를 입력해주세요(종료 : 0) : ");
-
-                while (inputNum != 0) {
-                    inputNum = scanner.nextInt();
-
-                    if (inputNum < 0) {
-                        throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
-                    }
-                    result += inputNum;
-                    count++;
-                }
-                break;
-            } catch (IllegalArgumentException e) {
-                System.out.println(e);
-            } catch (InputMismatchException e) {
-                System.out.println("잘못된 형식입니다. 정수를 입력해주세요.");
-                scanner.nextLine();
-            }
+    public static void main(String[] args) {
+        try {
+            System.out.println(averageUntilZero());
+        } catch (ArithmeticException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
-        return result / (count - 1);
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(inputSum(scanner));
-
-        scanner.close();
+    public static double averageUntilZero() {
+        double sum = 0;
+        double count = 0;
+        double result;
+        try (Scanner sc = new Scanner(System.in)) {
+            while (true) {
+                double num = sc.nextInt();
+                if (num > 0) {
+                    sum += num;
+                    count++;
+                } else if (num == 0) {
+                    break;
+                } else {
+                    throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
+                }
+            }
+        }
+        if (count == 0.0) {
+            throw new ArithmeticException("분모가 0입니다.");
+        }
+        result = sum / count;
+        return result;
     }
 }

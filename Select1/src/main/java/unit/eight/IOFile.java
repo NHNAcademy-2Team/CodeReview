@@ -3,87 +3,91 @@ package unit.eight;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 
-// Exercise6.java
-
 public class IOFile {
-    private String filename;
+    private String name;
+    private File file = new File("/Users/nhn/Desktop/Git/CodeReview/Select1/src/main/java/unit/eight/" + name);
 
     public IOFile(String filename) {
-        this.filename = filename;
+        this.name = filename;
     }
 
     public int countLines() {
         int count = 0;
 
-        try (BufferedReader br = new BufferedReader(new FileReader(this.filename))) {
-            while (br.readLine() != null) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file));) {
+
+            while(br.readLine() != null) {
                 count++;
             }
+
         } catch (IOException e) {
-            System.out.println("파일을 열 수 없습니다.");
+            System.out.println("올바른 입력값이 아닙니다.");
         }
         return count;
     }
 
-    public void write(OutputStream os) throws IOException {
-        String data;
-        os = new FileOutputStream(this.filename, true);
+    public void write(OutputStream os) {
+        //that writes the content of the file to os;
 
-        try (InputStream is = System.in;
-                InputStreamReader isr = new InputStreamReader(is);
-                BufferedReader br = new BufferedReader(isr);
-                PrintWriter pw = new PrintWriter(os)) {
+        try (PrintWriter pw = new PrintWriter(os);
+             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
 
-            while (!(data = br.readLine()).equals("")) {
-                pw.write(data + "\n");
+            String line = br.readLine();
+
+            while((line = br.readLine()) != null) {
+                pw.write(line);
             }
 
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("올바른 입력값이 아닙니다.");
         }
+
     }
 
     public void print() {
-        try (BufferedReader br = new BufferedReader(new FileReader(this.filename))) {
-            while (br.ready()) {
+        //that prints the content of the file to the video;
+        try (BufferedReader br = new BufferedReader(new FileReader(file));) {
+
+            String line = br.readLine();
+            while ((line = br.readLine()) != null) {
                 System.out.println(br.readLine());
             }
+
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("파일을 찾을 수 없습니다.");
         }
     }
-
     public void copy(String filename) {
-        String data;
+        //that copies the content of the file to the file specified by filename;
+        File file2 = new File("/Users/nhn/Desktop/Git/CodeReview/Select1/src/main/java/unit/eight/" + filename);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(this.filename));
-                BufferedWriter bw = new BufferedWriter(new FileWriter(filename, false))) {
-            while (br.ready()) {
-                data = br.readLine();
-                bw.write(data + "\n");
+        try (BufferedReader br = new BufferedReader(new FileReader(this.file));
+             OutputStream os = new FileOutputStream(file);
+             PrintWriter pw = new PrintWriter(os);) {
+
+            String line = br.readLine();
+            while ((line = br.readLine()) != null) {
+//                pw.
             }
+
+
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("파일을 찾을 수 없습니다.");
         }
+
     }
 
     public void delete() {
-        File file = new File(filename);
-
-        if (file.exists())
-            file.delete();
-        else {
-            System.out.println("파일이 존재하지 않습니다.");
-        }
+        //that deletes the file from mass-storage.
     }
 
 }
