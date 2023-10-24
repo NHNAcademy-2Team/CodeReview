@@ -3,35 +3,26 @@ package unit.ten;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Objects;
 
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni10/node30.html
+ * Exercise 10.5 Provide the implementation of a recursive method that counts how many occurrences of 1 appear in a sequence of integers read from a file (accessed through a BufferedReader).
+ */
 public class Exercise5 {
-    private static int count = 0;
-
-    public static int countOne(BufferedReader br) throws IOException {
-        char integer = (char) br.read();
-
-        if (integer == '\uFFFF')    return count;
-        else if (integer == '1') {
-            count++;
+    public static void main(String[] args) throws IOException {
+        String fileName = "one.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(
+                Objects.requireNonNull(Exercise5.class.getClassLoader().getResource(fileName)).getFile()))) {
+            System.out.println(countOne(br, 0, br.readLine()));
         }
-        return countOne(br);
     }
 
-    public static void main(String[] args) {
-
-        int count = 0;
-        try{
-            FileReader fr = new FileReader("src/main/java/unit/resource/SequenceOfIntegers");
-            BufferedReader br = new BufferedReader(fr);
-
-            count = countOne(br);
-            fr.close();
-            br.close();
-        } catch(IOException e) {
-            System.out.println(e.getMessage());
+    public static long countOne(BufferedReader br, long count, String line) throws IOException {
+        if (line == null) {
+            return count;
         }
-
-        System.out.println(count);
-
+        count += line.chars().filter(ch -> ch == '1').count();
+        return countOne(br, count, br.readLine());
     }
 }
