@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/two/ExerciseFive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/two/ExerciseFour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/two/ExerciseOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/two/ExerciseSix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/two/ExerciseThree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/two/ExersizeTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Select1/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Select1/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/Select1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/Select1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Exercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Exercise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Exercise3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Exercise4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/ListOfPersons.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Person.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,31 +45,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hyuni1020&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kimseunghyeon/Desktop/CodeReview&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/nhn/Desktop/codeReview/Select1/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "hyuni000",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/Users/kimseunghyeon/Desktop/CodeReview",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/nhn/Desktop/codeReview/Select1/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/unit/seven" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Exercise9">
+  <component name="RunManager">
     <configuration name="Exercise7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="unit.seven.Exercise7" />
       <module name="Select1" />
@@ -102,6 +118,7 @@
       <workItem from="1698018755946" duration="76000" />
       <workItem from="1698018884505" duration="45000" />
       <workItem from="1698018986339" duration="55000" />
+      <workItem from="1698130059014" duration="734000" />
     </task>
     <servers />
   </component>

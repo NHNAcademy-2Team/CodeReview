@@ -1,9 +1,19 @@
 package unit.eleven;
 
 class ListNode {
-    String info;
-    ListNode next;
+    public String info;
+    public ListNode next;
 
-    ListNode() {
+    public ListNode() {
+        this(null, null);
+    }
+
+    public ListNode(String info) {
+        this(info, null);
+    }
+
+    public ListNode(String info, ListNode next) {
+        this.info = info;
+        this.next = next;
     }
 }
