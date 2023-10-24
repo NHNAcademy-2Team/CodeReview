@@ -1,20 +1,11 @@
-package unit.seven;
+package unit.eight;
 
-/**
- * Link : https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni07/node24.html
- * Exercise 07.12
- * Realize a Java class Apartment, whose objects maintain the following information: an integer that indicates the size in square meters of the apartment, the address, and a list of maximal 10 names of persons that live in the apartment.
- * Each person living in the apartment has an associated number between 0 and the number of persons currently living in the apartment minus 1.
- * The class should export the following functionalities:
- * a constructor that takes a size and an address and creates an apartment that is initially empty;
- * a method that returns the size of the apartment;
- * a method that returns the address of the apartment;
- * a method that returns the number of persons currently living in the apartment;
- * a method that takes as parameter the name of a person, and adds the person to those living in the apartment; the person gets assigned the next available number, if there is still room; if the apartment is full (i.e., 10 persons already live there), the method does nothing;
- * a method that takes as parameter a nonnegative integer number and returns the name of the person associated to that number and living in the apartment; if the number is greater than or equal to the number of persons in the apartment, the method returns null;
- * a method that takes as parameter a nonnegative integer number and removes the person associated to that number from the apartment; the number associated to all following persons should be decreased by one; if the number is greater than or equal to the number of persons in the apartment, the method does nothing.
- * a method toString that does overriding of toString inherited from object, and returns a string with all the information about the apartment.
- */
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Apartment {
     private int squareMetersSize;
     private String address;
@@ -87,6 +78,36 @@ public class Apartment {
         }
     }
 
+    public void saveToFile(String fileName) throws IOException {
+        FileWriter f = new FileWriter(fileName);
+        try (PrintWriter out = new PrintWriter(f)) {
+            out.println(this.squareMetersSize);
+            out.println(this.address);
+            for (int i = 0; i < this.apartments.length; i++) {
+                if(this.apartments[i] == null)
+                    break;
+                out.println(this.apartments[i]);
+            }
+        }
+    }
+
+    public static Apartment readFromFile(BufferedReader br) throws IOException {
+        String first = br.readLine();
+        String second = br.readLine();
+        if (first == null || second == null) {
+            return null;
+        }
+        return new Apartment(Integer.parseInt(first), second);
+    }
+
+    public static void printApartment(String fileName) throws IOException {
+        try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+            String line;
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+            }
+        }
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
