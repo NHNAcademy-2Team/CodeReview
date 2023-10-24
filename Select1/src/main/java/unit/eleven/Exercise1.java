@@ -1,170 +1,248 @@
 package unit.eleven;
 
-import java.io.PrintStream;
-import java.util.Objects;
+
+class ListNode {
+    public String info;
+    public ListNode next;
+
+    public ListNode() {
+        this(null, null);
+    }
+
+    public ListNode(String info) {
+        this(info, null);
+    }
+
+    public ListNode(String info, ListNode next) {
+        this.info = info;
+        this.next = next;
+    }
+}
+
 
 public class Exercise1 {
-    public static void main(String[] args) {
-        testListNode();
-    }
-
-    public static void testListNode(){
-        ListNode testListNode = create3NodesABC();
-        ListNode testListNode1 = create3NodesABC();
-        ListNode testListNode2 = create3NodesABC();
-        System.out.println(length(testListNode));
-        print(insertAfter(testListNode, "D", "C"), System.out);
-        print(modify(testListNode, "B", "A"), System.out);
-        print(modifyAll(testListNode, "A", "B"), System.out);
-        print(insertBefore(testListNode, "A", "B"), System.out);
-        print(copy(testListNode), System.out);
-        print(invert(testListNode), System.out);
-        print(deleteDoubles(testListNode), System.out);
-        System.out.println(searchSequence(testListNode, testListNode2));
-        System.out.println(searchSequence(testListNode1, testListNode2));
-        System.out.println(searchSequence(testListNode2, testListNode1));
-    }
-    public static ListNode create3NodesABC() {
-        ListNode a = new ListNode();
-        ListNode b = new ListNode();
-        ListNode c = new ListNode();
-        a.info = "A";
-        a.next = b;
-        b.info = "B";
-        b.next = c;
-        c.info = "C";
-        c.next = null;
-        return a;
-    }
-
-    public static void print(ListNode lis, PrintStream ps) {
-        ListNode p = lis;
-        while (p != null) {
-            ps.print(p.info + " ");
-            p = p.next;
-        }
-        ps.println();
-    }
-
+    private static int count;
+    private static ListNode tmp;
     public static int length(ListNode lis) {
-        int count = 0;
-        while (lis != null) {
-            lis = lis.next;
+        // that returns the length of lis;
+        if(lis != null && lis.next != null) {
             count++;
+            return length(lis.next);
         }
-        return count;
+        int result = ++count;
+        count = 0;
+        return result;
     }
 
     public static ListNode insertAfter(ListNode lis, String s, String given) {
-        ListNode finalLis = lis;
-        while (lis != null) {
-            if (lis.info.equals(given)) {
-                ListNode empty = lis.next;
-                lis.next = new ListNode();
-                lis.next.info = s;
-                lis.next.next = empty;
+        /* that returns the list obtained by modifying lis by inserting a new element s after a given element,
+         * if such an element is present, and returns lis unmodified otherwise; */
+
+        if (lis != null) {
+            if(!lis.info.equals(given)) {
+                return insertAfter(lis.next, s, given);
+            } else {
+                lis.next = new ListNode(s, lis.next);
             }
-            lis = lis.next;
         }
-        return finalLis;
+        return lis;
     }
 
     public static ListNode modify(ListNode lis, String old, String ne) {
-        ListNode finalLis = lis;
-        while (lis != null) {
-            if (lis.info.equals(old)) {
-                lis.info = ne;
-                break;
+        // that returns the list obtained by modifying lis by changing the first occurrence of old to ne;
+
+        if(lis != null) {
+            if (!lis.info.equals(old)) {
+                return modify(lis.next, old, ne);
             }
-            lis = lis.next;
+            lis.info = ne;
         }
-        return finalLis;
+        return lis;
     }
 
     public static ListNode modifyAll(ListNode lis, String old, String ne) {
-        ListNode finalLis = lis;
-        while (lis != null) {
-            if (lis.info.equals(old)) {
+        // that returns the list obtained by modifying lis by changing all occurrences of old to ne;
+
+        if(lis != null) {
+            if(lis.info.equals(old)) {
                 lis.info = ne;
             }
-            lis = lis.next;
+            return modifyAll(lis.next, old, ne);
         }
-        return finalLis;
+        return lis;
     }
 
     public static ListNode insertBefore(ListNode lis, String s, String given) {
-        ListNode finalLis = lis;
-        ListNode newLis = new ListNode();
-        newLis.info = s;
-        if (lis.info.equals(given)) {
-            newLis.next = lis;
-            finalLis = newLis;
-        } else {
-            while (lis.next != null) {
-                if (lis.next.info.equals(given)) {
-                    ListNode empty = lis.next;
-                    lis.next = newLis;
-                    newLis.next = empty;
-                    break;
-                }
-                lis = lis.next;
-            }
+        /* that returns the list obtained by modifying lis by inserting a new element s before a given element,
+         * if such an element is present, and returns lis unmodified otherwise; */
+
+        if(lis == null) {
+            return lis;
         }
-        return finalLis;
+
+        // lis != null
+        if(lis.info.equals(given)) {
+            lis = new ListNode(s, lis);
+            return lis;
+        }
+
+        lis.next = insertBefore(lis.next, s, given);
+        return lis;
     }
 
     public static ListNode copy(ListNode lis) {
-        if (lis == null) {
-            return null;
+        /* that returns a copy of the list lis, i.e., a list containing the same sequence of elements as lis,
+         * but using new nodes; */
+        // recursive로 못 만듦
+
+
+//        if(lis == null) {
+//            return lis;
+//        }
+//
+//        if(tmp == null) {
+//            tmp = new ListNode(lis.info);
+//            return tmp;
+//        }
+//
+//        // lis != null && tmp != null;
+//
+//        tmp.next = copy(lis.next);
+//        ListNode result = tmp;
+//
+//        return tmp;
+
+        ListNode head = lis;
+        ListNode newLis = new ListNode(head.info);
+        ListNode headForCopy = newLis;
+        while(head.next != null) {
+            headForCopy.next = new ListNode(head.next.info);
+            head = head.next;
+            headForCopy = headForCopy.next;
         }
-        ListNode newLis = new ListNode();
-        ListNode finalLis = newLis;
-        while (lis != null) {
-            newLis.info = lis.info;
-            newLis.next = lis.next == null ? null : new ListNode();
-            lis = lis.next;
-            newLis = newLis.next;
-        }
-        return finalLis;
+
+        return newLis;
+
     }
 
     public static ListNode invert(ListNode lis) {
-        if (lis == null) {
-            return null;
-        }
-        ListNode prevNode = null;
-        ListNode nextNode;
-        while (lis != null) {
-            nextNode = lis.next;
-            lis.next = prevNode;
-            prevNode = lis;
-            lis = nextNode;
-        }
-        lis = prevNode;
+        // that modifies lis by inverting the links among its nodes, and returns a reference to the inverted list;
+        // 다 못 풀었어유ㅠㅠ
+        // recursive로 못 만듦
+
+//        ListNode lis2 = new ListNode(lis.info, null);
+//        ListNode head = lis;
+//
+//        while(head.next != null) {
+//            insertBefore(lis2, head.next.info, head.info);
+//        }
+//
         return lis;
     }
 
     public static ListNode deleteDoubles(ListNode lis) {
-        if (lis == null) {
-            return null;
-        }
+        // that returns the list obtained by modifying lis by deleting all occurrences of an element apart from the first one.
         lis.next = null;
+
         return lis;
     }
 
     public static boolean searchSequence(ListNode lis1, ListNode lis2) {
-        ListNode copyLis2 = copy(lis2);
-        while (lis1 != null) {
-            if (Objects.equals(lis1, lis2)) {
-                lis2 = lis2.next;
-            } else {
-                lis2 = copyLis2;
+        /* that checks whether the lis lis1 contains a subsequence of consecutive elements that coincides with lis2.
+         * For example, if the sequence of elements of lis1 is (A B B C D E),
+         * and the sequence of elements of lis2 is (B B C), the result should be true.
+         * Instead, if lis1 is again (A B B C D E) and lis2 is (A B C), the result should be false. */
+        // recursive 못 만듦
+        ListNode head = lis1;
+        ListNode finder = head;
+        ListNode headSecond = lis2;
+
+        for(int i =0; i < length(lis1) - length(lis2) + 1; i++) {
+            int count = 0;
+            for (int j = 0; j < length(lis2); j++) {
+                if (!finder.info.equals(headSecond.info)) {
+                    break;
+                }
+                count++;
+                finder = finder.next;
+                headSecond = headSecond.next;
             }
-            if (lis2 == null) {
-                return true;
-            }
-            lis1 = lis1.next;
+            if (count == length(lis2)) return true;
+
+            head = head.next;
+            finder = head;
+            headSecond = lis2;
         }
+
         return false;
+    }
+
+    public static ListNode generate() {
+        ListNode head;
+
+        head = new ListNode("1",
+                new ListNode("2",
+                        new ListNode("2",
+                                new ListNode("4",
+                                        null))));
+
+        return head;
+    }
+
+    public static void print(ListNode lis) {
+        if(lis == null) {
+            System.out.println();
+        } else {
+            System.out.print(lis.info + " -> ");
+            print(lis.next);
+        }
+    }
+
+    public static void main(String[] args) {
+        ListNode lis = generate();
+        System.out.println("Count: " + length(lis));
+
+
+        insertAfter(lis, "hello", "2");
+        System.out.println("ListNode: ");
+        print(lis);
+
+        modify(lis, "Hi", "2");
+        print(lis);
+
+        modifyAll(lis, "2", "Hi");
+        print(lis);
+
+        insertBefore(lis, "0", "1");
+        insertBefore(lis, "3", "4");
+        print(lis);
+
+        ListNode lis2 = copy(lis);
+        print(lis2);
+
+        System.out.println();
+        ListNode head;
+        ListNode lis3 = invert(lis2);
+        head = lis3;
+        for(int i = 0; i < length(lis3); i++) {
+            System.out.println(head.info + " -> ");
+            head = head.next;
+        }
+
+
+        System.out.println();
+        head = deleteDoubles(lis2);
+        for(int i = 0; i < length(lis2); i++) {
+            System.out.print(head.info + " -> ");
+            head = head.next;
+        }
+
+        System.out.println();
+        System.out.println(searchSequence(lis, lis2));
+        head = lis2;
+        for(int i = 0; i < length(lis2); i++) {
+            System.out.print(head.info + " -> ");
+            head = head.next;
+        }
     }
 }

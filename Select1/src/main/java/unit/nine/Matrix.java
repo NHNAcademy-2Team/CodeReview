@@ -1,4 +1,4 @@
-package unit.eight;
+package unit.nine;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,6 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
+// 보류중
+// 보류중
+// 보류중
+// 보류중
+// 보류중
 public class Matrix {
     private int[][] matrix;
     private int row;
@@ -70,7 +76,7 @@ public class Matrix {
     * 2 2 2
     *
     * */
-    public static Matrix read(String filename) throws IOException {
+    public static Matrix read(String filename) throws IOException, ExceptionWrongMatrixValues {
         FileReader fr = new FileReader(filename);
         BufferedReader br = new BufferedReader(fr);
 
@@ -80,13 +86,23 @@ public class Matrix {
         Matrix matrix = new Matrix(Integer.parseInt(mInfo[0]), Integer.parseInt(mInfo[1]));
         int m[][] = matrix.getMatrix();
 
-        for(int i = 0; i < m.length; i++) {
-            line = br.readLine();
-            for(int j = 0; j < m[0].length; j++) {
-                m[i][j] = Integer.parseInt(line.split(" ")[j]);
+        try {
+            for(int i = 0; i < m.length; i++) {
+                line = br.readLine();
+                for(int j = 0; j < m[i].length; j++) {
+                    if(m[i].length != Integer.parseInt(mInfo[1]) || m.length != Integer.parseInt(mInfo[0])) {
+                        throw new ExceptionWrongMatrixValues("각 행의 열 수가 동일하지 않습니다.");
+                    }
+                    m[i][j] = Integer.parseInt(line.split(" ")[j]);
+                }
             }
         }
+        catch(NumberFormatException e) {
+            throw new ExceptionWrongMatrixValues("정수가 아닌 요소가 포함되어 있습니다.");
+        }
 
+        fr.close();
+        br.close();
         matrix.setMatrix(m);
 
         return matrix;
@@ -131,26 +147,11 @@ public class Matrix {
     }
 
     public static void main(String[] args) throws IOException {
-        int[][] m = {
-                {1,2,3},
-                {2,3,4},
-                {1,2,3},
-                {2,3,4}
-        };
 
-        Matrix mFirst = new Matrix(m);
-        mFirst.save("src/main/java/unit/resource/matrixData2");
-
-        Matrix mSecond = read("src/main/java/unit/resource/matrixData");
-        Matrix mProduct = mFirst.product(mSecond);
-
-        int[][] result = mProduct.getMatrix();
-
-        for(int i = 0; i < result.length; i++) {
-            for(int j = 0; j < result[0].length; j++) {
-                System.out.print(result[i][j] + " ");
-            }
-            System.out.println();
+        try {
+            read("src/main/java/unit/resource/nineMatrixData");
+        } catch(ExceptionWrongMatrixValues e) {
+            System.out.println(e.getMessage());
         }
     }
 }

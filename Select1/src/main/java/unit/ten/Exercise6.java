@@ -1,21 +1,28 @@
 package unit.ten;
 
-//  as parameters a string s and a character c로는 못 풀고
-// as parameters a string s and a string c로 풀었습니다..
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
-/**
- * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni10/node30.html
- * Provide the implementation of a recursive method that takes as parameters a string s and a character c and returns the length of the longest sequence of consecutive occurrences of character c in s.
- */
 public class Exercise6 {
-    public static void main(String[] args) {
-        System.out.println(longestSequence("xxyxxxhiizyy", "y"));
+    private static int longest, sequence,index;
+    public static int longestSequence(String s, char c) {
+
+        if(s.length() <= index) {
+            if(longest < sequence) longest = sequence;
+            return longest;
+        }
+        else if(s.charAt(index++) == c) {
+            sequence++;
+        } else {
+            if(longest < sequence) longest = sequence;
+            sequence = 0;
+        }
+
+        return longestSequence(s, c);
     }
 
-    public static int longestSequence(String s, String c) {
-        if (s.contains(c)) {
-            return longestSequence(s, c + c.charAt(0));
-        }
-        return c.length() - 1;
+    public static void main(String[] args) {
+        System.out.println(longestSequence("hellohhhhh", 'h'));
     }
 }
