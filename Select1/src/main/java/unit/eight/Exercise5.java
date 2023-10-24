@@ -1,56 +1,46 @@
 package unit.eight;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Objects;
 
-
-// 더 쪼개보기
-
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
+ * Exercise 08.5 Write a public static method that reads from a file information about exam marks obtained by students, organized as follows:
+ * Rossi 25 24 26 30 24 30
+ * Bianchi 20 24 25
+ * Verdi 30 24 30 27
+ * The method should return a string representing the name of the student with the highest average marking.
+ */
 public class Exercise5 {
-    public static String getAverage(String filename) throws IOException {
-        FileReader f = new FileReader(filename);
-        BufferedReader br = new BufferedReader(f);
-        double max = 0;
-        String student = "";
-
-        System.out.println("Information of Students");
-
-        String line = br.readLine();
-        while(line != null) {
-            double average = scoreAverage(line);
-            if(max < average) {
-                max = average;
-                student = line;
-            }
-            System.out.println(line + ", average: " + scoreAverage(line));
-            line = br.readLine();
-        }
-
-        f.close();
-
-        return "the name of the student with the hightest average marking\n"
-                + student + ", average: " + Double.toString(max);
-    }
-
-    public static double scoreAverage(String line) {
-        // info[0]: name, info[1~]
-        String[] info = line.split(" ");
-        double total = 0;
-
-        for(int i =1; i<info.length; i++) {
-            total += Integer.parseInt(info[i]);
-        }
-
-        return total / (info.length - 1);
-    }
-
     public static void main(String[] args) {
         try {
-            System.out.println(getAverage("src/main/java/unit/eight/resource/examInfo"));
-        }catch (IOException e) {
-            System.out.println("파일을 찾을 수 없습니다. 파일 이름을 확인해주세요");
+            System.out.println(highestAverageStudent(
+                    Objects.requireNonNull(Exercise5.class.getClassLoader().getResource("student.txt")).getFile()));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
+    }
+
+    public static String highestAverageStudent(String fileName) throws IOException {
+        String highestStudentName = "NotFoundStudent";
+        int max = 0;
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] arr = line.split(" ");
+                int sum = 0;
+                for (int i = 1; i < arr.length; i++) {
+                    sum += Integer.parseInt(arr[i]);
+                }
+                int average = sum / (arr.length - 1);
+                if (max < average) {
+                    max = average;
+                    highestStudentName = arr[0];
+                }
+            }
+        }
+        return highestStudentName;
     }
 }

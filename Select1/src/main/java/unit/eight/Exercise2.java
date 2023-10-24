@@ -1,38 +1,41 @@
 package unit.eight;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
+ * Exercise 08.2 Write a public static method that reads from the keyboard a sequence of positive integers until the value 0 is inserted, and returns a double representing the average of the read values (without considering the final 0).
+ */
 public class Exercise2 {
-    public static double average(InputStream is) throws IOException {
-        InputStreamReader isr = new InputStreamReader(is);
-        BufferedReader br = new BufferedReader(isr);
-        double result = 0;
-        int i = 0;
-
-        double x = Double.parseDouble(br.readLine());
-        while(x != 0) {
-            result += x;
-            i++;
-            x = Double.parseDouble(br.readLine());
+    public static void main(String[] args) {
+        try {
+            System.out.println(averageUntilZero());
+        } catch (ArithmeticException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
-
-        if(i == 0) {
-            throw new ArithmeticException();
-        }
-
-        return result/i;
     }
 
-    public static void main(String[] args) {
-        InputStream is = System.in;
-
-        try{
-            System.out.println(average(is));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    public static double averageUntilZero() {
+        double sum = 0;
+        double count = 0;
+        double result;
+        try (Scanner sc = new Scanner(System.in)) {
+            while (true) {
+                double num = sc.nextInt();
+                if (num > 0) {
+                    sum += num;
+                    count++;
+                } else if (num == 0) {
+                    break;
+                } else {
+                    throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
+                }
+            }
         }
+        if (count == 0.0) {
+            throw new ArithmeticException("분모가 0입니다.");
+        }
+        result = sum / count;
+        return result;
     }
 }

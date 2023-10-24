@@ -3,32 +3,34 @@ package unit.eight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Objects;
+import java.util.stream.Stream;
 
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
+ * Exercise 08.3 Write a public static method that prints on the video all lines of a file that start with one of the characters '/', ';', or '%'. The name of the file should be given as a parameter.
+ */
 public class Exercise3 {
-    public static void printFile(String filename) throws IOException {
-        FileReader fr = new FileReader(filename);
-        BufferedReader br = new BufferedReader(fr);
+    public static void main(String[] args) {
+        try {
+            printVideo(Objects.requireNonNull(Exercise3.class.getClassLoader().getResource("hi.txt")).getFile());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
-        String line = br.readLine();
-
-        while(line != null) {
-            if(line.length() != 0) {
-                char tmp = line.charAt(0);
-                if(tmp == '/' || tmp == '%' || tmp == ';') {
+    public static void printVideo(String fileName) throws IOException {
+        FileReader f = new FileReader(fileName);
+        try (BufferedReader br = new BufferedReader(f)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (Stream.of("/", ";", "%").anyMatch(line::startsWith)) {
                     System.out.println(line);
                 }
             }
-            line = br.readLine();
-        }
-
-        fr.close();
-    }
-
-    public static void main(String[] args) {
-        try {
-            printFile("src/main/java/unit/eight/resource/test");
-        } catch(IOException e) {
-            System.out.println("파일이 존재하지 않습니다. 파일이름과 파일위치를 확인해주세요");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 }
