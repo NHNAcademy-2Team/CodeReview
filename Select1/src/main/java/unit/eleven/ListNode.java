@@ -1,8 +1,9 @@
 package unit.eleven;
 
-import java.lang.annotation.ElementType;
+class ListNode {
+    String info;
+    ListNode next;
 
-public class ListNode {
-    public ElementType info;
-    public ListNode next;
+    ListNode() {
+    }
 }

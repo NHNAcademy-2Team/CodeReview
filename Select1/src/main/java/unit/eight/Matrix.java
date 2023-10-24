@@ -1,102 +1,106 @@
 package unit.eight;
 
-import java.io.*;
-import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import unit.nine.ExceptionWrongMatrixDimension;
+import unit.nine.ExceptionWrongMatrixValue;
 
 public class Matrix {
-    private double[][] data;
+    private int n;
+    private int m;
+    private int[][] matrix;
 
-    public Matrix(int n, int m){
-        data = new double[n][m];
+    public Matrix(int n, int m) {
+        this.n = n;
+        this.m = m;
+        this.matrix = new int[n][m];
     }
 
-    public void save(String filename){
-        try(PrintWriter writer = new PrintWriter(new FileWriter(filename))){
-            writer.println(data.length);
-            writer.println(data[0].length);
-            for(double[] row: data){
-                for (int i = 0; i < data[0].length ; i++) {
-                    writer.print(row[i]);
-                    if(i != data[0].length - 1) {
-                        writer.print(" ");
-                    }
+    public int getN() {
+        return this.n;
+    }
+
+    public int getM() {
+        return this.m;
+    }
+
+    public int getMatrixElement(int n, int m) {
+        return this.matrix[n][m];
+    }
+
+    public void setMatrix(int n, int m, int result) {
+        this.matrix[n][m] = result;
+    }
+
+    public void save(String filename) throws IOException {
+        FileWriter f = new FileWriter(filename);
+        try (PrintWriter out = new PrintWriter(f)) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    out.print(matrix[i][j] + " ");
                 }
-                writer.println();
+                out.println();
             }
-            System.out.println("행렬이 성공적으로 파일에 저장되었습니다.");
-        } catch(IOException e) {
-            System.out.println("파일을 쓸 수 없습니다: " + e.getMessage());
         }
     }
 
-    public static Matrix read(String filename){
-        Matrix matrix = null;
-        try(BufferedReader reader = new BufferedReader(new FileReader(filename))){
-            int n = Integer.parseInt(reader.readLine());
-            int m = Integer.parseInt(reader.readLine());
-            matrix = new Matrix(n,m);
-            for(int i = 0; i < n; i++){
-                StringTokenizer tokenizer = new StringTokenizer(reader.readLine());
-                for (int j = 0; j < m ; j++) {
-                    matrix.data[i][j] = Double.parseDouble(tokenizer.nextToken());
-                }
+    public static Matrix read(String filename) throws IOException, ExceptionWrongMatrixDimension {
+        Matrix newMatrix = null;
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line = br.readLine();
+            if (line == null) {
+                return newMatrix;
             }
-        } catch (IOException e){
-            System.out.println("파일을 읽을 수 없습니다: " + e.getMessage());
-        }
-        return matrix;
-    }
-
-    public Matrix sum(Matrix m){
-        if(data.length != m.data.length || data[0].length != m.data[0].length){
-            return null;
-        }
-        Matrix result = new Matrix(data.length, data[0].length);
-        for (int i = 0; i < data.length ; i++) {
-            for (int j = 0; j < data[0].length; j++) {
-                result.data[i][j] = data[i][j] + m.data[i][j];
-            }
-        }
-        return result;
-    }
-
-    public Matrix product(Matrix m){
-        if(data[0].length != m.data.length){
-            return null;
-        }
-        Matrix result = new Matrix(data.length, m.data[0].length);
-        for (int i = 0; i < data.length ; i++) {
-            for (int j = 0; j < m.data[0].length; j++) {
-                for (int k = 0; k < data[0].length ; k++) {
-                    result.data[i][j] += data[i][k] * m.data[k][j];
+            String[] nm = line.split(" ");
+            newMatrix = new Matrix(Integer.parseInt(nm[0]), Integer.parseInt(nm[1]));
+            for (int i = 0; i < Integer.parseInt(nm[0]); i++) {
+                String[] m = br.readLine().split(" ");
+                for (int j = 0; j < Integer.parseInt(nm[1]); j++) {
+                    newMatrix.setMatrix(i, j, Integer.parseInt(m[j]));
                 }
             }
         }
-        return result;
+        if(newMatrix == null){
+            throw new ExceptionWrongMatrixDimension("행렬이 될 수 없는 파일입니다.");
+        }
+        return newMatrix;
     }
 
-    public static void main(String[] args) {
-        Matrix matrix = new Matrix(2,3);
-        matrix.data[0] = new double[]{1,2,3};
-        matrix.data[1] = new double[]{4,5,6};
-
-        matrix.save("/Users/hongjiwon/Desktop/NewGit/Select1/src/main/java/unit/eight/txtfile/Exercise9");
-
-        Matrix readMatrix = read("/Users/hongjiwon/Desktop/NewGit/Select1/src/main/java/unit/eight/txtfile/Exercise9");
-        readMatrix.save("/Users/hongjiwon/Desktop/NewGit/Select1/src/main/java/unit/eight/txtfile/read_Exercise9");
-
-        Matrix sumMatrix = matrix.sum(readMatrix);
-        if(sumMatrix != null) {
-            sumMatrix.save("/Users/hongjiwon/Desktop/NewGit/Select1/src/main/java/unit/eight/txtfile/sum_Exercise9");
-        } else {
-            System.out.println("행렬의 크기가 동일하지 않아 덧셈을 수행할 수 없습니다.");
+    public Matrix sum(Matrix m) throws ExceptionWrongMatrixValue {
+        if (this.m != m.getM() || this.n != m.getN()) {
+            throw new ExceptionWrongMatrixValue("형식이 맞지 앖습니다.");
         }
+        Matrix newMatrix = new Matrix(m.getM(), m.getN());
+        for (int i = 0; i < m.getM(); i++) {
+            for (int j = 0; j < m.getN(); j++) {
+                newMatrix.setMatrix(i, j, this.getMatrixElement(i, j) + m.getMatrixElement(i, j));
+            }
+        }
+        return newMatrix;
+    }
 
-        Matrix productMatrix = matrix.product(readMatrix);
-        if(productMatrix != null){
-            productMatrix.save("/Users/hongjiwon/Desktop/NewGit/Select1/src/main/java/unit/eight/txtfile/product_Exercise9");
-        } else {
-            System.out.println("행렬의 크기가 호환되지 않아 곱셈을 수행할 수 없습니다.");
+    public Matrix product(Matrix m) throws ExceptionWrongMatrixValue {
+        if (this.m != m.getM() || this.n != m.getN()) {
+            throw new ExceptionWrongMatrixValue("형식이 맞지 앖습니다.");
+        }
+        Matrix newMatrix = new Matrix(m.getM(), m.getN());
+        for (int i = 0; i < m.getM(); i++) {
+            for (int j = 0; j < m.getN(); j++) {
+                newMatrix.setMatrix(i, j, this.getMatrixElement(i, j) * m.getMatrixElement(i, j));
+            }
+        }
+        return newMatrix;
+    }
+
+    public void printMatrix() {
+        for (int i = 0; i < this.m; i++) {
+            for (int j = 0; j < this.n; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }

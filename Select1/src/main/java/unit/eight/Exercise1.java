@@ -1,41 +1,37 @@
 package unit.eight;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Scanner;
 
-
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
+ * Exercise 08.1 Write a class IOStrings containing two public static methods:
+ * String[] loadArray(InputStream is, int n) : that returns an array of n strings read from the input channel specified by is;
+ * void saveArray(OutputStream os, String[] sa) : that writes the array of strings sa to the output channel specified by os.
+ */
 public class Exercise1 {
-    /* is로 지정된 입력 채널에서 읽은 n개의 문자열 배열 반환 */
-    public static String[] loadArray(InputStream is, int n) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+    public static void main(String[] args) throws IOException {
+        String[] arr = loadArray(System.in, 5);
+        saveArray(System.out, arr);
+    }
+
+    public static String[] loadArray(InputStream is, int n) {
         String[] result = new String[n];
-        try {
+        try (Scanner sc = new Scanner(is)) {
             for (int i = 0; i < n; i++) {
-                result[i] = reader.readLine();
+                result[i] = sc.next();
             }
-        } finally {
-            is.close();
         }
         return result;
     }
 
-    /* os가 지정한 출력 채널에 문자열 sa의 배열 사용*/
     public static void saveArray(OutputStream os, String[] sa) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os));
-        try {
-            for (String s : sa) {
-                writer.write(s);
-                writer.newLine();
-            }
-            writer.flush();
-        } finally {
-            os.close();
+        for (int i = 0; i < sa.length; i++) {
+            byte[] strToByte = sa[i].getBytes();
+            os.write(strToByte);
+            os.write(" ".getBytes());
         }
-    }
-
-    public static void main(String[] args) throws IOException {
-        String[] loadStrings = loadArray(new FileInputStream("Select1/test.txt"), 3);
-
-        saveArray(System.out, loadStrings);
-
     }
 }

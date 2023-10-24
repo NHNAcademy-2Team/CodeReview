@@ -1,31 +1,21 @@
 package unit.ten;
 
-public class Exercise6 {
-    public static int findLongSequence(String s, char letter){
-        if(s.length()==0){
-            return 0;
-        }
+//  as parameters a string s and a character c로는 못 풀고
+// as parameters a string s and a string c로 풀었습니다..
 
-        if(s.charAt(0) == letter){
-            int count = 1;
-            int i = 1;
-            while(i < s.length() && s.charAt(0)=='c'){
-                count++;
-                i++;
-            }
-            int nextSequence = findLongSequence(s.substring(i), letter);
-            return Math.max(count, nextSequence);
-        } else {
-            return findLongSequence(s.substring(1),letter);
-        }
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni10/node30.html
+ * Provide the implementation of a recursive method that takes as parameters a string s and a character c and returns the length of the longest sequence of consecutive occurrences of character c in s.
+ */
+public class Exercise6 {
+    public static void main(String[] args) {
+        System.out.println(longestSequence("xxyxxxhiizyy", "y"));
     }
 
-    public static void main(String[] args) {
-        String sequence = "aaabbbcccccc";
-        char target = 'c';
-
-        int longestSequence = findLongSequence(sequence,target);
-        System.out.println("가장 긴 시퀀스의 길이는 " + longestSequence);
-
+    public static int longestSequence(String s, String c) {
+        if (s.contains(c)) {
+            return longestSequence(s, c + c.charAt(0));
+        }
+        return c.length() - 1;
     }
 }

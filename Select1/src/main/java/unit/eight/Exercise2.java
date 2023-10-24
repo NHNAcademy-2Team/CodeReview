@@ -2,32 +2,40 @@ package unit.eight;
 
 import java.util.Scanner;
 
+/**
+ * https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni08/node24.html
+ * Exercise 08.2 Write a public static method that reads from the keyboard a sequence of positive integers until the value 0 is inserted, and returns a double representing the average of the read values (without considering the final 0).
+ */
 public class Exercise2 {
-    public static double calculateAverage(){
-        Scanner scn = new Scanner(System.in);
-        int sum = 0;
-        int count = 0;
-
-        while(true){
-            int input = scn.nextInt();
-            if(input == 0){
-                break;
-            }
-            sum += input;
-            count++;
-        }
-        scn.close();
-
-        if(count == 0){
-            return 0.0;
-        } else {
-            return (double) sum / count;
+    public static void main(String[] args) {
+        try {
+            System.out.println(averageUntilZero());
+        } catch (ArithmeticException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println("양의 정수를 입력하세요. 0을 입력하면 종료됩니다.");
-        double average = calculateAverage();
-        System.out.println("입력한 값의 평균은 " + average);
+    public static double averageUntilZero() {
+        double sum = 0;
+        double count = 0;
+        double result;
+        try (Scanner sc = new Scanner(System.in)) {
+            while (true) {
+                double num = sc.nextInt();
+                if (num > 0) {
+                    sum += num;
+                    count++;
+                } else if (num == 0) {
+                    break;
+                } else {
+                    throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
+                }
+            }
+        }
+        if (count == 0.0) {
+            throw new ArithmeticException("분모가 0입니다.");
+        }
+        result = sum / count;
+        return result;
     }
 }
