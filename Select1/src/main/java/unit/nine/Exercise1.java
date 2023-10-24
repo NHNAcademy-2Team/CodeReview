@@ -13,7 +13,7 @@ public class Exercise1 {
     }
 
     // 수정 전 -> 컴파일 오류 발생
-    // public class Exercise1 {
+    // public class chapter.Exercise1 {
     // public static void main(String[] args) {
     // for (int i = 0, j = 0; i < 10, j < 10; i++, j++) {
     // System.out.println(i + " + " + j + " = " + (i+j));
