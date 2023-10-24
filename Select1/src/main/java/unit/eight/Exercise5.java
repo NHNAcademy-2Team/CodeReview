@@ -8,7 +8,7 @@ import java.io.IOException;
 
 // 더 쪼개보기
 
-public class ExerciseFive {
+public class Exercise5 {
     public static String getAverage(String filename) throws IOException {
         FileReader f = new FileReader(filename);
         BufferedReader br = new BufferedReader(f);

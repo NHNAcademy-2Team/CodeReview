@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class ExerciseFour {
+public class Exercise4 {
     public static void multiTable(String filename, int n) throws IOException {
         FileWriter f = new FileWriter(filename);
         PrintWriter out = new PrintWriter(f);
