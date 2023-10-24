@@ -320,7 +320,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij,maven,windows,eclipse,visualstudiocode,sonar,sonarqube,java
 .idea
 Select1.iml
