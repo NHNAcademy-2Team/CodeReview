@@ -18,8 +18,8 @@
 * [*] Unit07(~9/22)
 * [*] Unit08(~10/4)
 * [*] Unit09(~10/5)
-* [ ] Unit10(~10/11)
-* [ ] Unit11(~10/11)
+* [*] Unit10(~10/11)
+* [*] Unit11(~10/11)
 
 참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
 
