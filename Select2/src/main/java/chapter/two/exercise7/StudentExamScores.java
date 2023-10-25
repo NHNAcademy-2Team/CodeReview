@@ -1,4 +1,4 @@
-package chater.two.exercise7;
+package chapter.two.exercise7;
 
 import java.util.List;
 
@@ -11,11 +11,9 @@ public class StudentExamScores {
     }
     public int average(){
         int total = 0;
-        int count = 0;
         for(Exam exam : examList){
             total += exam.getScore();
-            count++;
         }
-        return total / count;
+        return total / examList.size();
     }
 }

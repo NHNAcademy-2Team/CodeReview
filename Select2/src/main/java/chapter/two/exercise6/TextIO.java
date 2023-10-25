@@ -1,4 +1,4 @@
-package chater.two.exercise6;
+package chapter.two.exercise6;
 
 import java.io.BufferedReader;
 import java.io.File;

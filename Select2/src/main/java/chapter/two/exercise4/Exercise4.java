@@ -1,4 +1,4 @@
-package chater.two.exercise4;
+package chapter.two.exercise4;
 
 import java.util.Objects;
 

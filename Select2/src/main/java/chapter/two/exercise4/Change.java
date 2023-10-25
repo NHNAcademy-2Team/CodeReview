@@ -1,4 +1,4 @@
-package chater.two.exercise4;
+package chapter.two.exercise4;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

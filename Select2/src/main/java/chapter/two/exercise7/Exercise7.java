@@ -1,7 +1,6 @@
-package chater.two.exercise7;
+package chapter.two.exercise7;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,8 +24,6 @@ public class Exercise7 {
 
             StudentExamScores studentExamScores = new StudentExamScores(student, examList);
             System.out.println(studentExamScores.average());
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
