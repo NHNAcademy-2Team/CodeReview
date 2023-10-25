@@ -1,8 +1,12 @@
 package chapter;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exercise5 {
+
+    private static final int DOZEN = 12;
+    private static final int GROSS = DOZEN * DOZEN;
     //달걀
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -18,34 +22,26 @@ public class Exercise5 {
 
         try {
 
-            int gross = eggs / (12 * 12);
-            int dozen = eggs % 144 / 12;
-            int rest = eggs % 144 % 12;
-
             if (eggs == 0) {
                 System.out.println("소지한 달걀은 0개 입니다.");
             } else if (eggs < 0) {
                 throw new IllegalArgumentException("댤걀 개수가 음수일 수 없습니다.");
             } else {
-                print(gross, dozen, rest);
+                print(eggs);
             }
 
-        } catch (ArithmeticException e) {
-            throw new RuntimeException(e);
-        } catch (NullPointerException n) {
-            throw new RuntimeException(n);
+        } catch (InputMismatchException e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 
-    public static void print(int gross, int dozen, int rest) {
+    public static void print(int eggs) {
 
-        if (gross > 0) {
-            System.out.println("Your number of eggs is " + gross + " gross, " + dozen + " dozen, and " + rest);
-        } else if (dozen > 0) {
-            System.out.println("Your number of eggs is " + dozen + " dozen, and " + rest);
-        } else {
-            System.out.println("Your number of eggs is " + rest);
-        }
+        int gross = eggs / GROSS;
+        int dozen = eggs % 144 / DOZEN;
+        int rest = eggs % 144 % DOZEN;
+
+        System.out.println("Your number of eggs is " + gross + " gross, " + dozen + " dozen, and " + rest);
 
     }
 

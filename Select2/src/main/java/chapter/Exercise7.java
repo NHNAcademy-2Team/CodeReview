@@ -10,10 +10,16 @@ import java.util.List;
 
 public class Exercise7 {
 
+    private static List<String> list = new ArrayList<>();
+    private static String name = "";
+
+
+
     public static void main(String[] args) {
         File file = new File("../Select2/src/main/resources/testdata.txt");
         if (file.exists()) {
             read(file);
+            print();
         }
     }
 
@@ -21,10 +27,7 @@ public class Exercise7 {
 
         try (BufferedReader br = new BufferedReader(new FileReader(file));) {
 
-            List<String> list = new ArrayList();
             String line;
-            String name = "";
-
             while ((line = br.readLine()) != null) {
                 if (isNum(line)) {
                     list.add(line);
@@ -33,14 +36,8 @@ public class Exercise7 {
                 }
             }
 
-            if (list.size() > 1) {
-                System.out.println(name + "의 평균 성적 : " + avg(list));
-            }
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
         }
     }
 
@@ -71,6 +68,12 @@ public class Exercise7 {
             count++;
         }
         return count;
+    }
+
+    public static void print() {
+        if (list.size() > 1) {
+            System.out.printf("%s의 평균 성적 : %d" , name, avg(list));
+        }
     }
 
 
