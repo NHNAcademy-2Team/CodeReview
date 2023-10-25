@@ -25,7 +25,7 @@ public class Exercise5 {
             if (eggs == 0) {
                 System.out.println("소지한 달걀은 0개 입니다.");
             } else if (eggs < 0) {
-                throw new ArithmeticException("댤걀 개수가 음수일 수 없습니다.");
+                throw new IllegalArgumentException("댤걀 개수가 음수일 수 없습니다.");
             } else {
                 print(gross, dozen, rest);
             }
