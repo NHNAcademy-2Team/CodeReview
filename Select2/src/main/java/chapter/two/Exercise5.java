@@ -1,4 +1,4 @@
-package chapter;
+package chapter.two;
 
 import java.util.Scanner;
 
@@ -14,12 +14,14 @@ public class Exercise5 {
 
 class EggConvertor {
 
+    private static final int DOZEN = 12;
+    private static final int GROSS = 144;
     private static int[] eggConvertor(int number) {
         int[] eggArrays = new int[3];
-        eggArrays[0] = number / 144;
-        number %= 144;
-        eggArrays[1] = number / 12;
-        eggArrays[2] = number % 12;
+        eggArrays[0] = number / GROSS;
+        number %= GROSS;
+        eggArrays[1] = number / DOZEN;
+        eggArrays[2] = number % DOZEN;
 
         return eggArrays;
     }

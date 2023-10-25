@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +33,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hyuni1020&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;taehee1024&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/kimseunghyeon/Desktop/CodeReview&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -46,6 +44,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -102,6 +101,12 @@
       <workItem from="1698018755946" duration="76000" />
       <workItem from="1698018884505" duration="45000" />
       <workItem from="1698018986339" duration="55000" />
+      <workItem from="1698190868282" duration="1011000" />
+      <workItem from="1698205663085" duration="598000" />
+      <workItem from="1698211666359" duration="85000" />
+      <workItem from="1698211783022" duration="194000" />
+      <workItem from="1698218383554" duration="197000" />
+      <workItem from="1698218691505" duration="20000" />
     </task>
     <servers />
   </component>

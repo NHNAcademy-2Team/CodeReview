@@ -1,4 +1,4 @@
-package chapter;
+package chapter.two;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -22,6 +22,10 @@ public class Exercise4 {
 }
 
 class DollarConvertor {
+
+    private static final int QUARTER = 25;
+    private static final int DIME = 10;
+    private static final int NICKEL = 5;
 
     public static double centToDollar(Scanner scanner) {
         int[] coin = new int[4];
@@ -47,15 +51,15 @@ class DollarConvertor {
     }
 
     private static int quarterToCent(int quarter) {
-        return quarter * 25;
+        return quarter * QUARTER;
     }
 
     private static int dimeToCent(int dime) {
-        return dime * 10;
+        return dime * DIME;
     }
 
     private static int nickelToCent(int nickel) {
-        return nickel * 5;
+        return nickel * NICKEL;
     }
 
 }
