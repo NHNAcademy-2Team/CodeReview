@@ -9,6 +9,7 @@ public class Exercise6 {
         String input;
         int space;
 
+
         Scanner name = new Scanner(System.in);
         System.out.print("이름과 성을 공백으로 구분하여 입력: ");
         firstName = name.next();
