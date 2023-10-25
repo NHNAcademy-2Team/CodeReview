@@ -1,6 +1,6 @@
 package chapter.two;
 
-public class Exersize2 {
+public class Exercize2 {
 
     public static void main(String[] args) {
         int first;
