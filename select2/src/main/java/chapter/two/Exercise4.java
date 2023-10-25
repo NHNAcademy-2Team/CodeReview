@@ -3,11 +3,15 @@ package chapter.two;
 import java.util.Scanner;
 
 public class Exercise4 {
+    private static final int QUARTER = 25;
+    private static final int DIME = 10;
+    private static final int NICK = 5;
+
 
     public static int coinCalculate(int quarters, int dimes, int nicks, int pennies) {
         int totalCents;
 
-        totalCents = 25 * quarters + 10 * dimes + 5 * nicks + pennies;
+        totalCents = QUARTER * quarters + DIME * dimes + NICK * nicks + pennies;
 
         System.out.println("동전 수: " + totalCents);
 

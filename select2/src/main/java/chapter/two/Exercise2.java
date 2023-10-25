@@ -1,22 +1,22 @@
 package chapter.two;
 
 public class Exercise2 {
-    public static void randomDice() {
-        int firstDice;
-        int secondDice;
-        int roll;
+    private static int dice = 1;
 
-        firstDice = (int) (Math.random() * 6) + 1;
-        secondDice = (int) (Math.random() * 6) + 1;
-        roll = firstDice + secondDice;
+    public static void randomDice() { // 주사위를 굴리는 행위만
+        dice = (int) (Math.random() * 6) + 1;
+    }
 
-        System.out.println("첫 번째 주사위: " + firstDice);
-        System.out.println("두 번째 주사위: " + secondDice);
-        System.out.println("총 주사위 값은 " + roll);
+    public static void sumDice(int firstDice, int secondDice) {
+        System.out.println("주사위 총 합: " + (firstDice + secondDice));
     }
 
     public static void main(String[] args) {
         randomDice();
+        System.out.println("첫 번째 주사위: " + dice);
+        randomDice();
+        System.out.println("두 번째 주사위: " + dice);
+        sumDice(dice, dice);
     }
 
 }

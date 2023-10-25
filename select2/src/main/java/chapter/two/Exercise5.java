@@ -7,11 +7,13 @@ public class Exercise5 {
     /* 이 프로그램은 주어진 수의 계란을 계란으로 변환
      * 계란 1342개는 총 9개, 3다스, 10개이다.
      */
+    private static final int GROSS = 144;
+    private static final int DOZEN = 12;
     public static void eggCalculate(int egg){
-        int gross = egg / 144;
-        int extraGross = egg % 144;
-        int dozens = extraGross / 12;
-        int extra = extraGross % 12;
+        int gross = egg / GROSS;
+        int extraGross = egg % GROSS;
+        int dozens = extraGross / DOZEN;
+        int extra = extraGross % DOZEN;
 
         System.out.println("gross: " + gross);
         System.out.println("dozens: " + dozens);
