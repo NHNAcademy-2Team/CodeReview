@@ -5,8 +5,8 @@ package chapter;
 public class Exercise2 {
     public static void main(String[] args) {
 
-        int first = (int)(Math.random() * 6) + 1;
-        int second = (int)(Math.random() * 6) + 1;
+        int first = roll();
+        int second = roll();
         int total = first + second;
 
         System.out.println("The first die comes up " + first);
@@ -14,13 +14,10 @@ public class Exercise2 {
         System.out.println("Your total roll is " + total);
 
     }
+
+    public static int roll() {
+        int dice = (int)(Math.random() * 6) + 1;
+        return dice;
+    }
 }
 
-//class Dice {
-//
-//    private int first
-//
-//    public Dice(int need) {
-//
-//    }
-//}
