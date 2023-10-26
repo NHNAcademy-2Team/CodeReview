@@ -34,7 +34,7 @@ public class Exercise6 {
     public static String initials(String name) {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(name.substring(0, 1));
+        sb.append(name.charAt(0));
 
         for (int i = name.length() - 1; i >= 0; i--) {
             if (Character.isUpperCase(name.charAt(i))) {
