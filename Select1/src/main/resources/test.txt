@@ -1,7 +1,0 @@
-/This is a line starting with '/'
-;Here's a line starting with ';'
-%And this one starts with '%'
-This line doesn't start with any of the specified characters
-/Another line beginning with '/'
-This is a normal line
-;A line that begins with ';'

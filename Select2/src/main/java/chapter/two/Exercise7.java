@@ -3,29 +3,58 @@ package chapter.two;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class Exercise7 {
     public static void main(String[] args) {
-        // 함수 더 나누기
-        String fileName = Objects.requireNonNull(Exercise7.class.getClassLoader().getResource("student.txt")).getFile();
-        try(FileReader f = new FileReader(fileName); BufferedReader br = new BufferedReader(f)) {
-            Student student = new Student(br.readLine());
-            Exam exam1 = new Exam(Integer.parseInt(br.readLine()));
-            Exam exam2 = new Exam(Integer.parseInt(br.readLine()));
-            Exam exam3 = new Exam(Integer.parseInt(br.readLine()));
+        String filename = "/Users/taehee/과정2/resorces/testdata.txt";
+        FindAverage find = new FindAverage();
+        find.fileReader(filename);
+        System.out.println(find.toString());
 
-            List<Exam> examList = new ArrayList<>();
-            examList.add(exam1);
-            examList.add(exam2);
-            examList.add(exam3);
+    }
 
-            StudentExamScores studentExamScores = new StudentExamScores(student, examList);
-            System.out.println(studentExamScores.average());
+}
+
+class FindAverage {
+    private String name;
+    private int[] score;
+
+    private int count(String filename) {
+        int count = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            while (br.readLine() != null) {
+                count++;
+            }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
+        return count;
+    }
+
+    public void fileReader(String filename) {
+        this.score = new int[count(filename)];
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            this.name = br.readLine();
+
+            for (int i = 0; i < score.length - 1; i++) {
+                score[i] = Integer.parseInt(br.readLine());
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private double avg() {
+        double sum = 0;
+        for (int i = 0; i < score.length; i++) {
+            sum += score[i];
+        }
+        return sum / score.length;
+    }
+
+    public String toString() {
+        return this.name + "의 평균 : " + avg();
     }
 }
