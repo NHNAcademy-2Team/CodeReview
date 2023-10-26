@@ -1,35 +1,48 @@
 package chapter.two;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exercise5 {
 
-    /* 이 프로그램은 주어진 수의 계란을 계란으로 변환
-     * 계란 1342개는 총 9개, 3다스, 10개이다.
-     */
-    private static final int GROSS = 144;
     private static final int DOZEN = 12;
-    public static void eggCalculate(int egg){
-        int gross = egg / GROSS;
-        int extraGross = egg % GROSS;
-        int dozens = extraGross / DOZEN;
-        int extra = extraGross % DOZEN;
-
-        System.out.println("gross: " + gross);
-        System.out.println("dozens: " + dozens);
-        System.out.println("extra: " + extra);
-    }
-
-
+    private static final int GROSS = DOZEN * DOZEN;
+    //달걀
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        System.out.print("달걀 몇 개? ");
-        int egg = scn.nextInt();
+        Scanner scan = new Scanner(System.in);
+        System.out.print("달걀이 몇 개 있습니까? : ");
+        int eggs = scan.nextInt();
 
-        eggCalculate(egg);
+        countEggs(eggs);
 
-        scn.close();
+        scan.close();
+    }
+
+    public static void countEggs(int eggs) {
+
+        try {
+
+            if (eggs == 0) {
+                System.out.println("소지한 달걀은 0개 입니다.");
+            } else if (eggs < 0) {
+                throw new IllegalArgumentException("댤걀 개수가 음수일 수 없습니다.");
+            } else {
+                print(eggs);
+            }
+
+        } catch (InputMismatchException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public static void print(int eggs) {
+
+        int gross = eggs / GROSS;
+        int dozen = eggs % 144 / DOZEN;
+        int rest = eggs % 144 % DOZEN;
+
+        System.out.println("Your number of eggs is " + gross + " gross, " + dozen + " dozen, and " + rest);
 
     }
-}
 
+}

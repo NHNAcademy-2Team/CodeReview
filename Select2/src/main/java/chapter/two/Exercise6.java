@@ -3,32 +3,49 @@ package chapter.two;
 import java.util.Scanner;
 
 public class Exercise6 {
+
     public static void main(String[] args) {
-        String firstName;
-        String lastName;
-        String middleName;
-        String input;
-        int space;
+        Scanner scan = new Scanner(System.in);
 
-
-        try (Scanner name = new Scanner(System.in)) {
-            System.out.print("이름과 성을 공백으로 구분하여 입력: ");
-            firstName = name.next();
-            middleName = name.next();
-            lastName = name.next();
-
-            System.out.println("당신의 이름은 " + firstName + "이며, " + firstName.length() + " 문자 ");
-            System.out.println("당신의 가운데 이름은 " + middleName + "이며, " + middleName.length() + " 문자 ");
-            System.out.println("귀하의 성은 " + lastName + "이며, " + lastName.length() + " 문자 ");
-            System.out.println("귀하의 이니셜은 " + firstName.charAt(0) + middleName.charAt(0) + lastName.charAt(0));
-
-            input = name.next();
-            space = input.indexOf(' '); // 공백 문자 위치 찾기
-            firstName = input.substring(0, space); // 0부터 공백 이전까지
-            middleName = input.substring(space + 1,space);
-            lastName = input.substring(space + 1); // 공백 다음부터 끝까지
-
-        } // try문이 끝나면 자동으로 자원 해제를 해주므로 직접 닫아주지 않아도 된다.
+        question(scan);
+        scan.close();
     }
+
+
+    public static void question(Scanner scan) {
+
+        System.out.print("Please enter your first name and last name, separated by a space. : ");
+        String name = scan.nextLine();
+        int blank = name.lastIndexOf(" ");
+
+        String firstName = name.substring(0, blank);
+        String lastName = name.substring(blank + 1);
+
+        System.out.println("Your first name is " + firstName + ", which has " + count(firstName) + " characters");
+        System.out.println("Your last name is " + lastName + ", which has " + count(lastName) + " characters");
+        System.out.println("Your initials are " + initials(name));
+    }
+
+    public static int count(String name) {
+        String result = name.replace(" ", "");
+        return result.length();
+    }
+
+    public static String initials(String name) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(name.substring(0, 1));
+
+        for (int i = name.length() - 1; i >= 0; i--) {
+            if (Character.isUpperCase(name.charAt(i))) {
+                sb.append(name.charAt(i));
+                break;
+            }
+        }
+
+        return sb.toString();
+    }
+
 }
+
 
