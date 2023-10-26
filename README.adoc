@@ -20,6 +20,9 @@
 * [*] Unit09(~10/5)
 * [*] Unit10(~10/11)
 * [*] Unit11(~10/11)
+선택과정2 + 
+* [*] Chapter2(~10/24)
+* [*] Chapter2(~10/29)
 
 참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
 
