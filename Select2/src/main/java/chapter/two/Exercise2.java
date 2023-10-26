@@ -1,4 +1,6 @@
-package chapter.two.exercise2;
+package chapter.two;
+
+import chapter.two.Dice;
 
 public class Exercise2 {
     public static void main(String[] args) {

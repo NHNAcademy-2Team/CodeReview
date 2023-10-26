@@ -1,4 +1,4 @@
-package chapter.two.exercise4;
+package chapter.two;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package chapter.two.exercise7;
+package chapter.two;
 
 public class Exam {
     private int score;
