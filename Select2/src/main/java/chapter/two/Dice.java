@@ -5,7 +5,6 @@ import java.util.Random;
 public class Dice {
 
     private int maxNum;
-    private int player;
     private int score;
     private Random rnd = new Random();
 
@@ -16,7 +15,7 @@ public class Dice {
     public void setRoll() {
         try {
 
-            this.score = rnd.nextInt(6) + 1;
+            this.score = rnd.nextInt(maxNum) + 1;
 
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
