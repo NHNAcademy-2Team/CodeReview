@@ -1,4 +1,4 @@
-package chapter;
+package chapter2;
 import java.util.Scanner;
 public class Exercise6 {
     // 성이 포함된 이름을 입력받고 성과 이름을 따로 분류하여 출력하세요.

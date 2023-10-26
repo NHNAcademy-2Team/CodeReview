@@ -1,4 +1,4 @@
-package chapter;
+package chapter2;
 public class Exercise2 {
     // 주사위 하나를 두번 굴려 두수에 합을 출력하시오.
     private static int dice = 1;
