@@ -1,19 +1,48 @@
 package chapter.two;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exercise5 {
-    // 총 n개의 달걀을 12개씩 묶어 1판을 만들고 나머지 달걀개수를 구하세요. 더 나아가 12판을 묶은 1상자를 만들고 총 ?상자 ?판 ?개의 달걀이 남는지 출력하세요.
+
+    private static final int DOZEN = 12;
+    private static final int GROSS = DOZEN * DOZEN;
+    //달걀
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        System.out.print("달걀이 몇 개 있습니까? : ");
+        int eggs = scan.nextInt();
 
-        System.out.print("달걀의 개수를 입력하세요. : ");
-        int eggs = sc.nextInt();
-        int eggBoxs = eggs/144;
-        eggs %= 144;
-        int eggCartons = eggs/12;
-        eggs %= 12;
+        countEggs(eggs);
 
-        System.out.println("Your number of eggs is " + eggBoxs + " gross, " + eggCartons + "dozen, and " + eggs);
-        sc.close();
+        scan.close();
     }
+
+    public static void countEggs(int eggs) {
+
+        try {
+
+            if (eggs == 0) {
+                System.out.println("소지한 달걀은 0개 입니다.");
+            } else if (eggs < 0) {
+                throw new IllegalArgumentException("댤걀 개수가 음수일 수 없습니다.");
+            } else {
+                print(eggs);
+            }
+
+        } catch (InputMismatchException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public static void print(int eggs) {
+
+        int gross = eggs / GROSS;
+        int dozen = eggs % 144 / DOZEN;
+        int rest = eggs % 144 % DOZEN;
+
+        System.out.println("Your number of eggs is " + gross + " gross, " + dozen + " dozen, and " + rest);
+
+    }
+
 }

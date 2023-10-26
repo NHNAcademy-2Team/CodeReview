@@ -1,28 +1,51 @@
 package chapter.two;
+
 import java.util.Scanner;
+
 public class Exercise6 {
-    // 성이 포함된 이름을 입력받고 성과 이름을 따로 분류하여 출력하세요.
+
     public static void main(String[] args) {
-        String fillName;
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
-        int cheak = 0;
-        while (true) {
-            System.out.print("Please enter your first name and last name, separated by a space. : ");
-            fillName = sc.nextLine();
+        question(scan);
+        scan.close();
+    }
 
-            cheak = fillName.indexOf(' ');
-            if (cheak >= 0) {
+
+    public static void question(Scanner scan) {
+
+        System.out.print("Please enter your first name and last name, separated by a space. : ");
+        String name = scan.nextLine();
+        int blank = name.lastIndexOf(" ");
+
+        String firstName = name.substring(0, blank);
+        String lastName = name.substring(blank + 1);
+
+        System.out.println("Your first name is " + firstName + ", which has " + count(firstName) + " characters");
+        System.out.println("Your last name is " + lastName + ", which has " + count(lastName) + " characters");
+        System.out.println("Your initials are " + initials(name));
+    }
+
+    public static int count(String name) {
+        String result = name.replace(" ", "");
+        return result.length();
+    }
+
+    public static String initials(String name) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(name.substring(0, 1));
+
+        for (int i = name.length() - 1; i >= 0; i--) {
+            if (Character.isUpperCase(name.charAt(i))) {
+                sb.append(name.charAt(i));
                 break;
             }
-            System.out.println("err : 다시 입력하세요.");
         }
-        String firstName = fillName.substring(0, cheak);
-        String lastName = fillName.substring(cheak +1);
 
-        System.out.println("Your first name is " + firstName + ", which has " + firstName.length() + " characters");
-        System.out.println("Your last name is " + lastName + ", which has " + lastName.length() + " characters");
-        System.out.println("Your initials are " + firstName.substring(0, 1).toUpperCase() + lastName.substring(0, 1).toUpperCase());
-        sc.close();
+        return sb.toString();
     }
+
 }
+
+

@@ -1,50 +1,60 @@
 package chapter.two;
-import java.io.*;
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Exercise7 {
-    // testdata.txt라는 이름에 파일정보는 다음과 같다. 첫줄은 학생이름, 다음 세줄은 각각 정수이고 세번시험본 각각에 점수들이다.
-    // 학생이름과 성적 평균을 출력하시오. 더 나아가 입력하여 파일을 저장하시오.
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        String filename = "/Users/taehee/과정2/resorces/testdata.txt";
+        FindAverage find = new FindAverage();
+        find.fileReader(filename);
+        System.out.println(find.toString());
 
-        String name;
-        int exam1, exam2, exam3;
-        double average;
-        //---
-        Scanner sc = new Scanner(System.in);
-        System.out.print("이름을 입력하세요. : ");
-        name = sc.nextLine();
-        System.out.println("첫번째 점수를 입력하세요. : ");
-        exam1 = sc.nextInt();
-        System.out.println("두번째 점수를 입력하세요. : ");
-        exam2 = sc.nextInt();
-        System.out.println("세번째 점수를 입력하세요. : ");
-        exam3 = sc.nextInt();
+    }
 
-        FileWriter fw = new FileWriter("testdata.txt");
-        PrintWriter pw = new PrintWriter(fw);
-        pw.println(name);
-        pw.println(exam1);
-        pw.println(exam2);
-        pw.println(exam3);
+}
 
-        pw.close();
-        fw.close();
-        //---
+class FindAverage {
+    private String name;
+    private int[] score;
 
-        FileReader fr = new FileReader("testdata.txt");
-        BufferedReader br = new BufferedReader(fr);
+    private int count(String filename) {
+        int count = 0;
 
-        name = br.readLine();
-        exam1 = Integer.valueOf(br.readLine());
-        exam2 = Integer.valueOf(br.readLine());
-        exam3 = Integer.valueOf(br.readLine());
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            while (br.readLine() != null) {
+                count++;
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return count;
+    }
 
-        fr.close();
-        average = (double)(exam1 + exam2 + exam3) / 3;
+    public void fileReader(String filename) {
+        this.score = new int[count(filename)];
 
-        System.out.println("학생 이름 : " + name);
-        System.out.printf("학생 점수 평균 : %.2f", average);
-        sc.close();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            this.name = br.readLine();
+
+            for (int i = 0; i < score.length - 1; i++) {
+                score[i] = Integer.parseInt(br.readLine());
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private double avg() {
+        double sum = 0;
+        for (int i = 0; i < score.length; i++) {
+            sum += score[i];
+        }
+        return sum / score.length;
+    }
+
+    public String toString() {
+        return this.name + "의 평균 : " + avg();
     }
 }
