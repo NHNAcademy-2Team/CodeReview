@@ -1,34 +1,48 @@
 package chapter.two;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exercise5 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int egg = scanner.nextInt();
-        EggConvertor.printEgg(egg);
-
-        scanner.close();
-    }
-}
-
-class EggConvertor {
 
     private static final int DOZEN = 12;
-    private static final int GROSS = 144;
-    private static int[] eggConvertor(int number) {
-        int[] eggArrays = new int[3];
-        eggArrays[0] = number / GROSS;
-        number %= GROSS;
-        eggArrays[1] = number / DOZEN;
-        eggArrays[2] = number % DOZEN;
+    private static final int GROSS = DOZEN * DOZEN;
+    //달걀
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("달걀이 몇 개 있습니까? : ");
+        int eggs = scan.nextInt();
 
-        return eggArrays;
+        countEggs(eggs);
+
+        scan.close();
     }
 
-    public static void printEgg(int number) {
-        int[] eggArrays = eggConvertor(number);
+    public static void countEggs(int eggs) {
 
-        System.out.println("gross : " + eggArrays[0] + "\ndozen : " + eggArrays[1] + "\nmodulus : " + eggArrays[2]);
+        try {
+
+            if (eggs == 0) {
+                System.out.println("소지한 달걀은 0개 입니다.");
+            } else if (eggs < 0) {
+                throw new IllegalArgumentException("댤걀 개수가 음수일 수 없습니다.");
+            } else {
+                print(eggs);
+            }
+
+        } catch (InputMismatchException e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
+
+    public static void print(int eggs) {
+
+        int gross = eggs / GROSS;
+        int dozen = eggs % 144 / DOZEN;
+        int rest = eggs % 144 % DOZEN;
+
+        System.out.println("Your number of eggs is " + gross + " gross, " + dozen + " dozen, and " + rest);
+
+    }
+
 }

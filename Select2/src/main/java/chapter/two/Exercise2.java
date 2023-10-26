@@ -1,46 +1,38 @@
 package chapter.two;
 
-import java.util.Random;
-
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 public class Exercise2 {
     public static void main(String[] args) {
-        Dice dice = new Dice();
-        dice.rollDice(2);
-        dice.printDice();
+
+        Dice dice1 = createDice(6);
+        Dice dice2 = createDice(6);
+        print(dice1, dice2);
+
     }
+
+    public static Dice createDice(int maxNum) {
+        Dice dice = new Dice(maxNum);
+        dice.setRoll();
+        return dice;
+    }
+
+    public static void print(Dice dice1, Dice dice2) {
+        try {
+            System.out.println("The first dice comes up " + dice1.getRoll());
+            System.out.println("The second dice comes up " + dice2.getRoll());
+
+            System.out.println("Your total roll is " + total(dice1.getRoll(), dice2.getRoll()));
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int total(int first, int second) {
+        return first + second;
+    }
+
 }
 
-class Dice {
-    private Random random = new Random();
-    private int[] dice;
 
-    public Dice() {
-    }
 
-    private int randomDiceNumer() {
-        return random.nextInt(6) + 1;
-    }
-
-    public void rollDice(int number) {
-        dice = new int[number];
-        for (int i = 0; i < dice.length; i++) {
-            dice[i] = randomDiceNumer();
-        }
-    }
-
-    public int sumDice() {
-        int sum = 0;
-        for (int i : this.dice) {
-            sum += i;
-        }
-        return sum;
-    }
-
-    public void printDice() {
-
-        for (int i = 0; i < this.dice.length; i++) {
-            System.out.println((i + 1) + "번째 주사위는 " + dice[i] + "가 나옵니다.");
-        }
-        System.out.println("총 합은 " + sumDice() + "입니다.");
-    }
-}
