@@ -1,65 +1,24 @@
 package chapter.two;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-/**
- * Quarter (25 센트)
- * Dime (10 센트)
- * Nickel (5 센트)
- * Penny (1 센트)
- * 
- * 1 달러 = 100 센트
- */
+import java.util.Objects;
 
 public class Exercise4 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(DollarConvertor.centToDollar(scanner) + "달러");
-
-        scanner.close();
+        changeTest();
     }
-}
 
-class DollarConvertor {
-
-    private static final int QUARTER = 25;
-    private static final int DIME = 10;
-    private static final int NICKEL = 5;
-
-    public static double centToDollar(Scanner scanner) {
-        int[] coin = new int[4];
-
-        System.out.print("교환할 동전의 수를 입력하세요(Quarter Dime Kickel Penny) : ");
-        for (int i = 0; i < 4; i++) {
-            try {
-                coin[i] = Integer.parseInt(scanner.next());
-
-                if (coin[i] < 0) {
-                    throw new IllegalArgumentException("양수의 값을 입력해주세요.");
-                }
-
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                i--;
-            } catch (InputMismatchException e) {
-                System.out.println(e.getMessage());
-                i--;
-            }
+    private static ChangeBuilder createChange(int[] changeArr) {
+        Objects.requireNonNull(changeArr);
+        if (changeArr.length != 4) {
+            throw new IllegalArgumentException("배열의 길이가 맞지 앖습니다.");
         }
-        return (quarterToCent(coin[0]) + dimeToCent(coin[1]) + nickelToCent(coin[2]) + coin[3]) / 100.0;
+        return new ChangeBuilder.Builder()
+                .quarter(changeArr[0]).dime(changeArr[1])
+                .nickel(changeArr[2]).penny(changeArr[3]).build();
     }
 
-    private static int quarterToCent(int quarter) {
-        return quarter * QUARTER;
+    public static void changeTest() {
+        ChangeBuilder changeBuilder = createChange(InputInformation.ChangeInformation());
+        System.out.println(changeBuilder.convertDollar() + "$");
     }
-
-    private static int dimeToCent(int dime) {
-        return dime * DIME;
-    }
-
-    private static int nickelToCent(int nickel) {
-        return nickel * NICKEL;
-    }
-
 }

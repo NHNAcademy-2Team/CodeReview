@@ -1,38 +1,26 @@
 package chapter.two;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import chapter.two.Dice;
+
 public class Exercise2 {
     public static void main(String[] args) {
-
-        Dice dice1 = createDice(6);
-        Dice dice2 = createDice(6);
-        print(dice1, dice2);
-
-    }
-
-    public static Dice createDice(int maxNum) {
-        Dice dice = new Dice(maxNum);
-        dice.setRoll();
-        return dice;
-    }
-
-    public static void print(Dice dice1, Dice dice2) {
         try {
-            System.out.println("The first dice comes up " + dice1.getRoll());
-            System.out.println("The second dice comes up " + dice2.getRoll());
-
-            System.out.println("Your total roll is " + total(dice1.getRoll(), dice2.getRoll()));
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+            diceSimulation();
+        } catch (ArithmeticException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    public static int total(int first, int second) {
-        return first + second;
+    private static void diceSimulation() {
+        Dice dice1 = new Dice(6);
+        Dice dice2 = new Dice(6);
+
+        int rollNum1 = dice1.roll();
+        int rollNum2 = dice2.roll();
+        long total = Math.addExact(rollNum1, rollNum2);
+
+        System.out.printf("The first die comes up %d%n", rollNum1);
+        System.out.printf("The second die comes up %d%n", rollNum2);
+        System.out.printf("Your total roll is %d%n", total);
     }
-
 }
-
-
-

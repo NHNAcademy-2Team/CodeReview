@@ -3,27 +3,28 @@ package chapter.two;
 import java.util.Random;
 
 public class Dice {
+    private final int maxValue;
 
-    private int maxNum;
-    private int player;
-    private int score;
-    private Random rnd = new Random();
-
-    public Dice(int maxNum) {
-        this.maxNum = maxNum;
+    public Dice(int maxValue) {
+        this.maxValue = maxValue;
+        classInvariant();
     }
 
-    public void setRoll() {
-        try {
-
-            this.score = rnd.nextInt(6) + 1;
-
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+    private void classInvariant() {
+        if (this.maxValue < 1) {
+            throw new IllegalArgumentException("양수가 아닙니다.");
         }
     }
 
-    public int getRoll() {
-        return this.score;
+    public int roll() {
+        Random random = new Random();
+        return random.nextInt(this.maxValue) + 1;
+    }
+
+    @Override
+    public String toString() {
+        return "Dice{" +
+                "maxValue=" + maxValue +
+                '}';
     }
 }
