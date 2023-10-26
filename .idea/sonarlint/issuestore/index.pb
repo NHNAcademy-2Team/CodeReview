@@ -1,24 +1,4 @@
 
-Q
-!Select1/unit/seven/Exercise1.java,4/b/4b439642e027cea25f63fd72ae57e4da48faca99
-Q
-!Select1/unit/seven/Apartment.java,d/1/d1ca058a0f0bb6d69be185e89984c789cacb90e7
-Q
-!Select1/unit/seven/Exercise6.java,c/3/c394330279b59a4960b7243c26af7e5fe43c9c37
-Q
-!Select1/unit/seven/Exercise7.java,b/b/bb245c3bca0ebdc03e0e58af2141b375c7e47b39
-Q
-!Select1/unit/seven/Exercise9.java,c/7/c7148521f2d1f00b69c47920cd130b8b4d160d4f
-R
-"Select1/unit/seven/Exercise12.java,d/f/dfb96f0eb3818ab9841b558252282bc180b3bf5f
-R
-"Select1/unit/seven/Exercise10.java,9/e/9e61b1f6f98a7f43aff88d12e021f73a93ed569e
-Q
-!Select1/unit/seven/Exercise5.java,a/a/aa2ae9ce76a0a2634fde01bb23e411c4586a8415
-Q
-!Select1/unit/seven/Exercise4.java,c/a/ca96b0330f81e31783584567ea4f1aebc8150f43
-Q
-!Select1/unit/seven/Exercise2.java,8/7/8719dc5d05992eb714ab1ab66b180b313920ee81
 _
 /Select1/src/main/java/unit/seven/Apartment.java,5/6/56c306a5c999f3d98269cb612a12c298c1e1a891
 _
