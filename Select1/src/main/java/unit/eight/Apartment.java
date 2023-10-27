@@ -7,49 +7,74 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Apartment {
-    private int size;
+    private int squareMetersSize;
     private String address;
-    private String[] persons;
-    private int peopleNum;
+    private String[] apartments;
 
-    public Apartment(int size, String address) {
-        this.size = size * size;
+    public Apartment(int squareMetersSize, String address) {
+        this.squareMetersSize = squareMetersSize;
         this.address = address;
-        this.persons = new String[10];
-        this.peopleNum = 0;
+        this.apartments = new String[10];
     }
 
-    public int getSize() {
-        return this.size;
+    public int getSquareMetersSize() {
+        return this.squareMetersSize;
     }
 
     public String getAddress() {
         return this.address;
     }
 
-    public int getNumberOfPeople() {
-        return this.peopleNum;
-    }
-
-    public String getPerson(int num) {
-        if (num >= 0 && this.peopleNum > num) {
-            return persons[num];
-        }
-        return null;
-    }
-
-    public void addPerson(String name) {
-        if (peopleNum != 10) {
-            persons[peopleNum++] = name;
-        }
-    }
-
-    public void removePerson(int num) {
-        if(num >= 0 && num < this.peopleNum ) {
-            for(int i = num; i < peopleNum; i++) {
-                this.persons[i] = this.persons[i + 1];
+    public int countApartments() {
+        int cnt = 0;
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] != null) {
+                cnt++;
             }
-            this.persons[peopleNum--] = null;
+        }
+        return cnt;
+    }
+
+    public void setApartment(String personName) {
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] == null) {
+                apartments[i] = personName;
+                break;
+            }
+        }
+    }
+
+    public String getApartment(int slot) {
+        if (slot < 0) {
+            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
+        }
+        if (slot >= 10) {
+            return null;
+        }
+        return apartments[slot];
+    }
+
+    public void removeApartment(int slot) {
+        if (slot < 0) {
+            throw new IllegalArgumentException("음이 아닌 정수를 입력해주세요.");
+        }
+        if (slot >= 10) {
+            throw new IllegalArgumentException("입력 범위를 넘겼습니다.");
+        }
+        apartments[slot] = null;
+    }
+
+    public void reorganizeApartments() {
+        int empty = -1;
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] == null && empty == -1) {
+                empty = i;
+            }
+            if (apartments[i] != null && empty != -1) {
+                apartments[empty] = apartments[i];
+                apartments[i] = null;
+                empty++;
+            }
         }
     }
 
@@ -85,16 +110,20 @@ public class Apartment {
     }
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("");
-        for (String person : this.persons) {
-            if (person == (null)) {
-                break;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Size: ")
+                .append(this.squareMetersSize)
+                .append(", ")
+                .append("Address: ")
+                .append(this.address);
+        for (int i = 0; i < 10; i++) {
+            if (apartments[i] != null) {
+                sb.append("\nApartment ")
+                        .append(i)
+                        .append(": ")
+                        .append(apartments[i]);
             }
-            sb.append(person + ", ");
         }
-
-        return "[ APARTMENT ]\n" + "Address: " + getAddress()
-                + "\nSize Of Apartment: " + getSize() + "\nPeople Num: "
-                + getNumberOfPeople() + "\nLiving People List: " + sb.toString();
+        return sb.toString();
     }
 }

@@ -324,3 +324,7 @@ $RECYCLE.BIN/
 .idea
 Select1.iml
 NewGit.iml
+Select2.iml
+encodings.xml
+workspace.xml
+./Select2/pom.xml

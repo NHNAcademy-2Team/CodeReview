@@ -8,7 +8,7 @@
 * 피드백 반영하여 당일 오후 6시 이전까지 push 완료하기
 
 계획 ::
-선택과정1 + 
+선택과정1 :: 
 * [*] Unit01(~9/12)
 * [*] Unit02(~9/13)
 * [*] Unit03(~9/15)
@@ -22,6 +22,12 @@
 * [*] Unit11(~10/11)
 
 참고자료 :: https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
+
+선택과정2 ::
+* [*] Chapter2(~10/24)
+* [ ] Chapter3(~10/29)
+
+참고자료 :: https://math.hws.edu/javanotes/
 
 개인과제(스타크래프트) ::
 [cols=2*]
