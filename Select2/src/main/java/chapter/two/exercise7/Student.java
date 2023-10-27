@@ -1,4 +1,4 @@
-package chater.two.exercise7;
+package chapter.two.exercise7;
 
 public class Student {
     private String name;

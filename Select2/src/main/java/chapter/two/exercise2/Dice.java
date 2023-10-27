@@ -1,4 +1,4 @@
-package chater.two.exercise2;
+package chapter.two.exercise2;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package chater.two.exercise7;
+package chapter.two.exercise7;
 
 public class Exam {
     private int score;
