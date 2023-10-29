@@ -1,25 +1,19 @@
-package chapter.three;
+package Select2.src.main.java.chapter.three;
 
 public class Exercise1 {
-    private static int firstDice = 1;
-    private static int secondDice = 1;
-
-    public static void randomDice() { // 주사위를 굴리는 행위만
-        int firstDice = (int) (Math.random() * 6) + 1;
-        int secondDice = (int) (Math.random() * 6) + 1;
-    }
-
-    public static void countRoll(){
-        int count = 0;
-        do {
-            randomDice();
-        } while (!(firstDice = 1 && secondDice =1));
-    }
-
 
     public static void main(String[] args) {
-        randomDice();
-        randomDice();
+        int dice1, dice2;
+        int countRoll = 0;
+
+        do {
+            dice1 = (int) (Math.random() * 6) + 1;
+            dice2 = (int) (Math.random() * 6) + 1;
+            countRoll++;
+
+        } while (!(dice1 == 1 && dice2 == 1));
+
+        System.out.print("주사위 몇 번 돌았냐? " + countRoll);
 
     }
 

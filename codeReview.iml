@@ -6,13 +6,14 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Select1/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/select2/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Select2/src/main/java" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="temurin-11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="SonarLintModuleSettings">
-    <option name="uniqueId" value="cbbdda2b-284a-404a-9ca3-df4c659a57a6" />
+    <option name="uniqueId" value="6ae1490f-6b0c-4012-8b5d-6b3999f24a38" />
   </component>
 </module>

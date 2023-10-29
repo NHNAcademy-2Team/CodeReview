@@ -1,4 +1,4 @@
-package chapter.two;
+package Select2.src.main.java.chapter.two;
 
 public class Exercise2 {
     private static int dice = 1;

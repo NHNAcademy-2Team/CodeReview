@@ -1,4 +1,4 @@
-package chapter.two;
+package Select2.src.main.java.chapter.two;
 
 import java.util.Scanner;
 

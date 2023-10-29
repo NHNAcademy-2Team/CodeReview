@@ -1,12 +1,10 @@
-package textio;
+package Select2.src.main.java.chapter.three;
 
 import java.io.*;
 import java.util.IllegalFormatException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  * TextIO provides a set of static methods for reading and writing text. By
