@@ -6,6 +6,7 @@ public class Exercise1 {
         int dice1, dice2;
         int countRoll = 0;
 
+
         do {
             dice1 = (int) (Math.random() * 6) + 1;
             dice2 = (int) (Math.random() * 6) + 1;
