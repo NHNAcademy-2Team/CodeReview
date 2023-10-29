@@ -13,6 +13,7 @@ public class Exercise1 {
 
         } while (!(dice1 == 1 && dice2 == 1));
 
+
         System.out.print("주사위 몇 번 돌았냐? " + countRoll);
 
     }
