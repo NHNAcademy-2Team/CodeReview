@@ -23,17 +23,18 @@ public class Exercise5 {
     public static void read(File file) {
         String line;
         String subLine;
+        String[] split;
         List<Double> list = new ArrayList<>();
         int index;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
             while ((line = br.readLine()) != null) {
-                index = line.indexOf(":");
-                subLine = line.substring(index + 1).trim();
+                subLine = line.trim();
+                split = subLine.split(":");
 
                 if (isDouble(subLine)) {
-                    list.add(Double.parseDouble(subLine));
+                    list.add(Double.parseDouble(split[1]));
                 }
 
             }
