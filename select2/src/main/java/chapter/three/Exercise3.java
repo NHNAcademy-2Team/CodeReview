@@ -18,12 +18,16 @@ public class Exercise3 {
             switch (operator) {
                 case '+':
                     result = first + second;
+                    break;
                 case '-':
                     result = first - second;
+                    break;
                 case '*':
                     result = first * second;
+                    break;
                 case '/':
                     result = first / second;
+                    break;
                 default:
                     System.out.println("잘못된 연산자입니다. ");
 
