@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Exercise7 {
     public static void main(String[] args) {
-        String filename = "/Users/taehee/과정2/resorces/testdata.txt";
+        String filename = "src/main/java/resources/testdata";
         FindAverage find = new FindAverage();
         find.fileReader(filename);
         System.out.println(find.toString());
