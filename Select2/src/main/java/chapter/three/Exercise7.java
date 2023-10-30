@@ -1,4 +1,9 @@
-package chapter.three.exercise7;
+package chapter.three;
+
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Random;
+import java.util.Set;
 
 public class Exercise7 {
     public static void main(String[] args) {
@@ -37,5 +42,53 @@ public class Exercise7 {
             personSet.add(new Person());
         }
         return count;
+    }
+}
+class Person {
+    private final int birthDate;
+
+    public Person() {
+        this.birthDate = randomDate();
+    }
+
+    private int randomDate() {
+        Random random = new Random();
+        return random.nextInt(365) + 1;
+    }
+
+    public int getBirthDate() {
+        return birthDate;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == this) {
+            return true;
+        }
+        if (!(object instanceof Person)) {
+            return false;
+        }
+        Person person = (Person) object;
+        return person.birthDate == this.birthDate;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(birthDate);
+    }
+}
+class PersonSet {
+    private final Set<Person> personSet;
+
+    public PersonSet() {
+        personSet = new HashSet<>();
+    }
+
+    public void add(Person person) {
+        personSet.add(person);
+    }
+
+    public int size() {
+        return personSet.size();
     }
 }
