@@ -1,68 +1,65 @@
 package chapter.three;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Exercise5 {
+    private static int count;
+
+    //모든 도시의 총 매출을 계산하고 인쇄할 프로그램을 작성하라. 이 프로그램은 또한 데이터가 제공되지 않은 도시의 갯수를 보고해야 한다.
     public static void main(String[] args) {
-        SalesFigures sales = new SalesFigures("../Select2/src/main/resources/sales.dat");
-        System.out.println(sales.totalSales());
-    }
-}
 
-class SalesFigures{
-    private String filename;
-    public SalesFigures(String filename){
-        this.filename = filename;
+        File file = new File("../Select2/src/main/resources/sales.dat");
+        if (file.exists()) {
+            read(file);
+        }
+
     }
 
-    private int fileLength(){
-        int count = 0;
+    public static void read(File file) {
         String line;
-        try(BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            while((line = br.readLine()) != null){
-                count++;
+        List<Double> list = new ArrayList<>();
+        int index;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+
+            while ((line = br.readLine()) != null) {
+                String[] split = line.split(":");
+
+                if (isDouble(split[1])) {
+                    list.add(Double.parseDouble(split[1]));
+                }
+
             }
-        } catch(IOException e){
-            throw new RuntimeException();
+
+            print(list);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return count;
     }
 
-    public double totalSales(){
-        double result = 0.0;
-        String line;
-
-        try(BufferedReader br = new BufferedReader(new FileReader(filename))){
-            for (int i = 0; i < fileLength(); i++) {
-                line = br.readLine();
-                double temp = sales(line);
-
-                if(temp != -1)
-                    result += temp;
-            }
-        }catch (IOException e){
-            throw new RuntimeException();
+    public static void print(List<Double> list) {
+        double sum = 0;
+        for (int i = 0; i < list.size(); i++) {
+            sum += list.get(i);
         }
-        return result;
+        System.out.println("총 매출 : " + sum);
+        System.out.println("데이터 미제공 도시 수 : " + count);
     }
 
-    private double sales(String line){
-        String number = "";
-        line = line.replaceAll(" ", "");
-
-        for (int i = 0; i < line.length(); i++) {
-            if(line.charAt(i) == ':'){
-                number = line.substring(i+1);
-                break;
-            }
+    public static boolean isDouble(String line) {
+        try {
+            Double.parseDouble(line);
+        } catch (NumberFormatException e) {
+            count++;
+            return false;
         }
 
-        try{
-            return Double.parseDouble(number);
-        } catch(NumberFormatException e){
-            return -1;
-        }
+        return true;
     }
 }

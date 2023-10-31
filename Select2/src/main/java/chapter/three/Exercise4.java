@@ -1,25 +1,54 @@
 package chapter.three;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Exercise4 {
+
+
     public static void main(String[] args) {
-        try(Scanner sc = new Scanner(System.in)){
-            String sentence = sc.nextLine();
-            ListWordsInString.print(sentence);
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
+
+            System.out.print("> ");
+
+            String line = br.readLine();
+            if (line != null) {
+                print(separate(line));
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
     }
-}
 
-class ListWordsInString{
-    public static void print(String sentence){
-        String[] arrays = sentence.split("");
+    public static List<String> separate(String line) {
+        List<String> list = new ArrayList<>();
+        String[] separate = line.split(" ");
 
-        for (int i = 0; i < arrays.length; i++) {
-            if (Character.isLetter(arrays[i].charAt(0)))
-                System.out.print(arrays[i]);
-            else if(arrays[i].equals(" ") || arrays[i].equals("'"))
-                System.out.println();
+        for (int i = 0; i < separate.length; i++) {
+            list.add(isLetter(separate[i]));
+        }
+        return list;
+    }
+
+    public static String isLetter(String separate) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < separate.length(); i++) {
+            if (Character.isLetter(separate.charAt(i))) {
+                sb.append(separate.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+
+    public static void print(List<String> list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
         }
     }
 }
