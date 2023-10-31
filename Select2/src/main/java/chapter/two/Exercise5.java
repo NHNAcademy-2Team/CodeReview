@@ -1,34 +1,34 @@
 package chapter.two;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Exercise5 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int egg = scanner.nextInt();
-        EggConvertor.printEgg(egg);
-
-        scanner.close();
-    }
-}
-
-class EggConvertor {
-
     private static final int DOZEN = 12;
-    private static final int GROSS = 144;
-    private static int[] eggConvertor(int number) {
-        int[] eggArrays = new int[3];
-        eggArrays[0] = number / GROSS;
-        number %= GROSS;
-        eggArrays[1] = number / DOZEN;
-        eggArrays[2] = number % DOZEN;
+    private static final int GROSS = DOZEN * DOZEN;
 
-        return eggArrays;
+    public static void main(String[] args) {
+        outputEggInformation(inputEggInformation());
     }
 
-    public static void printEgg(int number) {
-        int[] eggArrays = eggConvertor(number);
+    private static int inputEggInformation() {
+        int eggNum;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.print("달걀의 개수를 입력해주세요 : ");
+            eggNum = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return eggNum;
+    }
 
-        System.out.println("gross : " + eggArrays[0] + "\ndozen : " + eggArrays[1] + "\nmodulus : " + eggArrays[2]);
+    private static void outputEggInformation(int eggNum) {
+        if(eggNum < 0)
+            throw new IllegalArgumentException("음수는 들어올 수 없습니다.");
+        int grossNum = eggNum / GROSS;
+        int dozenNUm = (eggNum % GROSS) / DOZEN;
+        int rest = (eggNum % GROSS) % DOZEN;
+        System.out.printf("Your number of eggs is %d gross, %d dozen, and %d", grossNum, dozenNUm, rest);
     }
 }

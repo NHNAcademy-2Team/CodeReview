@@ -1,20 +1,51 @@
 package chapter.two;
 
-import chapter.TextIO;
+import java.util.Scanner;
 
 public class Exercise6 {
 
-    public static void printName() {
-        System.out.print("Please enter your first name and last name, separated by a space\n? ");
-        String[] name = TextIO.getln().split(" ");
-
-        System.out.printf("Your first name is %s, which has %d characters.\n", name[0], name[0].length());
-        System.out.printf("Your last name is %s, which has %d characters.\n", name[1], name[1].length());
-        System.out.printf("Your initials are %c%c\n", name[0].charAt(0), name[1].charAt(0));
-    }
-
     public static void main(String[] args) {
-        printName();
+        Scanner scan = new Scanner(System.in);
+
+        question(scan);
+        scan.close();
     }
+
+
+    public static void question(Scanner scan) {
+
+        System.out.print("Please enter your first name and last name, separated by a space. : ");
+        String name = scan.nextLine();
+        int blank = name.lastIndexOf(" ");
+
+        String firstName = name.substring(0, blank);
+        String lastName = name.substring(blank + 1);
+
+        System.out.println("Your first name is " + firstName + ", which has " + count(firstName) + " characters");
+        System.out.println("Your last name is " + lastName + ", which has " + count(lastName) + " characters");
+        System.out.println("Your initials are " + initials(name));
+    }
+
+    public static int count(String name) {
+        String result = name.replace(" ", "");
+        return result.length();
+    }
+
+    public static String initials(String name) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(name.charAt(0));
+
+        for (int i = name.length() - 1; i >= 0; i--) {
+            if (Character.isUpperCase(name.charAt(i))) {
+                sb.append(name.charAt(i));
+                break;
+            }
+        }
+
+        return sb.toString();
+    }
+
 }
+
 

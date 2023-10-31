@@ -1,26 +1,9 @@
-package chapter.three;
+package chapter.two;
 
 import java.util.Random;
 
 public class Dice {
     private final int maxValue;
-    private int numberOfRolls;
-
-    public boolean isSnakeEyes(int dice1, int dice2) {
-        return (dice1 == 1) && (dice2 == 1);
-    }
-
-    public void rollDices() {
-        Dice dice1 = new Dice(6);
-        Dice dice2 = new Dice(6);
-
-        do {
-            numberOfRolls++;
-            System.out.println("[" + numberOfRolls + "] Roll dices!");
-        } while (!isSnakeEyes(dice1.roll(), dice2.roll()));
-
-        System.out.println("OH IT'S SNAKE EYES");
-    }
 
     public Dice(int maxValue) {
         this.maxValue = maxValue;
