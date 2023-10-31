@@ -1,9 +1,9 @@
 package chapter.three;
 
-public class Die {
+public class Dice {
     private int num;
 
-    Die() {
+    Dice() {
         reload();
     }
 

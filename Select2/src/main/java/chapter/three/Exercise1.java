@@ -4,14 +4,14 @@ public class Exercise1 {
 
     public static void main(String[] args) {
         long count = 0;
-        Die die1 = new Die();
-        Die die2 = new Die();
+        Dice dice1 = new Dice();
+        Dice dice2 = new Dice();
 
         while (true) {
             count++;
-            die1.reload();
-            die2.reload();
-            if (die1.getNum() == 1 && die2.getNum() == 1) {
+            dice1.reload();
+            dice2.reload();
+            if (dice1.getNum() == 1 && dice2.getNum() == 1) {
                 break;
             }
         }
