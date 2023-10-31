@@ -1,4 +1,4 @@
-package select2.src.main.java.chapter.two.three;
+package select2.src.main.java.chapter.three;
 
 import java.util.InputMismatchException;
 

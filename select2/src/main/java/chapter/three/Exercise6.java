@@ -1,4 +1,4 @@
-package select2.src.main.java.chapter.two.three;
+package select2.src.main.java.chapter.three;
 
 public class Exercise6 {
     public static void main(String[] args) {
