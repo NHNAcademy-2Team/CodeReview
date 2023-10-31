@@ -12,6 +12,8 @@ public class Exercise1 {
 
 class SnakeEyes{
 
+    private SnakeEyes(){}
+
     public static int count (Dice dice){
         int count = 0;
         do{

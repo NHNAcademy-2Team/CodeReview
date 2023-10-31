@@ -5,7 +5,7 @@ public class Exercise2 {
     public static void mostDivisors(int number){
         int maxDivisor = 0;
         int maxNumver = 0;
-        for (int i = 0; i < number; i++) {
+        for (int i = 1; i < number; i++) {
             if(maxDivisor < divisors(i)){
                 maxDivisor = divisors(i);
                 maxNumver = i;
