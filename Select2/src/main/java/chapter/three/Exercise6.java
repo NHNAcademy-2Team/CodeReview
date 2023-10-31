@@ -1,41 +1,40 @@
 package chapter.three;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-
 public class Exercise6 {
-    private static final int MIN_VALUE = 1;
-    private static final int MAX_VALUE = 10000;
-
     public static void main(String[] args) {
-        printMaxCountDivisor();
+        MostDivisorsWithArray divisors = new MostDivisorsWithArray();
+        divisors.mostDivisors(1, 10000);
+    }
+}
+
+class MostDivisorsWithArray {
+
+    private int[] divisors;
+    private int max = 0;
+
+    public MostDivisorsWithArray() {
     }
 
-    private static void printMaxCountDivisor() {
-        List<Integer> maxArr = new ArrayList<>();
-        int max = 0;
+    private void countDivisors(int minNumber, int maxNumber) {
+        divisors = new int[maxNumber - minNumber + 1];
 
-        for (int i = MIN_VALUE; i <= MAX_VALUE; i++) {
-            int count = countDivisors(i);
-            if (count > max) {
-                maxArr = new ArrayList<>();
-                maxArr.add(i);
-                max = count;
-            } else if (count == max) {
-                maxArr.add(i);
+        for (int i = minNumber; i < divisors.length; i++) {
+            divisors[i] = Exercise2.divisors(i + 1);
+
+            if (divisors[i] > max) {
+                max = divisors[i];
             }
         }
-
-        System.out.printf("%d과 %d 사이의 정수 중에서,%n", MIN_VALUE, MAX_VALUE);
-        System.out.printf("약수의 최대 갯수는 %d%n", max);
-        System.out.println("이러한 약수의 갯수를 가진 숫자들은:");
-        for (Integer maxNumber : maxArr) {
-            System.out.println(maxNumber);
-        }
     }
 
-    private static int countDivisors(int n) {
-        return (int) IntStream.rangeClosed(1, n).filter(i -> (n % i == 0)).count();
+    public void mostDivisors(int minNumber, int maxNumber) {
+        countDivisors(minNumber, maxNumber);
+        System.out.println(minNumber + "과" + maxNumber + " 사이의 정수 중에서,\n약수의 최대 갯수는 " + max +
+                "\n이러한 약수의 갯수를 가진 숫자들은 : ");
+        for (int i = 0; i < divisors.length; i++) {
+            if (divisors[i] == max) {
+                System.out.println(i + 1);
+            }
+        }
     }
 }
