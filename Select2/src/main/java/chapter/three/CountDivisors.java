@@ -1,23 +1,5 @@
 package chapter.three;
 
-import textio.TextIO;
-
-/**
- * This program reads a positive integer from the user.
- * It counts how many divisors that number has, and
- * then it prints the result.
- *
- * (Note: This program works for any integer in the range
- * 1 to 2147483646, but it crashes with a division-by-zero
- * when run with input 2147483647, the largest value of type
- * int.  This happens because 2147483647 + 1 is -2147483648,
- * the smallest value of type int.   So, after processing
- * testDivisor = 2147483647, testDivisor becomes -2147483648,
- * and the loop continues.  Eventually, testDivisor will be
- * zero, and the expression  N % testDivisor is trying to
- * divide N by zero.)
- */
-
 public class CountDivisors {
 
     public static void main(String[] args) {
@@ -39,9 +21,10 @@ public class CountDivisors {
 
         while (true) {
             System.out.print("Enter a positive integer: ");
-            N = TextIO.getlnInt();
-            if (N > 0)
+            N = textio.TextIO.getlnInt();
+            if (N > 0) {
                 break;
+            }
             System.out.println("That number is not positive.  Please try again.");
         }
 
@@ -51,8 +34,9 @@ public class CountDivisors {
         numberTested = 0;
 
         for (testDivisor = 1; testDivisor <= N; testDivisor++) {
-            if ( N % testDivisor == 0 )
+            if (N % testDivisor == 0) {
                 divisorCount++;
+            }
             numberTested++;
             if (numberTested == 10000000) {
                 System.out.print('.');
