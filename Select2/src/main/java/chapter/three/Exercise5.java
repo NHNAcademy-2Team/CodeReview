@@ -22,18 +22,15 @@ public class Exercise5 {
 
     public static void read(File file) {
         String line;
-        String subLine;
-        String[] split;
         List<Double> list = new ArrayList<>();
         int index;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
             while ((line = br.readLine()) != null) {
-                subLine = line.trim();
-                split = subLine.split(":");
+                String[] split = line.split(":");
 
-                if (isDouble(subLine)) {
+                if (isDouble(split[1])) {
                     list.add(Double.parseDouble(split[1]));
                 }
 

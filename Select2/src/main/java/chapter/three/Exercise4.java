@@ -3,7 +3,6 @@ package chapter.three;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.BufferOverflowException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,15 +30,15 @@ public class Exercise4 {
         List<String> list = new ArrayList<>();
         String[] separate = line.split(" ");
 
-        for (int i=0; i<separate.length; i++) {
-            list.add(isString(separate[i]));
+        for (int i = 0; i < separate.length; i++) {
+            list.add(isLetter(separate[i]));
         }
         return list;
     }
 
-    public static String isString(String separate) {
+    public static String isLetter(String separate) {
         StringBuilder sb = new StringBuilder();
-        for (int i=0; i<separate.length(); i++) {
+        for (int i = 0; i < separate.length(); i++) {
             if (Character.isLetter(separate.charAt(i))) {
                 sb.append(separate.charAt(i));
             }
