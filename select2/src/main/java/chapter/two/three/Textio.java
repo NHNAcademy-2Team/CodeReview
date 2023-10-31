@@ -1,4 +1,4 @@
-package Select2.src.main.java.chapter.three;
+package select2.src.main.java.chapter.two.three;
 
 import java.io.*;
 import java.util.IllegalFormatException;
