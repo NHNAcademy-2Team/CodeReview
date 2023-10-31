@@ -1,3 +1,5 @@
+package chapter.three;
+
 public class CountDivisors {
 
     public static void main(String[] args) {
