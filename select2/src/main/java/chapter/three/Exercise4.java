@@ -3,6 +3,7 @@ package Select2.src.main.java.chapter.three;
 import java.util.InputMismatchException;
 
 public class Exercise4 {
+
     public static void main(String[] args) {
         String line;
         char ch;
@@ -13,12 +14,12 @@ public class Exercise4 {
         try {
             for (int i = 0; i < line.length(); i++) {
                 ch = line.charAt(i);
-                if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
-                    System.out.println(ch);
-                }
+                if(!Character.isLetter(ch))
+                    throw new InputMismatchException("문자가 아닌 것을 입력하셨습니다.");
+                System.out.println(ch);
             }
         } catch (InputMismatchException e) {
-            System.out.println("문자가 아닌 것을 입력하셨습니다.");
+            System.out.println(e.getMessage());
         }
 
     }

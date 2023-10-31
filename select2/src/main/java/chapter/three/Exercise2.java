@@ -13,7 +13,7 @@ public class Exercise2 {
         maxDivisors = 1;
         numWithMax = 1;
 
-        for (num = 0; num <= 10000; num++) {
+        for (num = 1; num <= 10000; num++) {
             int divisorCount = 0;
 
             for (int i = 1; i <= num; i++) {
