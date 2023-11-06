@@ -1,7 +1,7 @@
-package unit.eight;
+package Select1.src.main.java.unit.eight;
 
 import java.io.IOException;
-import unit.seven.Apartment;
+import unit.eight.Apartment;
 
 public class Exercise8 {
 
@@ -16,13 +16,13 @@ public class Exercise8 {
 
         String filename = "Apartment.txt";
         Apartment apartment = new Apartment(30, "광주");
-        apartment.setName("양진영");
-        apartment.setName("이태희");
-        apartment.setName("순수연");
-        apartment.setName("홍지원");
-        apartment.setName("이가은");
-        apartment.setName("김승현");
-        apartment.setName("김바보");
+        apartment.setApartment("양진영");
+        apartment.setApartment("이태희");
+        apartment.setApartment("순수연");
+        apartment.setApartment("홍지원");
+        apartment.setApartment("이가은");
+        apartment.setApartment("김승현");
+        apartment.setApartment("김바보");
 
         apartment.saveToFile(filename);
         Apartment.printApartment(filename);
