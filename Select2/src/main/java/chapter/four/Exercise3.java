@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Exercise3 {
     public static void main(String[] args) {
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             int sumDice = Integer.parseInt(br.readLine());
             int six = 6;
             diceOutOfSum(sumDice, six);
@@ -17,14 +17,16 @@ public class Exercise3 {
         }
     }
 
-    private static void diceOutOfSum(int number, int eyes){
-        if(number < 2 || number > eyes * 2)
+    private static void diceOutOfSum(int number, int eyes) {
+        if (number < 2 || number > eyes * 2) {
             throw new IllegalArgumentException("유효한 수가 아닙니다.");
+        }
     }
 
-    private static int countDice(Dice firstDice, Dice secondDice, int count, int sumInput){
-        if (firstDice.roll() + secondDice.roll() == sumInput)
+    private static int countDice(Dice firstDice, Dice secondDice, int count, int sumInput) {
+        if (firstDice.roll() + secondDice.roll() == sumInput) {
             return count;
+        }
         return countDice(firstDice, secondDice, count + 1, sumInput);
     }
 }

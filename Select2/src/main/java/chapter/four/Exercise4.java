@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 
 public class Exercise4 {
     private static final int TENTHOUSAND = 10000;
+
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             int sumDice = Integer.parseInt(br.readLine());
@@ -19,9 +20,11 @@ public class Exercise4 {
             System.out.println(e.getMessage());
         }
     }
-    private static void diceOutOfSum(int number, int eyes){
-        if(number < 2 || number > eyes * 2)
+
+    private static void diceOutOfSum(int number, int eyes) {
+        if (number < 2 || number > eyes * 2) {
             throw new IllegalArgumentException("유효한 수가 아닙니다.");
+        }
     }
 
     private static double totalRollCount(int sumInput) {

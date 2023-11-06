@@ -24,8 +24,9 @@ public class Exercise2 {
 
         int hexNumber = hex.indexOf(String.valueOf(Character.toUpperCase(digits)));
 
-        if(hexNumber == -1)
+        if (hexNumber == -1) {
             throw new IllegalArgumentException("16진수가 아닙니다.");
+        }
 
         return hexNumber;
     }
@@ -35,6 +36,7 @@ public class Exercise2 {
             return result;
         }
 
-        return hexToDecimal(hexNumber, result + digit * hexValue(hexNumber.charAt(hexNumber.length() - count)), digit * 16, count + 1);
+        return hexToDecimal(hexNumber, result + digit * hexValue(hexNumber.charAt(hexNumber.length() - count)),
+                digit * 16, count + 1);
     }
 }

@@ -9,11 +9,12 @@ public class Exercise5 {
         System.out.println(avg().apply(arr));
         System.out.println(counter(2.2).apply(arr));
     }
-    public static ArrayProcessor max(){
+
+    public static ArrayProcessor max() {
         return arr -> {
             double maxValue = arr[0];
             for (int i = 1; i < arr.length; i++) {
-                if(maxValue < arr[i]){
+                if (maxValue < arr[i]) {
                     maxValue = arr[i];
                 }
             }
@@ -21,11 +22,11 @@ public class Exercise5 {
         };
     }
 
-    public static ArrayProcessor min(){
+    public static ArrayProcessor min() {
         return arr -> {
             double minValue = arr[0];
             for (int i = 1; i < arr.length; i++) {
-                if(minValue > arr[i]){
+                if (minValue > arr[i]) {
                     minValue = arr[i];
                 }
             }
@@ -33,24 +34,25 @@ public class Exercise5 {
         };
     }
 
-    public static ArrayProcessor sum(){
+    public static ArrayProcessor sum() {
         return arr -> {
             double sumArr = 0;
-            for(int i = 0; i < arr.length; i++){
+            for (int i = 0; i < arr.length; i++) {
                 sumArr += arr[i];
             }
             return sumArr;
         };
     }
 
-    public static ArrayProcessor avg(){
+    public static ArrayProcessor avg() {
         return arr -> sum().apply(arr) / arr.length;
     }
+
     public static ArrayProcessor counter(double value) {
         return arr -> {
             int count = 0;
-            for(double num : arr){
-                if(num == value){
+            for (double num : arr) {
+                if (num == value) {
                     count++;
                 }
             }
