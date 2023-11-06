@@ -1,0 +1,29 @@
+package chapter.four.exercise3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Exercise3 {
+    public static void main(String[] args) {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
+            int sumDice = Integer.parseInt(br.readLine());
+            int six = 6;
+            diceOutOfSum(sumDice, six);
+            System.out.println(countDice(new Dice(six), new Dice(six), 1, sumDice));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void diceOutOfSum(int number, int eyes){
+        if(number < 2 || number > eyes * 2)
+            throw new IllegalArgumentException("유효한 수가 아닙니다.");
+    }
+
+    private static int countDice(Dice firstDice, Dice secondDice, int count, int sumInput){
+        if (firstDice.roll() + secondDice.roll() == sumInput)
+            return count;
+        return countDice(firstDice, secondDice, count + 1, sumInput);
+    }
+}
