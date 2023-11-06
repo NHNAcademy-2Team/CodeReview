@@ -25,7 +25,8 @@
 
 선택과정2 ::
 * [*] Chapter2(~10/24)
-* [ ] Chapter3(~10/29)
+* [*] Chapter3(~10/29)
+* [ ] Chapter4(~11/01)
 
 참고자료 :: https://math.hws.edu/javanotes/
 

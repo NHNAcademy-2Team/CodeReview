@@ -3,66 +3,84 @@ package chapter.three;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Objects;
 
 public class Exercise5 {
     public static void main(String[] args) {
-        SalesFigures sales = new SalesFigures("../Select2/src/main/resources/sales.dat");
-        System.out.println(sales.totalSales());
+        String fileName = Objects.requireNonNull(Exercise5.class.getClassLoader().getResource("sales.dat")).getFile();
+        try (FileReader file = new FileReader(fileName); BufferedReader br = new BufferedReader(file)) {
+            String line;
+            int missingDataCount = 0;
+            CityList cityList = new CityList();
+            while ((line = br.readLine()) != null) {
+                try {
+                    String[] CityInfo = line.split(":");
+                    String cityName = CityInfo[0];
+                    double data = Double.parseDouble(CityInfo[1]);
+
+                    cityList.add(new City(cityName, data));
+                } catch (NumberFormatException | InputMismatchException e) {
+                    missingDataCount++;
+                }
+            }
+            System.out.printf("모든 도시의 총 매출 : %f%n", cityList.totalSales());
+            System.out.printf("누락된 도시의 수 : %d%n", missingDataCount);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
-class SalesFigures{
-    private String filename;
-    public SalesFigures(String filename){
-        this.filename = filename;
+class City {
+    private final String cityName;
+    private final double data;
+
+    public City(String cityName, double data) {
+        this.cityName = Objects.requireNonNull(cityName);
+        this.data = data;
     }
 
-    private int fileLength(){
-        int count = 0;
-        String line;
-        try(BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            while((line = br.readLine()) != null){
-                count++;
-            }
-        } catch(IOException e){
-            throw new RuntimeException();
-        }
-        return count;
+    public double getData() {
+        return this.data;
     }
 
-    public double totalSales(){
-        double result = 0.0;
-        String line;
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityName='" + cityName + '\'' +
+                ", data=" + data +
+                '}';
+    }
+}
 
-        try(BufferedReader br = new BufferedReader(new FileReader(filename))){
-            for (int i = 0; i < fileLength(); i++) {
-                line = br.readLine();
-                double temp = sales(line);
+class CityList {
+    private final List<City> cityList;
 
-                if(temp != -1)
-                    result += temp;
-            }
-        }catch (IOException e){
-            throw new RuntimeException();
-        }
-        return result;
+    public CityList() {
+        cityList = new ArrayList<>();
     }
 
-    private double sales(String line){
-        String number = "";
-        line = line.replaceAll(" ", "");
+    public void add(City city) {
+        Objects.requireNonNull(city);
+        this.cityList.add(city);
+    }
 
-        for (int i = 0; i < line.length(); i++) {
-            if(line.charAt(i) == ':'){
-                number = line.substring(i+1);
-                break;
-            }
+    public double totalSales() {
+        Objects.requireNonNull(cityList);
+        double sales = 0;
+        for (City city : cityList) {
+            sales += city.getData();
         }
+        return sales;
+    }
 
-        try{
-            return Double.parseDouble(number);
-        } catch(NumberFormatException e){
-            return -1;
-        }
+    @Override
+    public String toString() {
+        return "CityList{" +
+                "cityList=" + cityList +
+                '}';
     }
 }
