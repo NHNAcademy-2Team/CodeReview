@@ -1,12 +1,11 @@
 package chapter.four;
 
-import chapter.four.exercise3.Dice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Exercise4 {
-    private static final int TENTHOUSAND = 10000;
+    private static final int TEN_THOUSAND = 10_000;
 
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -30,10 +29,10 @@ public class Exercise4 {
     private static double totalRollCount(int sumInput) {
         double sum = 0.0;
         int six = 6;
-        for (int i = 0; i < TENTHOUSAND; i++) {
+        for (int i = 0; i < TEN_THOUSAND; i++) {
             sum += countDice(new Dice(six), new Dice(six), 1, sumInput);
         }
-        return sum / TENTHOUSAND;
+        return sum / TEN_THOUSAND;
     }
 
     private static int countDice(Dice dice1, Dice dice2, int count, int sumInput) {
