@@ -10,6 +10,7 @@ public class Exercise2 {
             case 'e':
             case 'f':
                 return (int) (ch - 'a' + 10);
+            case '0':
             case '1':
             case '2':
             case '3':
