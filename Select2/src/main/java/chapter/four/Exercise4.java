@@ -9,6 +9,5 @@ public class Exercise4 {
     }
 
     public static int rollCount(int dice){
-
     }
 }

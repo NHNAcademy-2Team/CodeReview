@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eight/Exercise8.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/eight/Exercise8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eight/Exercise9.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/eight/Exercise9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Exercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/Exercise1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/ListOfPersons.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/eleven/ListOfPersons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/nine/Exercise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/nine/Exercise3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Select1/src/main/java/unit/seven/Exercise9.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select1/src/main/java/unit/seven/Exercise9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select2/src/main/java/chapter/four/Exercise4.java" beforeDir="false" afterPath="$PROJECT_DIR$/select2/src/main/java/chapter/four/Exercise4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +56,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
