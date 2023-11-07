@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Quiz {
     private static final int QUIZ_NUMBER = 10;
     private static final int SCORE_QUESTION = 10;
+    private static final int MAX_OPERAND = 100;
 
     private int[] firstOperand = new int[QUIZ_NUMBER];
     private int[] secondOperand = new int[QUIZ_NUMBER];
@@ -12,8 +13,8 @@ public class Quiz {
 
     public Quiz() {
         for (int i = 0; i < QUIZ_NUMBER; i++) {
-            firstOperand[i] = (int) (Math.random() * 100);
-            secondOperand[i] = (int) (Math.random() * 100);
+            firstOperand[i] = (int) (Math.random() * MAX_OPERAND);
+            secondOperand[i] = (int) (Math.random() * MAX_OPERAND);
         }
     }
 

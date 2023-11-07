@@ -2,16 +2,24 @@ package chapter.four;
 
 public class Exercise1 {
     public static void printCapitalized(String str) {
-        String[] words = str.split(" ");
+        char[] charArray = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < words.length; i++) {
-            System.out.print(String.valueOf(words[i].charAt(0)).toUpperCase()
-                    + words[i].substring(1) + " ");
+        char frontCh = ' ';
+        for (char ch : charArray) {
+            if (!Character.isLetter(frontCh) && Character.isLetter(ch)) {
+                sb.append(Character.toUpperCase(ch));
+            } else {
+                sb.append(ch);
+            }
+            frontCh = ch;
         }
+
+        System.out.println(sb.toString());
     }
 
     public static void main(String[] args) {
-        String str = "Now is the time to act!";
+        String str = "Now is the time ;to act!";
         printCapitalized(str);
     }
 }

@@ -2,6 +2,7 @@ package chapter.four;
 
 public class Exercise2 {
     public static int hexValue(char ch) {
+        ch = Character.toLowerCase(ch);
         switch (ch) {
             case 'a':
             case 'b':
@@ -28,12 +29,12 @@ public class Exercise2 {
 
     public static void main(String[] args) {
         int value = 0;
-        String str = "1af3";
+        String str = "0123456789ABCDEFG";
+
         for (int i = 0; i < str.length(); i++) {
             value = value * 16 + hexValue(str.charAt(i));
         }
 
         System.out.println(value);
-
     }
 }
