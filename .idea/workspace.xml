@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="" />
+    <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/ArrayProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise4.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise8.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise8.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "jiwon1106",
+    "git-widget-placeholder": "Merging jiwon1106",
     "jdk.selected.JAVA_MODULE": "11",
     "last_opened_file_path": "/Users/kimseunghyeon/Desktop/CodeReview",
     "node.js.detected.package.eslint": "true",
