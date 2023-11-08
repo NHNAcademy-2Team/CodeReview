@@ -1,4 +1,4 @@
-package unit.seven;
+package Select1.src.main.java.unit.seven;
 
 /* Exercise 7.9
  * A matrix M is said to be symmetric if it is square (i.e., has the same number of rows and columns)

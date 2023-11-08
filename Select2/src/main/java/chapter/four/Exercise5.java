@@ -1,37 +1,33 @@
 package chapter.four;
 
+import java.util.Arrays;
+
 public class Exercise5 {
-    // max, min, sum, avg, counter
-
-    public static final ArrayProcessor max = array -> {
-        double maxNum = 0.0;
-        for(double i : array){
-            if(maxNum < i)
-                maxNum = i;
-        }
-        return maxNum;
+    public static final double[][] TEST_CASE = {
+            {1.0, 2.2, 3.1, 3.3, 5.1, 10.2},
+            {1.0, 3.1, 2.2, 3.3, 10.2, 5.1}
     };
 
-    public static final ArrayProcessor min = array -> {
-        double minNum = array[0];
-        for(double i : array){
-            if(minNum > i)
-                minNum = i;
-        }
-        return minNum;
+    public static final ArrayProcessor maxOfArray = (doubleArray) -> {
+        Arrays.sort(doubleArray);
+        return doubleArray[doubleArray.length - 1];
     };
 
-    public static final ArrayProcessor sum = array -> {
-        double sumNum = 0.0;
-        for(double i : array){
-            sumNum += i;
-        }
-        return sumNum;
+    public static final ArrayProcessor minOfArray = (doubleArray) -> {
+        Arrays.sort(doubleArray);
+        return doubleArray[0];
     };
 
-    public static final ArrayProcessor avg = array ->
-        sum.apply(array) / array.length;
+    public static final ArrayProcessor sumOfArray = (doubleArray) -> {
+        double sum = 0;
+        for (double operand : doubleArray) {
+            sum += operand;
+        }
+        return sum;
+    };
 
+    public static final ArrayProcessor avgOfArray =
+            (doubleArray) -> sumOfArray.apply(doubleArray) / doubleArray.length;
 
     public static ArrayProcessor counter( double number ) {
         return array -> {
@@ -44,14 +40,13 @@ public class Exercise5 {
         };
     }
 
-
     public static void main(String[] args) {
-        double[] x = {0.01, 1.12, 2.21};
+        System.out.println(maxOfArray.apply(TEST_CASE[0]));
+        System.out.println(minOfArray.apply(TEST_CASE[1]));
+        System.out.println(sumOfArray.apply(TEST_CASE[0]));
+        System.out.printf("%.2f%n", avgOfArray.apply(TEST_CASE[0]));
 
-        System.out.println(max.apply(x));
-        System.out.println(min.apply(x));
-        System.out.println(sum.apply(x));
-        System.out.println(avg.apply(x));
-        System.out.println(counter(0.01).apply(x));
+        System.out.println(counter(10.2).apply(TEST_CASE[0]));
+        System.out.println(counter(10).apply(TEST_CASE[0]));
     }
 }

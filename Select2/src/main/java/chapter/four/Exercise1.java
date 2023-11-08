@@ -1,32 +1,56 @@
 package chapter.four;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Exercise1 {
-
-    public static void printCapitalized(String sentence){
-        int i = 0;
-        char temp;
-
-        while(i < sentence.length()){
-            temp = sentence.charAt(i);
-
-            if(i == 0){
-                System.out.print(Character.toUpperCase(temp));
-            } else if (Character.isLetter(temp) && (sentence.charAt(i - 1) == ' ') ) {
-                System.out.print(Character.toUpperCase(temp));
-            } else {
-                System.out.print(temp);
-            }
-            i++;
-        }
+    public static void main(String[] args) {
+        printCapitalized(inputUser());
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String sentence = scanner.nextLine();
-        printCapitalized(sentence);
+    private static String inputUser() {
+        String line = null;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            line = br.readLine();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return line;
+    }
 
-        scanner.close();
+    private static void printCapitalized(String line) {
+        System.out.println(capitalized(line));
+    }
+
+    private static String capitalized(String line) {
+        if (precondition(line)) {
+            return line;
+        }
+        char[] lineCharArray = line.toCharArray();
+        boolean isFirst = true;
+        for (int i = 0; i < lineCharArray.length; i++) {
+            char ch = lineCharArray[i];
+            if (isSpace(ch)) {
+                isFirst = true;
+            } else if (isFirstCharacter(isFirst, ch)) {
+                lineCharArray[i] = Character.toUpperCase(ch);
+                isFirst = false;
+            }
+        }
+        return new String(lineCharArray);
+    }
+
+    private static boolean precondition(String line) {
+        return line == null || line.isEmpty();
+    }
+
+    private static boolean isSpace(char ch) {
+        return ch == ' ';
+    }
+
+    private static boolean isFirstCharacter(boolean isFirst, char ch) {
+        return isFirst && Character.isLetter(ch);
     }
 }
+

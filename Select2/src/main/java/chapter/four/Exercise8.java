@@ -1,46 +1,69 @@
 package chapter.four;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Exercise8 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        AdditionQuiz.administerQuiz(scanner);
 
-        scanner.close();
+    public static void main(String[] args) {
+        quizGame();
+    }
+
+    public static void quizGame() {
+        int grade = 0;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            int amount = 10;
+            Quiz quiz = new Quiz();
+            quiz.generator(amount);
+
+            for (int i = 0; i < amount; i++) {
+                quiz.printQuiz(i);
+                int userAnswer = Integer.parseInt(br.readLine());
+                System.out.printf("유저의 답안 : %d\n", userAnswer);
+                if (quiz.quizGrade(userAnswer, i)) {
+                    System.out.println("정답입니다!");
+                    grade += 10;
+                } else {
+                    System.out.printf("틀렸습니다. 정답은 %d입니다.\n", userAnswer);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.printf("점수는 %d입니다.\n", grade);
     }
 }
 
-class AdditionQuiz{
-    private static final int QUIZ_LENGTH = 10;
-    private static final int RANDOM_NUM = 1000;
-    private static Random random = new Random();
-    public static int[][] quiz = new int[QUIZ_LENGTH][2];
-    public static int[] userAnswer = new int[QUIZ_LENGTH];
+class Quiz {
+    private final int maxValue = 100;
+    private List<Integer> firstNumber;
+    private List<Integer> secondNumber;
+    private List<Integer> answerNumber;
 
-    public static void createQuiz(){
-        for (int i = 0; i < QUIZ_LENGTH; i++) {
-            quiz[i][0] = random.nextInt(RANDOM_NUM) + 1;
-            quiz[i][1] = random.nextInt(RANDOM_NUM) + 1;
+    public Quiz() {
+        this.firstNumber = new ArrayList<>();
+        this.secondNumber = new ArrayList<>();
+        this.answerNumber = new ArrayList<>();
+    }
+
+    public void generator(int amount) {
+        Random random = new Random();
+        for (int i = 0; i < amount; i++) {
+            firstNumber.add(random.nextInt(maxValue) + 1);
+            secondNumber.add(random.nextInt(maxValue) + 1);
+            answerNumber.add(firstNumber.get(i) + secondNumber.get(i));
         }
     }
 
-    public static void administerQuiz(Scanner scanner){
-        createQuiz();
-        for (int i = 0; i < QUIZ_LENGTH; i++) {
-            System.out.print((i+1) + ". " + quiz[i][0] + " + " + quiz[i][1] + " = ");
-            userAnswer[i] = scanner.nextInt();
-        }
-        System.out.println("\n점수 : " + gradeQuiz());
+    public void printQuiz(int index) {
+        System.out.printf("%d번. %d + %d 는 무엇일까요?\n", index + 1, firstNumber.get(index), secondNumber.get(index));
     }
 
-    public static int gradeQuiz(){
-        int score = 0;
-        for (int i = 0; i < QUIZ_LENGTH; i++) {
-            if(quiz[i][0] + quiz[i][1] == userAnswer[i])
-                score++;
-        }
-        return (score * (100 / QUIZ_LENGTH));
+    public boolean quizGrade(int answer, int index) {
+        return answer == answerNumber.get(index);
     }
 }

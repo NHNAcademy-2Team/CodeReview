@@ -1,4 +1,4 @@
-package unit.eight;
+package Select1.src.main.java.unit.eight;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -20,25 +20,25 @@ import unit.nine.ExceptionWrongMatrixValue;
  * ExceptionWrongMatrixDimension that is thrown in the method read if the data on the file do not correspond to the dimension of the matrix.
  * Modify the class Matrix in such a way that it generates the new exceptions when necessary.
  */
-public class Exercise9 {
-    public static void main(String[] args) {
-        try {
-            matrixTest();
-        } catch (IOException | ExceptionWrongMatrixValue | ExceptionWrongMatrixDimension e) {
-            System.out.println(e.getMessage());
-        }
-    }
+//public class Exercise9 {
+//    public static void main(String[] args) {
+//        try {
+//            matrixTest();
+//        } catch (IOException | ExceptionWrongMatrixValue | ExceptionWrongMatrixDimension e) {
+//            System.out.println(e.getMessage());
+//        }
+//    }
 
-    private static void matrixTest() throws IOException, ExceptionWrongMatrixValue, ExceptionWrongMatrixDimension {
-        Matrix firstMatrix = new Matrix(3, 3);
-        Matrix secondMatrix =
-                Matrix.read(
-                        Objects.requireNonNull(Exercise9.class.getClassLoader().getResource("matrix1.txt")).getFile());
-
-        Matrix thirdMatrix = firstMatrix.sum(secondMatrix);
-        Matrix fourthMatrix = firstMatrix.product(secondMatrix);
-
-        thirdMatrix.printMatrix();
-        fourthMatrix.printMatrix();
-    }
-}
+//    private static void matrixTest() throws IOException, ExceptionWrongMatrixValue, ExceptionWrongMatrixDimension {
+//        Matrix firstMatrix = new Matrix(3, 3);
+//        Matrix secondMatrix =
+//                Matrix.read(
+//                        Objects.requireNonNull(Exercise9.class.getClassLoader().getResource("matrix1.txt")).getFile());
+//
+//        Matrix thirdMatrix = firstMatrix.sum(secondMatrix);
+//        Matrix fourthMatrix = firstMatrix.product(secondMatrix);
+//
+//        thirdMatrix.printMatrix();
+//        fourthMatrix.printMatrix();
+//    }
+//}
