@@ -1,30 +1,16 @@
 package chapter.four;
 
 public class Exercise2 {
-    public static int hexValue(char ch) {
-        ch = Character.toLowerCase(ch);
-        switch (ch) {
-            case 'a':
-            case 'b':
-            case 'c':
-            case 'd':
-            case 'e':
-            case 'f':
-                return (int) (ch - 'a' + 10);
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-                return (int) (ch - '0');
-            default:
-                return -1;
+    private static int hexValue(char digits) {
+        String hex = "0123456789ABCDEFG";
+
+        int hexNumber = hex.indexOf(String.valueOf(Character.toUpperCase(digits)));
+
+        if (hexNumber == -1) {
+            throw new IllegalArgumentException("16진수가 아닙니다.");
         }
+
+        return hexNumber;
     }
 
     public static void main(String[] args) {
