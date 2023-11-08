@@ -29,13 +29,12 @@ public class Exercise5 {
     public static final ArrayProcessor avgOfArray =
             (doubleArray) -> sumOfArray.apply(doubleArray) / doubleArray.length;
 
-    public static ArrayProcessor counter(double value) {
-        return (doubleArray) -> {
+    public static ArrayProcessor counter( double number ) {
+        return array -> {
             int count = 0;
-            for (int i = 0; i < doubleArray.length; i++) {
-                if (value == doubleArray[i]) {
+            for (double i : array) {
+                if (number == i)
                     count++;
-                }
             }
             return count;
         };
