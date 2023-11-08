@@ -16,7 +16,7 @@ public class Exercise3 {
         }
         int count = 0;
         // 주사위 합과 입력한 변수가 같을 때까지 diceSum 호출
-        for (; ; ) {
+        while (true){
             count++;
             if (value == diceSum())
                 break;
