@@ -1,5 +1,7 @@
+
 package chapter.four;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Exercise4 {
@@ -51,6 +53,10 @@ public class Exercise4 {
     }
 
     public static void main(String[] args) {
-        avgOfRollCount();
+        try {
+            avgOfRollCount();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

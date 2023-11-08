@@ -8,17 +8,17 @@ public class Exercise5 {
             {1.0, 3.1, 2.2, 3.3, 10.2, 5.1}
     };
 
-    public static final ArrayProcessor maxOfArray = (double[] doubleArray) -> {
+    public static final ArrayProcessor maxOfArray = (doubleArray) -> {
         Arrays.sort(doubleArray);
         return doubleArray[doubleArray.length - 1];
     };
 
-    public static final ArrayProcessor minOfArray = (double[] doubleArray) -> {
+    public static final ArrayProcessor minOfArray = (doubleArray) -> {
         Arrays.sort(doubleArray);
         return doubleArray[0];
     };
 
-    public static final ArrayProcessor sumOfArray = (double[] doubleArray) -> {
+    public static final ArrayProcessor sumOfArray = (doubleArray) -> {
         double sum = 0;
         for (double operand : doubleArray) {
             sum += operand;
@@ -27,10 +27,10 @@ public class Exercise5 {
     };
 
     public static final ArrayProcessor avgOfArray =
-            (double[] doubleArray) -> sumOfArray.apply(doubleArray) / doubleArray.length;
+            (doubleArray) -> sumOfArray.apply(doubleArray) / doubleArray.length;
 
     public static ArrayProcessor counter(double value) {
-        return (double[] doubleArray) -> {
+        return (doubleArray) -> {
             int count = 0;
             for (int i = 0; i < doubleArray.length; i++) {
                 if (value == doubleArray[i]) {

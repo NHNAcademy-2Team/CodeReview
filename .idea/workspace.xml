@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="" />
+    <list default="true" id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/ArrayProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise4.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise8.java" beforeDir="false" afterPath="$PROJECT_DIR$/Select2/src/main/java/chapter/four/Exercise8.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -22,6 +37,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2Vjgi3hRckYFsSFNVve1kBTunGv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "hyuni1107",
+    "git-widget-placeholder": "Merging jiwon1106",
     "jdk.selected.JAVA_MODULE": "11",
     "last_opened_file_path": "/Users/kimseunghyeon/Desktop/CodeReview",
     "node.js.detected.package.eslint": "true",
@@ -43,6 +61,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -51,7 +70,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/unit/seven" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Exercise7">
+  <component name="RunManager">
     <configuration name="Exercise7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="unit.seven.Exercise7" />
       <module name="Select1" />
@@ -86,6 +105,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ca151adf-e5df-4aac-8e05-956ec0297b17" name="Changes" comment="" />
@@ -100,7 +122,6 @@
       <workItem from="1698018884505" duration="45000" />
       <workItem from="1698018986339" duration="55000" />
       <workItem from="1698130059014" duration="734000" />
-      <workItem from="1699322020725" duration="148000" />
     </task>
     <servers />
   </component>
@@ -117,6 +138,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

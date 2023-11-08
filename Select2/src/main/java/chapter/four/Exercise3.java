@@ -1,38 +1,59 @@
 package chapter.four;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Random;
 
 public class Exercise3 {
-    private static int sumDices;
-
-    public static int getRollCount(int sumDices) {
-        Dice dice1 = new Dice(6);
-        Dice dice2 = new Dice(6);
-        int count = 0;
-
-        do {
-            count++;
-        } while (sumDices != (dice1.roll() + dice2.roll()));
-
-        return count;
-    }
-
-    public static void sumOfDicesEyes() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("주사위의 합계를 입력해주세요(범위: 1~12): ");
-        sumDices = scanner.nextInt();
-        scanner.close();
-        if (sumDices <= 0 || sumDices > 12) {
-            throw new IllegalArgumentException("주사위의 합계는 1~12 사이의 값이어야 합니다. 정신차리자 코린아");
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            int sumDice = Integer.parseInt(br.readLine());
+            int six = 6;
+            diceOutOfSum(sumDice, six);
+            System.out.println(countDice(new Dice(six), new Dice(six), 1, sumDice));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    public static int getSumDices() {
-        return sumDices;
+    private static void diceOutOfSum(int number, int eyes) {
+        if (number < 2 || number > eyes * 2) {
+            throw new IllegalArgumentException("유효한 수가 아닙니다.");
+        }
     }
 
-    public static void main(String[] args) {
-        sumOfDicesEyes();
-        System.out.println(getSumDices() + "를 구하기 위해서 주사위 2개를 " + getRollCount(getSumDices()) + "번 돌렸습니다.");
+    private static int countDice(Dice firstDice, Dice secondDice, int count, int sumInput) {
+        if (firstDice.roll() + secondDice.roll() == sumInput) {
+            return count;
+        }
+        return countDice(firstDice, secondDice, count + 1, sumInput);
+    }
+}
+
+class Dice {
+    private final int maxValue;
+
+    public Dice(int maxValue) {
+        this.maxValue = maxValue;
+        classInvariant();
+    }
+
+    private void classInvariant() {
+        if (this.maxValue < 1) {
+            throw new IllegalArgumentException("양수가 아닙니다.");
+        }
+    }
+
+    public int roll() {
+        Random random = new Random();
+        return random.nextInt(this.maxValue) + 1;
+    }
+
+    @Override
+    public String toString() {
+        return "Dice{" +
+                "maxValue=" + maxValue +
+                '}';
     }
 }
