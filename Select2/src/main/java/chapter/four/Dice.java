@@ -1,24 +1,30 @@
-package four;
+package chapter.four;
 
-public class Dice { //use Exercise3, Exercise4
+import java.util.Random;
 
-    int num;
+public class Dice {
+    private final int maxValue;
 
-    Dice() {
-        reload();
+
+    public Dice(int maxValue) {
+        this.maxValue = maxValue;
+        classInvariant();
     }
 
-    public void reload() {
-        num = (int)(Math.random()*6) + 1;
+    private void classInvariant() {
+        if (this.maxValue < 1) {
+            throw new IllegalArgumentException("양수가 아닙니다.");
+        }
     }
 
-    public int getNum() {
-        return num;
+    public int roll() {
+        return new Random().nextInt(this.maxValue) + 1;
     }
 
-    public int Num(int a, int b) {
-        num = a+b;
-
-        return num;
+    @Override
+    public String toString() {
+        return "Dice{" +
+                "maxValue=" + maxValue +
+                '}';
     }
 }

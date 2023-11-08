@@ -1,6 +1,6 @@
-package four;
+package chapter.four;
 
-@FunctionalInterface // 람다 인터페이스
+@FunctionalInterface
 public interface ArrayProcessor {
     double apply(double[] array);
 }

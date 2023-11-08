@@ -1,62 +1,52 @@
-package four;
+package chapter.four;
+
+import java.util.Arrays;
 
 public class Exercise5 {
-    // ArrayProcessor
-    public static void main(String[] args) {
+    public static final double[][] TEST_CASE = {
+            {1.0, 2.2, 3.1, 3.3, 5.1, 10.2},
+            {1.0, 3.1, 2.2, 3.3, 10.2, 5.1}
+    };
 
-        double[] list = {1,2,3,4,5,6,7,8,9,10};
+    public static final ArrayProcessor maxOfArray = (doubleArray) -> {
+        Arrays.sort(doubleArray);
+        return doubleArray[doubleArray.length - 1];
+    };
 
-        System.out.println(counter(10).apply(list));
-        System.out.println(sum.apply(list));
-        System.out.println(average.apply(list));
-        System.out.println(maximum.apply(list));
-        System.out.println(minimum.apply(list));
-    }
+    public static final ArrayProcessor minOfArray = (doubleArray) -> {
+        Arrays.sort(doubleArray);
+        return doubleArray[0];
+    };
 
-    // 최대,최소,총합,평균
-
-    public static ArrayProcessor maximum = array -> {
-        double max = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
-            }
+    public static final ArrayProcessor sumOfArray = (doubleArray) -> {
+        double sum = 0;
+        for (double operand : doubleArray) {
+            sum += operand;
         }
-        return max;
+        return sum;
     };
 
-    public static ArrayProcessor minimum = array -> {
-        double min = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-            }
-        }
-        return min;
-    };
+    public static final ArrayProcessor avgOfArray =
+            (doubleArray) -> sumOfArray.apply(doubleArray) / doubleArray.length;
 
-    public static ArrayProcessor sum = array -> {
-        double total = 0;
-        for (int i = 0; i < array.length; i++) {
-            total += array[i];
-        }
-        return total;
-    };
-
-    public static ArrayProcessor average = array -> {
-        return sum.apply(array) / array.length;
-    };
-
-    // 특정 수의 개수
-    public static final ArrayProcessor counter(double num) {
+    public static ArrayProcessor counter( double number ) {
         return array -> {
             int count = 0;
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] == num) {
+            for (double i : array) {
+                if (number == i)
                     count++;
-                }
             }
             return count;
         };
+    }
+
+    public static void main(String[] args) {
+        System.out.println(maxOfArray.apply(TEST_CASE[0]));
+        System.out.println(minOfArray.apply(TEST_CASE[1]));
+        System.out.println(sumOfArray.apply(TEST_CASE[0]));
+        System.out.printf("%.2f%n", avgOfArray.apply(TEST_CASE[0]));
+
+        System.out.println(counter(10.2).apply(TEST_CASE[0]));
+        System.out.println(counter(10).apply(TEST_CASE[0]));
     }
 }
