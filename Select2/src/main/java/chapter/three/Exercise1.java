@@ -1,38 +1,55 @@
 package chapter.three;
 
-import chapter.two.*;
+import java.util.Random;
 
 public class Exercise1 {
-
-    private static int count = 0;
-
     public static void main(String[] args) {
-        //주사위 한 쌍을 몇 번이나 굴려야 뱀의 눈(두 주사위가 1이 나오는 경우)이 나오는지?
-
-        Dice dice1 = new Dice(6);
-        Dice dice2 = new Dice(6);
-        System.out.println(count(count, dice1, dice2));
-
-
+        try {
+            System.out.println(snakeEyesSimulation(6, 6));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public static boolean isSnake(Dice dice) {
-        if (dice.getRoll() == 1) {
-            return true;
-        }
-        return false;
+    private static int snakeEyesSimulation(int firstDiceMaxEye, int secondDiceMaxEye) {
+        return countSnakeEyes(0, new Dice(firstDiceMaxEye), new Dice(secondDiceMaxEye));
     }
 
-    public static int count(int count, Dice dice1, Dice dice2) {
-
-        dice1.setRoll();
-        dice2.setRoll();
-
-        if (!(isSnake(dice1) && isSnake(dice2))) {
-            count++;
-            return count(count, dice1, dice2);
+    private static int countSnakeEyes(int count, Dice firstDice, Dice secondDice) {
+        if (isSnakeEyes(firstDice, secondDice)) {
+            return count;
         }
+        count += 1;
+        return countSnakeEyes(count, firstDice, secondDice);
+    }
 
-        return count;
+    private static boolean isSnakeEyes(Dice firstDice, Dice secondDice) {
+        return firstDice.roll() == 1 && secondDice.roll() == 1;
+    }
+}
+class Dice {
+    private final int maxValue;
+
+    public Dice(int maxValue) {
+        this.maxValue = maxValue;
+        classInvariant();
+    }
+
+    private void classInvariant() {
+        if (this.maxValue < 1) {
+            throw new IllegalArgumentException("양수가 아닙니다.");
+        }
+    }
+
+    public int roll() {
+        Random random = new Random();
+        return random.nextInt(this.maxValue) + 1;
+    }
+
+    @Override
+    public String toString() {
+        return "Dice{" +
+                "maxValue=" + maxValue +
+                '}';
     }
 }

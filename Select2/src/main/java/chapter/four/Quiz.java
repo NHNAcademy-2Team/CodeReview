@@ -1,61 +1,58 @@
 package chapter.four;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class Quiz {
+    private static final int QUIZ_NUMBER = 10;
+    private static final int SCORE_QUESTION = 10;
+    private static final int MAX_OPERAND = 100;
 
-    private int first;
-    private int second;
-    private Random rnd = new Random();
+    private int[] firstOperand = new int[QUIZ_NUMBER];
+    private int[] secondOperand = new int[QUIZ_NUMBER];
+    private int[] answerOfUser = new int[QUIZ_NUMBER];
 
-    public Quiz(int maxNum) {
-        first = rnd.nextInt(maxNum) + 1;
-        second = rnd.nextInt(maxNum) + 1;
+    public Quiz() {
+        for (int i = 0; i < QUIZ_NUMBER; i++) {
+            firstOperand[i] = (int) (Math.random() * MAX_OPERAND);
+            secondOperand[i] = (int) (Math.random() * MAX_OPERAND);
+        }
     }
 
-    public Quiz(int first, int second) {
-        this.first = first;
-        this.second = second;
+    public void createQuestion(int first, int second) {
+        System.out.printf("%d + %d = ", first, second);
     }
 
-    public int sum(int first, int second) {
-        return first + second;
-    }
+    public void manageQuiz() {
+        Scanner scanner = new Scanner(System.in);
+        int score = 0;
 
-    public int substract(int first, int second) {
-        return first - second;
-    }
-
-    public int multiply(int first, int second) {
-        return first * second;
-    }
-
-    public int division(int first, int second) {
-        return first / second;
-    }
-
-    public int mod(int first, int second) {
-        return first % second;
-    }
-
-    public boolean isCorrect(String input, int answer) {
-
-        try {
-            Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            return false;
+        for (int i = 0; i < QUIZ_NUMBER; i++) {
+            System.out.printf("[%d] ", i + 1);
+            createQuestion(firstOperand[i], secondOperand[i]);
+            answerOfUser[i] = scanner.nextInt();
         }
 
-        String result = String.valueOf(answer);
+        scanner.close();
 
-        return input.equals(result);
+        System.out.println("======= Result =======");
+
+        for (int i = 0; i < QUIZ_NUMBER; i++) {
+            System.out.printf("[%d] ", i + 1);
+            createQuestion(firstOperand[i], secondOperand[i]);
+            if (scoreOfQuiz(firstOperand[i], secondOperand[i], answerOfUser[i])) {
+                System.out.println(answerOfUser[i]);
+                score += SCORE_QUESTION;
+            } else {
+                System.out.println(firstOperand[i] + secondOperand[i]);
+            }
+        }
+
+        System.out.printf("Your Score is %d%n", score);
     }
 
-    public int getFirst() {
-        return first;
+    public boolean scoreOfQuiz(int first, int second, int answer) {
+        return ((first + second) == answer) ? true : false;
     }
 
-    public int getSecond() {
-        return second;
-    }
+
 }

@@ -1,65 +1,26 @@
 package chapter.four;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Exercise2 {
+    private static int hexValue(char digits) {
+        String hex = "0123456789ABCDEFG";
 
-    //16진수 -> 10진수
+        int hexNumber = hex.indexOf(String.valueOf(Character.toUpperCase(digits)));
 
-    public static void main(String[] args) {
-
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-
-            System.out.print("> ");
-            String str = br.readLine();
-            hexToDecimal(str);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (hexNumber == -1) {
+            throw new IllegalArgumentException("16진수가 아닙니다.");
         }
 
+        return hexNumber;
     }
 
-    public static void hexToDecimal(String str) {
-
+    public static void main(String[] args) {
         int value = 0;
+        String str = "0123456789ABCDEFG";
+
         for (int i = 0; i < str.length(); i++) {
             value = value * 16 + hexValue(str.charAt(i));
         }
 
         System.out.println(value);
     }
-
-    public static int hexValue(char ch) {
-
-        ch = Character.toUpperCase(ch);
-
-        switch(ch) {
-            case '0' :
-            case '1' :
-            case '2' :
-            case '3' :
-            case '4' :
-            case '5' :
-            case '6' :
-            case '7' :
-            case '8' :
-            case '9' :
-                return (int) (ch - '0');
-            case 'A' :
-            case 'B' :
-            case 'C' :
-            case 'D' :
-            case 'E' :
-            case 'F' :
-                return (int) (ch - 'A' + 10);
-            default:
-                throw new IllegalArgumentException();
-        }
-
-
-    }
-
 }

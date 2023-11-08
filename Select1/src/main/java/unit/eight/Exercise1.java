@@ -1,57 +1,35 @@
 package unit.eight;
 
-import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.Arrays;
 
 public class Exercise1 {
+    static String[] loadArray(InputStream is, int n) throws IOException {
+        String[] arrays = new String[n];
 
-    /*
-    Exercise 8.1. Write a class IOStrings containing two public static methods:
-    • String[] loadArray(InputStream is, int n) : that returns an array of n strings read from the input channel specified by is;
-    • void saveArray(OutputStream os, String[] sa) : that writes the array of strings sa to the output channel specified by os.
-    */
-
-    public static String[] loadArray(InputStream is, int n) throws IOException {
-        String[] result = new String[n];
-
+        int data;
         for (int i = 0; i < n; i++) {
-            result[i] = String.valueOf((char) is.read());
-            if (result[i] == null) {
-                break;
-            }
+            data = is.read();
+            arrays[i] = String.valueOf((char) data);
         }
-
-        is.close();
-        return result;
+        return arrays;
     }
 
-
-    public static void saveArray(OutputStream os, String[] sa) throws IOException {
-        PrintWriter pw = new PrintWriter(os);
-        pw.println(Arrays.toString(sa));
-        for (int i = 0; i < sa.length; i++) {
-            pw.print(sa[i]);
+    static void saveArray(OutputStream os, String[] sa) throws IOException {
+        for (String i : sa) {
+            os.write(i.getBytes());
         }
-        pw.close();
-        os.close();
     }
 
-}
+    public static void main(String[] args) {
 
-
-class Exercise1Main {
-    public static void main(String[] args) throws IOException {
-        System.out.print("문자를 입력하십시오 : ");
-        InputStream is = System.in;
-        OutputStream os = System.out;
-        String[] sa = Exercise1.loadArray(is, 5);
-
-        Exercise1.saveArray(os, sa);
-
+        try (InputStream is = System.in;
+                OutputStream os = new FileOutputStream("/Users/taehee/과정1/resources/eight/exercise1.txt", true);) {
+            saveArray(os, loadArray(is, 5)); // 5글자 입력
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

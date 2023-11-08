@@ -3,66 +3,50 @@ package chapter.three;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.function.BiFunction;
 
 public class Exercise3 {
-
     public static void main(String[] args) {
-        //표현식 평가 프로그램
-
-        read();
-
+        evalutionExpression();
     }
 
-
-    public static void read() {
-
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
-
-            System.out.print("서식을 작성하십시오(0 입력 시 프로그램 종료) : ");
-            String[] operation = br.readLine().split(" ");
-
-            if (operation[0].equals("0")) {
-                System.out.println("프로그램이 종료됩니다.");
-                return;
+    private static void evalutionExpression() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String line;
+            while (!(line = br.readLine()).equals("0")) {
+                String[] arg = line.split(" ");
+                double x = Double.parseDouble(arg[0]);
+                String operator = arg[1];
+                double y = Double.parseDouble(arg[2]);
+                System.out.println(Operator.find(operator).calculator(x, y));
             }
-
-            print(operation);
-
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
+}
+enum Operator {
+    PLUS("+", (x, y) -> x + y),
+    MINUS("-", (x, y) -> x - y),
+    MULTIPLY("*", (x, y) -> x * y),
+    DIVIDE("/", (x, y) -> x / y);
 
-    public static void print(String[] operation) {
-        StringBuilder sb = new StringBuilder();
+    private String operator;
+    private BiFunction<Double, Double, Double> expression;
 
-        if (isNum(operation[0]) && isOperator(operation[1]) && isNum(operation[2])) {
-            sb.append(operation[0] + " ");
-            sb.append(operation[1] + " ");
-            sb.append(operation[2]);
-
-            System.out.println(sb.toString());
-        } else {
-            System.out.println("서식이 잘못되었습니다");
-        }
+    Operator(String operator, BiFunction<Double, Double, Double> expression) {
+        this.operator = operator;
+        this.expression = expression;
     }
 
-    public static boolean isNum(String num) {
-        try {
-            Double.parseDouble(num);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
+    public double calculator(double x, double y) {
+        return expression.apply(x, y);
     }
 
-    public static boolean isOperator(String op) {
-        String[] operator = {"+", "-", "*", "/"};
-        for (int i = 0; i < operator.length; i++) {
-            if (op.equals(operator[i])) {
-                return true;
-            }
-        }
-        return false;
+    public static Operator find(String operator) {
+        return Arrays.stream(values())
+                .filter(operation -> operation.operator.equals(operator))
+                .findAny().orElseThrow(() -> new IllegalArgumentException("잘못된 연산자 입니다."));
     }
 }

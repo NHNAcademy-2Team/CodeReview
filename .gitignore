@@ -323,3 +323,8 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij,maven,windows,eclipse,visualstudiocode,sonar,sonarqube,java
 .idea
 Select1.iml
+NewGit.iml
+Select2.iml
+encodings.xml
+workspace.xml
+./Select2/pom.xml

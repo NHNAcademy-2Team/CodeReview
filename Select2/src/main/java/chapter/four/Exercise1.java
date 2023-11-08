@@ -5,39 +5,52 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Exercise1 {
-
     public static void main(String[] args) {
+        printCapitalized(inputUser());
+    }
 
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
-
-            System.out.print("> ");
-            String input = br.readLine();
-            System.out.println(printCapitalized(input));
-
+    private static String inputUser() {
+        String line = null;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            line = br.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-
-
+        return line;
     }
 
-    public static String printCapitalized(String input) {
+    private static void printCapitalized(String line) {
+        System.out.println(capitalized(line));
+    }
 
-        String[] str = input.split(" ");
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < str.length; i++) {
-
-            if (Character.isLetter(str[i].charAt(0))) {
-                sb.append(str[i].toUpperCase().charAt(0));
-                sb.append(str[i].substring(1));
+    private static String capitalized(String line) {
+        if (precondition(line)) {
+            return line;
+        }
+        char[] lineCharArray = line.toCharArray();
+        boolean isFirst = true;
+        for (int i = 0; i < lineCharArray.length; i++) {
+            char ch = lineCharArray[i];
+            if (isSpace(ch)) {
+                isFirst = true;
+            } else if (isFirstCharacter(isFirst, ch)) {
+                lineCharArray[i] = Character.toUpperCase(ch);
+                isFirst = false;
             }
-
-            sb.append(" ");
-
         }
-
-        return sb.toString();
+        return new String(lineCharArray);
     }
 
+    private static boolean precondition(String line) {
+        return line == null || line.isEmpty();
+    }
+
+    private static boolean isSpace(char ch) {
+        return ch == ' ';
+    }
+
+    private static boolean isFirstCharacter(boolean isFirst, char ch) {
+        return isFirst && Character.isLetter(ch);
+    }
 }
+

@@ -1,21 +1,39 @@
 package chapter.four;
 
-public class Exercise5 {
-    public static void main(String[] args) {
-        double[] array = {1.0, 4.4, 9.7, 15.9};
-        System.out.println(counter(4.4).apply(array));
+import java.util.Arrays;
 
-        System.out.println(max.apply(array));
-        System.out.println(min.apply(array));
-        System.out.println(sum.apply(array));
-        System.out.println(avg.apply(array));
-    }
+public class Exercise5 {
+    public static final double[][] TEST_CASE = {
+            {1.0, 2.2, 3.1, 3.3, 5.1, 10.2},
+            {1.0, 3.1, 2.2, 3.3, 10.2, 5.1}
+    };
+
+    public static final ArrayProcessor maxOfArray = (doubleArray) -> {
+        Arrays.sort(doubleArray);
+        return doubleArray[doubleArray.length - 1];
+    };
+
+    public static final ArrayProcessor minOfArray = (doubleArray) -> {
+        Arrays.sort(doubleArray);
+        return doubleArray[0];
+    };
+
+    public static final ArrayProcessor sumOfArray = (doubleArray) -> {
+        double sum = 0;
+        for (double operand : doubleArray) {
+            sum += operand;
+        }
+        return sum;
+    };
+
+    public static final ArrayProcessor avgOfArray =
+            (doubleArray) -> sumOfArray.apply(doubleArray) / doubleArray.length;
 
     public static ArrayProcessor counter(double value) {
-        return (array) -> {
+        return (doubleArray) -> {
             int count = 0;
-            for (int i = 0; i < array.length; i++) {
-                if (value == array[i]) {
+            for (int i = 0; i < doubleArray.length; i++) {
+                if (value == doubleArray[i]) {
                     count++;
                 }
             }
@@ -23,36 +41,13 @@ public class Exercise5 {
         };
     }
 
-    public static ArrayProcessor max = (array) -> {
-        double max = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
-            }
-        }
-        return max;
-    };
+    public static void main(String[] args) {
+        System.out.println(maxOfArray.apply(TEST_CASE[0]));
+        System.out.println(minOfArray.apply(TEST_CASE[1]));
+        System.out.println(sumOfArray.apply(TEST_CASE[0]));
+        System.out.printf("%.2f%n", avgOfArray.apply(TEST_CASE[0]));
 
-    public static ArrayProcessor min = (array) -> {
-        double min = Double.MAX_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            if (min > array[i]) {
-                min = array[i];
-            }
-        }
-        return min;
-    };
-
-    public static ArrayProcessor sum = (array) -> {
-        double sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-        return sum;
-    };
-
-    public static ArrayProcessor avg = (array) -> {
-        double avg = 0;
-        return sum.apply(array) / array.length;
-    };
+        System.out.println(counter(10.2).apply(TEST_CASE[0]));
+        System.out.println(counter(10).apply(TEST_CASE[0]));
+    }
 }
